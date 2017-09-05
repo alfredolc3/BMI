@@ -6,6 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Acacha\\AdminLTETemplateLaravel\\app\\Exceptions\\Handler' => $vendorDir . '/acacha/admin-lte-template-laravel/src/app/Exceptions/Handler.php',
+    'Acacha\\AdminLTETemplateLaravel\\app\\Providers\\AdminLTETemplateServiceProvider' => $vendorDir . '/acacha/admin-lte-template-laravel/src/app/Providers/AdminLTETemplateServiceProvider.php',
     'App\\Console\\Commands\\Inspire' => $baseDir . '/app/Console/Commands/Inspire.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Events\\Event' => $baseDir . '/app/Events/Event.php',
