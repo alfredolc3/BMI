@@ -4,40 +4,42 @@
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
 
-        <!-- Sidebar user panel (optional) -->
-        <div class="user-panel">
-            <div class="pull-left image">
-                <img src="{{asset('/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image" />
-            </div>
-            <div class="pull-left info">
-                <p>{{ Auth::user()->name }}</p>
-                <!-- Status -->
-                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-            </div>
-        </div>
-
-        <!-- search form (Optional) -->
-        <form action="#" method="get" class="sidebar-form">
-            <div class="input-group">
-                <input type="text" name="q" class="form-control" placeholder="Search..."/>
-              <span class="input-group-btn">
-                <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
-              </span>
-            </div>
-        </form>
-        <!-- /.search form -->
-
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu">
-            <li class="header">HEADER</li>
             <!-- Optionally, you can add icons to the links -->
-            <li class="active"><a href="{{ url('home') }}"><i class='fa fa-link'></i> <span>Home</span></a></li>
-            <li><a href="#"><i class='fa fa-link'></i> <span>Another Link</span></a></li>
-            <li class="treeview">
-                <a href="#"><i class='fa fa-link'></i> <span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
+            <li class=""><a href="{{ url('home') }}"><i class='fa fa-edit'></i> 
+                <span>Registros</span>
+                <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
-                    <li><a href="#">Link in level 2</a></li>
-                    <li><a href="#">Link in level 2</a></li>
+                    <li><a href="#"><i class='glyphicon glyphicon-plus'></i>  Nuevo </a></li>
+                    <li><a href="#"><i class='glyphicon glyphicon-edit'></i> Editar </a></li>
+                    <li><a href="#"><i class='glyphicon glyphicon-remove'></i>  Eliminar </a></li>
+                </ul>
+            </li>
+
+            <li><a href="#"><i class='glyphicon glyphicon-search'></i> <span>Consultas</span></a></li>
+            
+            <li class="treeview">
+                <a href="#"><i class='glyphicon glyphicon-th-list'></i> <span>Reportes</span></a>
+            </li>
+            <li class="treeview">
+                <a href="#"><i class='glyphicon glyphicon-book'></i><span>Biblioteca Digital</span></a>
+            </li>
+            <li class=""><a href="{{ url('home') }}"><i class='fa fa-edit'></i> 
+                <span>Catalogos</span>
+                <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="{{route('admin.users.index')}}"><i class='glyphicon glyphicon-plus'></i>  Usuarios </a></li>
+                    <li><a href="{{route('admin.formas.index')}}"><i class='glyphicon glyphicon-plus'></i> Formas </a></li>
+                    <li><a href="{{route('admin.frentes.index')}}"><i class='glyphicon glyphicon-plus'></i>  Frentes </a></li>
+                    <li><a href="{{route('admin.regimenes.index')}}"><i class='glyphicon glyphicon-plus'></i>Regimen de Propiedad </a></li>
+                    <li><a href="{{route('admin.sepomex.index')}}"><i class='glyphicon glyphicon-plus'></i>SEPOMEX</a></li>
+                    <li><a href="{{route('admin.tipologiasinmueble.index')}}"><i class='glyphicon glyphicon-plus'></i>Tipos de Inmueble</a></li>
+                    <li><a href="{{route('admin.tiposterreno.index')}}"><i class='glyphicon glyphicon-plus'></i>Tipos de Terreno</a></li>
+                    <li><a href="{{route('admin.tiposvialidad.index')}}"><i class='glyphicon glyphicon-plus'></i>Tipos de Vialidad</a></li>
+                    <li><a href="{{route('admin.topografias.index')}}"><i class='glyphicon glyphicon-plus'></i>Topografias</a></li>
+                    <li><a href="{{route('admin.ubicacionesmanzana.index')}}"><i class='glyphicon glyphicon-plus'></i>Ubicaciones de Manzana</a></li>
+                    <li><a href="{{route('admin.usossuelo.index')}}"><i class='glyphicon glyphicon-plus'></i>Usos de Suelo</a></li>
                 </ul>
             </li>
         </ul><!-- /.sidebar-menu -->

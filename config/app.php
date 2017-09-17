@@ -137,14 +137,23 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+
         /*
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        Acacha\AdminLTETemplateLaravel\app\Providers\AdminLTETemplateServiceProvider::class,
+        
+        /*
+            * providers personales
+        */
 
+        Acacha\AdminLTETemplateLaravel\app\Providers\AdminLTETemplateServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
+        Laracasts\Flash\FlashServiceProvider::class,
+
+        
     ],
 
     /*
@@ -192,7 +201,15 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
-        /*'AdminLTE' => Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::class,*/
+        
+        /*
+        *   Aliases Personales
+        */
+
+        'Form'      => Collective\Html\FormFacade::class,
+        'Html'      => Collective\Html\HtmlFacade::class,
+        'AdminLTE'  => Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::class,
+        'Flash'     => Laracasts\Flash\Flash::class,
 
     ],
 
