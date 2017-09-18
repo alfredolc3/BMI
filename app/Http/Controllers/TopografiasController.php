@@ -29,7 +29,7 @@ class TopografiasController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.topografias.create');
     }
 
     /**
@@ -40,7 +40,10 @@ class TopografiasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $topografias = new Topografia($request->all());
+        $topografias->save();
+        Flash::success("Se ha registrado ". $topografias->topografias . " de forma exitosa!");
+        return redirect()->route('admin.topografias.index');
     }
 
     /**

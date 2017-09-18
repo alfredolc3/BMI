@@ -18,7 +18,7 @@ class UsosSueloController extends Controller
      */
     public function index()
     {
-        $usossuelo = UsoSuelo::orderBy('id', 'ASC')->paginate(5);
+        $usossuelo = UsoSuelo::orderBy('id', 'ASC')->paginate(20);
         return view('admin.usossuelo.index')->with('usossuelo', $usossuelo);
     } 
 
@@ -29,7 +29,7 @@ class UsosSueloController extends Controller
      */
     public function create()
     {
-        //
+         return view('admin.usossuelo.create');
     }
 
     /**
@@ -40,7 +40,12 @@ class UsosSueloController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $usossuelo = new UsoSuelo($request->all());
+        //dd($formas);
+        //dd($request->all());
+        $usossuelo->save();
+        Flash::success("Se ha registrado ". $usossuelo->usoSuelo . " de forma exitosa!");
+        return redirect()->route('admin.usossuelo.index');
     }
 
     /**

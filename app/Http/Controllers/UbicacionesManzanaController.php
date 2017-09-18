@@ -30,7 +30,7 @@ class UbicacionesManzanaController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.ubicacionesmanzana.create');
     }
 
     /**
@@ -41,7 +41,10 @@ class UbicacionesManzanaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $ubicacionesmanzana = new UbicacionManzana($request->all());
+        $ubicacionesmanzana->save();
+        Flash::success("Se ha registrado ". $ubicacionesmanzana->ubicacionManzana . " de forma exitosa!");
+        return redirect()->route('admin.ubicacionesmanzana.index');
     }
 
     /**
