@@ -29,7 +29,7 @@ class TipologiasInmuebleController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.tipologiasinmueble.create');
     }
 
     /**
@@ -40,7 +40,12 @@ class TipologiasInmuebleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $tipologiasinmueble = new TipologiaInmueble($request->all());
+        //dd($regimenes);
+        //dd("Se ha registrado ". $tipologiasinmueble->tipoinmueble . " de forma exitosa!");
+        $tipologiasinmueble->save();
+        Flash::success("Se ha registrado ". $tipologiasinmueble->tipoInmueble . " de forma exitosa!");
+        return redirect()->route('admin.tipologiasinmueble.index');
     }
 
     /**

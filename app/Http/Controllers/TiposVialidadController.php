@@ -29,7 +29,7 @@ class TiposVialidadController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.tiposvialidad.create');
     }
 
     /**
@@ -40,7 +40,12 @@ class TiposVialidadController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $tiposvialidad = new TipoVialidad($request->all());
+        //dd($tiposvialidad);
+        //dd($request->all());
+        $tiposvialidad->save();
+        Flash::success("Se ha registrado ". $tiposvialidad->tipoVialidad . " de forma exitosa!");
+        return redirect()->route('admin.tiposvialidad.index');
     }
 
     /**

@@ -29,7 +29,7 @@ class TiposTerrenoController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.tiposterreno.create');
     }
 
     /**
@@ -40,7 +40,13 @@ class TiposTerrenoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $tiposterreno = new TipoTerreno($request->all());
+        //dd($tiposterreno);
+        //dd($request->all());
+        //dd("Se ha registrado ". $tiposterreno->tipoterreno . " de forma exitosa!");
+        $tiposterreno->save();
+        Flash::success("Se ha registrado ". $tiposterreno->tipoTerreno . " de forma exitosa!");
+        return redirect()->route('admin.tiposterreno.index');
     }
 
     /**
