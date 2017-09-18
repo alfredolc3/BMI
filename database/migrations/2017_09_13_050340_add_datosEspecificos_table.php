@@ -31,9 +31,9 @@ class AddDatosEspecificosTable extends Migration
 
             $table->foreign('idDatosPrincipales')->references('id')->on('datosPrincipales')->onDelete('cascade');
             $table->foreign('idSepomex')->references('id')->on('sepomex')->onDelete('cascade');
-            $table->foreign('idTipologiaInmueble')->references('id')->on('tipologiaInmueble')->onDelete('cascade');
-            $table->foreign('idRegimenPropiedad')->references('id')->on('regimenPropiedad')->onDelete('cascade');
-            $table->foreign('idTipoTerreno')->references('id')->on('tipoTerreno')->onDelete('cascade');
+            $table->foreign('idTipologiaInmueble')->references('id')->on('tipologiasInmueble')->onDelete('cascade');
+            $table->foreign('idRegimenPropiedad')->references('id')->on('regimenes')->onDelete('cascade');
+            $table->foreign('idTipoTerreno')->references('id')->on('tiposTerreno')->onDelete('cascade');
 
             $table->timestamps();
         });
