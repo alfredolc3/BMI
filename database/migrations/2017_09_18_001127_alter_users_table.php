@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddRegimenPropiedadTable extends Migration
+class AlterUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,8 @@ class AddRegimenPropiedadTable extends Migration
      */
     public function up()
     {
-        Schema::create('regimenes', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('regimenPropiedad');
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            $table->enum('type', ['Administrador','Normal'])->default('Normal');
         });
     }
 
@@ -26,6 +24,8 @@ class AddRegimenPropiedadTable extends Migration
      */
     public function down()
     {
-        Schema::drop('regimen');
+        Schema::table('users', function (Blueprint $table) {
+            //
+        });
     }
 }

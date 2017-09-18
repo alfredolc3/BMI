@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddRegimenPropiedadTable extends Migration
+class AlterRegimenesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,8 @@ class AddRegimenPropiedadTable extends Migration
      */
     public function up()
     {
-        Schema::create('regimenes', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('regimenPropiedad');
-            $table->timestamps();
+        Schema::table('regimenes', function (Blueprint $table) {
+               $table->string('regimenPropiedad')->after('regimen');
         });
     }
 
@@ -26,6 +24,8 @@ class AddRegimenPropiedadTable extends Migration
      */
     public function down()
     {
-        Schema::drop('regimen');
+        Schema::table('regimenes', function (Blueprint $table) {
+            //
+        });
     }
 }
