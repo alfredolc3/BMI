@@ -42,7 +42,7 @@ class TopografiasController extends Controller
     {
         $topografias = new Topografia($request->all());
         $topografias->save();
-        Flash::success("Se ha registrado ". $topografias->topografias . " de forma exitosa!");
+        Flash::success("Se ha registrado ". $topografias->topografia . " de forma exitosa!");
         return redirect()->route('admin.topografias.index');
     }
 

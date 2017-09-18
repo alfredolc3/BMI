@@ -13,8 +13,8 @@
 						{!!Form::open(['route'=>'admin.topografias.store', 'method'=>'POST'])!!}
 
 						<div class="form-group">
-							{!!Form::label('topografias', 'Tipo de topografia')!!}
-							{!!Form::text('topografias', null,['class'=>'form-control', 'placeholder'=>'Tipo de topografia', 'required'])!!}
+							{!!Form::label('topografia', 'Tipo de topografia')!!}
+							{!!Form::text('topografia', null,['class'=>'form-control', 'placeholder'=>'Tipo de topografia', 'required'])!!}
 						</div>
 						<div class="form-group">
 							{!! Form::submit('Registrar',['class' => 'btn btn-primary']) !!}
