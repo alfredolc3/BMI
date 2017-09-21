@@ -34,7 +34,10 @@
 											<span class="label label-success">{{$user->type}}</span>
 										@endif
 									</td>
-									<td><a href="" class="btn btn-danger"></a><a href="" class="btn btn-warning"></a></td>
+									<td>
+										<a href="" class="btn btn-warning"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a>
+										<a href="{{route('admin.users.destroy', $user->id)}}" onclick="return confirm('¿Seguro que deseas eliminarlo?')" class="btn btn-danger"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a>
+									</td>
 								</tr>
 							@endforeach
 						</tbody>

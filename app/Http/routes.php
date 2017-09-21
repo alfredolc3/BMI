@@ -22,6 +22,7 @@ Route::get('/', function () {
 
 
 Route::group(['prefix' => 'admin'], function(){
+	//crear nuevos registros
 	Route::resource('users','UsersController');
 	Route::resource('formas','FormasController');
 	Route::resource('frentes','FrentesController');
@@ -33,6 +34,13 @@ Route::group(['prefix' => 'admin'], function(){
 	Route::resource('topografias','TopografiasController');
 	Route::resource('ubicacionesmanzana','UbicacionesManzanaController');
 	Route::resource('usossuelo','UsosSueloController');
+
+	//eliminar registros
+
+	Route::get('users/{id}/destroy', [
+		'uses' 	=> 'UsersController@destroy',
+		'as'	=>	'admin.users.destroy'
+	]);
 });
 
 Route::get('nregistro', function () {
