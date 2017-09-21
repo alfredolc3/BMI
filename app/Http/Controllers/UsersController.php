@@ -96,7 +96,7 @@ class UsersController extends Controller
         $user = USer::find($id);
         $user->delete();
 
-        Flash::warning('El usuario '. $user->name . ' a sido borrado de forma exitosa!');
+        Flash::error('El usuario '. $user->name . ' a sido borrado de forma exitosa!');
         return redirect()->route('admin.users.index');
         //dd($user);
     }
