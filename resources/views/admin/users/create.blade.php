@@ -12,6 +12,18 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">Nuevo Usuario </div>
 				<div class="panel-body">
+
+					@if(count($errors) > 0)
+						<div class="alert alert-danger" role="alert">
+							<ul>
+							@foreach($errors->all() as $message)
+								<li>{{ $message }}</li>
+							@endforeach
+							</ul>
+						</div>
+					@endif
+
+
 					{!!Form::open(['route'=> 'admin.users.store', 'method'=>'POST'])!!}
 
 					<div class="form-group">
