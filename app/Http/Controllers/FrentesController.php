@@ -67,7 +67,8 @@ class FrentesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $frentes = Frente::find($id);
+        return view('admin.frentes.edit')->with('frente',$frentes);
     }
 
     /**
@@ -79,7 +80,13 @@ class FrentesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $frentes = Frente::find($id);
+        $frentes->frente = $request->frente;
+        $frentes->save();
+
+        Flash::warning('El Frente '. $frentes->frente . ' ha sido editado con exito!');
+        return redirect()->route('admin.frentes.index');
+
     }
 
     /**

@@ -24,7 +24,7 @@
 								<tr>
 									<td>{{$tipologiainmueble->id}}</td>
 									<td>{{$tipologiainmueble->tipoInmueble}}</td>
-									<td><a href="" class="btn btn-danger"></a><a href="" class="btn btn-warning"></a></td>
+									<td><a href="" class="btn btn-danger"></a><a href="{{route('admin.tipologiasinmueble.edit', $tipologiainmueble->id)}}" class="btn btn-warning"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></a></td>
 								</tr>
 							@endforeach	
 						</tbody>

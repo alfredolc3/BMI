@@ -24,7 +24,8 @@
 								<tr>
 									<td>{{$tipoterreno->id}}</td>
 									<td>{{$tipoterreno->tipoTerreno}}</td>
-									<td><a href="" class="btn btn-danger"></a><a href="" class="btn btn-warning"></a></td>
+									<td><a href="" class="btn btn-danger"></a>
+										<a href="{{route('admin.tiposterreno.edit', $tipoterreno->id)}}" class="btn btn-warning"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a></td>
 								</tr>
 							@endforeach	
 						</tbody>

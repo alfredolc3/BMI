@@ -8,12 +8,11 @@
         <ul class="sidebar-menu">
             <!-- Optionally, you can add icons to the links -->
             <li class=""><a href="{{ url('home') }}"><i class='fa fa-edit'></i> 
-                <span>Registros</span>
+                <span>Comparables</span>
                 <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
+                    <li><a href="#"><i class='glyphicon glyphicon-plus'></i>  Existentes </a></li>
                     <li><a href="#"><i class='glyphicon glyphicon-plus'></i>  Nuevo </a></li>
-                    <li><a href="#"><i class='glyphicon glyphicon-edit'></i> Editar </a></li>
-                    <li><a href="#"><i class='glyphicon glyphicon-remove'></i>  Eliminar </a></li>
                 </ul>
             </li>
 

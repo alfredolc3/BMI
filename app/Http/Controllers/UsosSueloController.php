@@ -67,7 +67,8 @@ class UsosSueloController extends Controller
      */
     public function edit($id)
     {
-        //
+        $usossuelo = UsoSuelo::find($id);
+        return view('admin.usossuelo.edit')->with('usossuelo',$usossuelo);
     }
 
     /**
@@ -79,7 +80,13 @@ class UsosSueloController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $usossuelo = UsoSuelo::find($id);
+        $usossuelo->usoSuelo = $request->usoSuelo;
+        $usossuelo->save();
+
+        Flash::warning('El Uso de Suelo '. $usossuelo->usoSuelo . ' ha sido editado con exito!');
+        return redirect()->route('admin.usossuelo.index');
+
     }
 
     /**

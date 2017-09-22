@@ -24,7 +24,10 @@
 								<tr>
 									<td>{{$forma->id}}</td>
 									<td>{{$forma->forma}}</td>
-									<td><a href="" class="btn btn-danger"></a><a href="" class="btn btn-warning"></a></td>
+									<td>
+										<a href="" class="btn btn-danger"></a>
+										<a href="{{route('admin.formas.edit', $forma->id)}}" class="btn btn-warning"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a>
+									</td>
 								</tr>
 							@endforeach	
 						</tbody>

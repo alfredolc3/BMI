@@ -24,7 +24,8 @@
 								<tr>
 									<td>{{$ubicacion->id}}</td>
 									<td>{{$ubicacion->ubicacionManzana}}</td>
-									<td><a href="" class="btn btn-danger"></a><a href="" class="btn btn-warning"></a></td>
+									<td><a href="" class="btn btn-danger"></a>
+										<a href="{{route('admin.ubicacionesmanzana.edit', $ubicacion->id)}}" class="btn btn-warning"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a></td>
 								</tr>
 							@endforeach	
 						</tbody>

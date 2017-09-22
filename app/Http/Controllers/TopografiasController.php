@@ -65,7 +65,8 @@ class TopografiasController extends Controller
      */
     public function edit($id)
     {
-        //
+        $topografias = Topografia::find($id);
+        return view('admin.topografias.edit')->with('topografia',$topografias);
     }
 
     /**
@@ -77,7 +78,12 @@ class TopografiasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $topografias = Topografia::find($id);
+        $topografias->topografia = $request->topografia;
+        $topografias->save();
+
+        Flash::warning('La Topografia '. $topografias->topografia . ' ha sido editado con exito!');
+        return redirect()->route('admin.topografias.index');
     }
 
     /**

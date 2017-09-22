@@ -43,6 +43,15 @@ Route::group(['prefix' => 'admin'], function(){
 	]);
 });
 
+
+
+
+
+
+
+
+
+
 Route::get('nregistro', function () {
     return view('registros.nuevo');
 });

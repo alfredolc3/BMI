@@ -13,6 +13,14 @@
 				<div class="panel-heading">Usuarios  </div>
 				<div class="panel-body">
 				<a href="{{route('admin.users.create')}}" class="btn btn-info"> Registrar Nuevo Usuario</a>
+				<!--Buscador -->
+					{!! Form::open(['route'=>'admin.users.index', 'method' => 'GET', 'class'=>'navbar-form pull-right'])!!}
+					<div class="input-group">
+						{!!Form::text('name', null, ['class'=>'form-control', 'placeholder'=>'Buscar', 'aria-describedby'=>'search'])!!}
+						<span class="input-group-addon" id="search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+					</div>
+						{!! Form::close()!!}
+				<!--Fin del Buscador -->
 					<table class="table table-striped">
 						<thead>
 							<th>ID</th>
@@ -35,7 +43,7 @@
 										@endif
 									</td>
 									<td>
-										<a href="" class="btn btn-warning"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a>
+										<a href="{{route('admin.users.edit', $user->id)}}" class="btn btn-warning"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a>
 										<a href="{{route('admin.users.destroy', $user->id)}}" onclick="return confirm('¿Seguro que deseas eliminarlo?')" class="btn btn-danger"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a>
 									</td>
 								</tr>

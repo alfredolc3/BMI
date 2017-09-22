@@ -67,7 +67,8 @@ class RegimenesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $regimenes = Regimen::find($id);
+        return view('admin.regimenes.edit')->with('regimen',$regimenes);
     }
 
     /**
@@ -79,7 +80,12 @@ class RegimenesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $regimenes = Regimen::find($id);
+        $regimenes->regimen = $request->regimen;
+        $regimenes->save();
+
+        Flash::warning('El Regimen '. $regimenes->regimen . ' ha sido editado con exito!');
+        return redirect()->route('admin.regimenes.index');
     }
 
     /**

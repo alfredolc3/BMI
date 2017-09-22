@@ -68,7 +68,8 @@ class TiposTerrenoController extends Controller
      */
     public function edit($id)
     {
-        //
+         $tiposterreno = TipoTerreno::find($id);
+        return view('admin.tiposterreno.edit')->with('tipoTerreno',$tiposterreno);
     }
 
     /**
@@ -80,7 +81,15 @@ class TiposTerrenoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $tiposterreno = TipoTerreno::find($id);
+        $tiposterreno->tipoTerreno = $request->tipoTerreno;
+        $tiposterreno->save();
+
+        Flash::warning('El  Tipo de Terreno '. $tiposterreno->tipoTerreno . ' ha sido editado con exito!');
+        return redirect()->route('admin.tiposterreno.index');
+
+        
+        //dd($request->all());
     }
 
     /**

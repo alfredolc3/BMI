@@ -67,7 +67,10 @@ class TipologiasInmuebleController extends Controller
      */
     public function edit($id)
     {
-        //
+         $tipologiasinmueble = TipologiaInmueble::find($id);
+        
+        // dd($tipologiasinmueble);
+        return view('admin.tipologiasinmueble.edit')->with('tipoInmueble',$tipologiasinmueble);
     }
 
     /**
@@ -79,7 +82,14 @@ class TipologiasInmuebleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $tipologiasinmueble = TipologiaInmueble::find($id);
+        $tipologiasinmueble->tipoInmueble = $request->tipoInmueble;
+        $tipologiasinmueble->save();
+
+        Flash::warning('La Tipo de Inmueble '. $tipologiasinmueble->tipoInmueble . ' ha sido editado con exito!');
+        return redirect()->route('admin.tipologiasinmueble.index');
+
+        //dd($request->all());
     }
 
     /**

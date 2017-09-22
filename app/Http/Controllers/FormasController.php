@@ -68,7 +68,8 @@ class FormasController extends Controller
      */
     public function edit($id)
     {
-        //
+        $formas = Forma::find($id);
+        return view('admin.formas.edit')->with('forma',$formas);
     }
 
     /**
@@ -80,7 +81,15 @@ class FormasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $formas = Forma::find($id);
+        $formas->forma = $request->forma;
+        $formas->save();
+
+        Flash::warning('La Forma '. $formas->forma . ' ha sido editado con exito!');
+        return redirect()->route('admin.formas.index');
+
+        
+        //dd($request->all());
     }
 
     /**

@@ -67,7 +67,8 @@ class TiposVialidadController extends Controller
      */
     public function edit($id)
     {
-        //
+         $tiposvialidad = TipoVialidad::find($id);
+        return view('admin.tiposvialidad.edit')->with('tiposvialidad',$tiposvialidad);
     }
 
     /**
@@ -79,7 +80,12 @@ class TiposVialidadController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $tiposvialidad = TipoVialidad::find($id);
+        $tiposvialidad->tipoVialidad = $request->tipoVialidad;
+        $tiposvialidad->save();
+
+        Flash::warning('La vialidad '. $tiposvialidad->tipoVialidad . ' ha sido editado con exito!');
+        return redirect()->route('admin.tiposvialidad.index');
     }
 
     /**

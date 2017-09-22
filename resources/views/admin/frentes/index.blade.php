@@ -24,7 +24,7 @@
 								<tr>
 									<td>{{$frente->id}}</td>
 									<td>{{$frente->frente}}</td>
-									<td><a href="" class="btn btn-danger"></a><a href="" class="btn btn-warning"></a></td>
+									<td><a href="" class="btn btn-danger"></a><a href="{{route('admin.frentes.edit', $frente->id)}}" class="btn btn-warning"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a></td>
 								</tr>
 							@endforeach	
 						</tbody>

@@ -66,7 +66,8 @@ class UbicacionesManzanaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $ubicacionesmanzana = UbicacionManzana::find($id);
+        return view('admin.ubicacionesmanzana.edit')->with('ubicacionesmanzana',$ubicacionesmanzana);
     }
 
     /**
@@ -78,7 +79,12 @@ class UbicacionesManzanaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $ubicacionesmanzana = UbicacionManzana::find($id);
+        $ubicacionesmanzana->ubicacionManzana = $request->ubicacionManzana;
+        $ubicacionesmanzana->save();
+
+        Flash::warning('La Ubicacion de la Manzana '. $ubicacionesmanzana->ubicacionManzana . ' ha sido editado con exito!');
+        return redirect()->route('admin.ubicacionesmanzana.index');
     }
 
     /**
