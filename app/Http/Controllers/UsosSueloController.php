@@ -95,8 +95,13 @@ class UsosSueloController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+      public function destroy($id)
     {
-        //
+        $usossuelo = UsoSuelo::find($id);
+        $usossuelo->delete();
+
+        Flash::error('El uso '. $usossuelo->usoSuelo . ' a sido borrado de forma exitosa!');
+        return redirect()->route('admin.usossuelo.index');
+        //dd($user);
     }
 }

@@ -98,8 +98,14 @@ class TipologiasInmuebleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+     public function destroy($id)
     {
-        //
+        $tipologiasinmueble = TipologiaInmueble::find($id);
+        $tipologiasinmueble->delete();
+
+        Flash::error('La tipologia '. $tipologiasinmueble->tipoInmueble . ' a sido borrado de forma exitosa!');
+        return redirect()->route('admin.tipologiasinmueble.index');
+        //dd($user);
     }
 }
+

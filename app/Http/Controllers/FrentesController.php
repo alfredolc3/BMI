@@ -97,6 +97,11 @@ class FrentesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $frentes = frente::find($id);
+        $frentes->delete();
+
+        Flash::error('El frente '. $frentes->frente . ' a sido borrado de forma exitosa!');
+        return redirect()->route('admin.frentes.index');
+        //dd($user);
     }
 }

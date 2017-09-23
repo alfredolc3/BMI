@@ -92,8 +92,13 @@ class TopografiasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+       public function destroy($id)
     {
-        //
+        $topografias = Topografia::find($id);
+        $topografias->delete();
+
+        Flash::error('La topografia '. $topografias->topografia . ' a sido borrado de forma exitosa!');
+        return redirect()->route('admin.topografias.index');
+        //dd($user);
     }
 }

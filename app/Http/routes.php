@@ -37,19 +37,18 @@ Route::group(['prefix' => 'admin'], function(){
 
 	//eliminar registros
 
-	Route::get('users/{id}/destroy', [
-		'uses' 	=> 'UsersController@destroy',
-		'as'	=>	'admin.users.destroy'
-	]);
+	Route::get('users/{id}/destroy', ['uses' 	=> 'UsersController@destroy','as'	=>	'admin.users.destroy']);
+	Route::get('formas/{id}/destroy',['uses' => 'FormasController@destroy', 'as' => 'admin.formas.destroy']);
+	Route::get('frentes/{id}/destroy',['uses' => 'FrentesController@destroy', 'as' => 'admin.frentes.destroy']);
+	Route::get('regimenes/{id}/destroy',['uses' => 'RegimenesController@destroy', 'as' => 'admin.regimenes.destroy']);
+	Route::get('tipologiasinmueble/{id}/destroy',['uses' => 'TipologiasInmuebleController@destroy', 'as' => 'admin.tipologiasinmueble.destroy']);
+	Route::get('tiposterreno/{id}/destroy',['uses' => 'TiposTerrenoController@destroy', 'as' => 'admin.tiposterreno.destroy']);
+	Route::get('tiposvialidad/{id}/destroy',['uses' => 'TiposVialidadController@destroy', 'as' => 'admin.tiposvialidad.destroy']);
+	Route::get('topografias/{id}/destroy',['uses' => 'TopografiasController@destroy', 'as' => 'admin.topografias.destroy']);
+	Route::get('ubicacionesmanzana/{id}/destroy',['uses' => 'UbicacionesManzanaController@destroy', 'as' => 'admin.ubicacionesmanzana.destroy']);
+	Route::get('usossuelo/{id}/destroy',['uses' => 'UsossueloController@destroy', 'as' => 'admin.usossuelo.destroy']);
+
 });
-
-
-
-
-
-
-
-
 
 
 Route::get('nregistro', function () {

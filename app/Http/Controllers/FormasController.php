@@ -98,8 +98,13 @@ class FormasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+   public function destroy($id)
     {
-        //
+        $formas = forma::find($id);
+        $formas->delete();
+
+        Flash::error('La forma '. $formas->forma . ' a sido borrada de forma exitosa!');
+        return redirect()->route('admin.formas.index');
+        //dd($user);
     }
 }

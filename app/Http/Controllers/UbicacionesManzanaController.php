@@ -93,8 +93,13 @@ class UbicacionesManzanaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+     public function destroy($id)
     {
-        //
+        $ubicacionesmanzana = UbicacionManzana::find($id);
+        $ubicacionesmanzana->delete();
+
+        Flash::error('La ubicación de la manzana '. $ubicacionesmanzana->ubicacionManzana . ' a sido borrada de forma exitosa!');
+        return redirect()->route('admin.ubicacionesmanzana.index');
+        //dd($user);
     }
 }

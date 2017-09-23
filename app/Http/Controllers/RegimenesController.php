@@ -96,6 +96,11 @@ class RegimenesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $regimenes = regimen::find($id);
+        $regimenes->delete();
+
+        Flash::error('El regimen '. $regimenes->regimen . ' a sido borrado de forma exitosa!');
+        return redirect()->route('admin.regimenes.index');
+        //dd($user);
     }
 }

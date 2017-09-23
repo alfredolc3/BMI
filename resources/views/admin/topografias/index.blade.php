@@ -13,6 +13,14 @@
 				<div class="panel-heading">Topografias </div>
 				<div class="panel-body">
 				<a href="{{route('admin.topografias.create')}}" class="btn btn-info"> Nuevo Registro </a>
+				<!--Buscador -->
+					{!! Form::open(['route'=>'admin.topografias.index', 'method' => 'GET', 'class'=>'navbar-form pull-right'])!!}
+					<div class="input-group">
+						{!!Form::text('name', null, ['class'=>'form-control', 'placeholder'=>'Buscar', 'aria-describedby'=>'search'])!!}
+						<span class="input-group-addon" id="search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+					</div>
+						{!! Form::close()!!}
+				<!--Fin del Buscador -->
 					<table class="table table-striped">
 						<thead>
 							<th>ID</th>
@@ -24,7 +32,8 @@
 								<tr>
 									<td>{{$topografia->id}}</td>
 									<td>{{$topografia->topografia}}</td>
-									<td><a href="" class="btn btn-danger"></a>
+									<td><a href="{{route('admin.topografias.destroy', $topografia->id)}}" onclick="return confirm('¿Seguro que deseas eliminarlo?')" class="btn btn-danger"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a>
+
 										<a href="{{route('admin.topografias.edit', $topografia->id)}}" class="btn btn-warning"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a></td>
 								</tr>
 							@endforeach	

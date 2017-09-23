@@ -96,6 +96,11 @@ class TiposVialidadController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $tiposvialidad = TipoVialidad::find($id);
+        $tiposvialidad->delete();
+
+        Flash::error('El tipo de vialidad '. $tiposvialidad->tipoVialidad . ' a sido borrado de forma exitosa!');
+        return redirect()->route('admin.tiposvialidad.index');
+        //dd($user);
     }
 }

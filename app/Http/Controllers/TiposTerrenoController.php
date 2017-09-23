@@ -100,6 +100,11 @@ class TiposTerrenoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $tiposterreno = TipoTerreno::find($id);
+        $tiposterreno->delete();
+
+        Flash::error('El tipo de terreno '. $tiposterreno->tipoTerreno . ' a sido borrado de forma exitosa!');
+        return redirect()->route('admin.tiposterreno.index');
+        //dd($user);
     }
 }
