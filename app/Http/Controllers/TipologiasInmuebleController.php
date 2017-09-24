@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\TipologiaInmueble;
 use Laracasts\Flash\Flash;
+use App\Http\Requests\TipologiaInmuebleRequest;
 
 class TipologiasInmuebleController extends Controller
 {
@@ -38,7 +39,7 @@ class TipologiasInmuebleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TipologiaInmuebleRequest $request)
     {
         $tipologiasinmueble = new TipologiaInmueble($request->all());
         //dd($regimenes);

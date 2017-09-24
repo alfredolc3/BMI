@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Frente;
 use Laracasts\Flash\Flash;
+use App\Http\Requests\FrenteRequest;
 
 class FrentesController extends Controller
 {
@@ -38,7 +39,7 @@ class FrentesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FrenteRequest $request)
     {
         $frentes = new Frente($request->all());
         //dd($frentes);

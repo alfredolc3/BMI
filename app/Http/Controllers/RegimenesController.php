@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Regimen;
 use Laracasts\Flash\Flash;
+use App\Http\Requests\RegimenRequest;
 
 class RegimenesController extends Controller
 {
@@ -38,7 +39,7 @@ class RegimenesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RegimenRequest $request)
     {
         $regimenes = new Regimen($request->all());
         //dd($regimenes);

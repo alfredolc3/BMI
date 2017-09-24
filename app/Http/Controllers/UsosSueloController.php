@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\UsoSuelo;
 use Laracasts\Flash\Flash;
+use App\Http\Requests\UsoSueloRequest;
 
 class UsosSueloController extends Controller
 {
@@ -38,7 +39,7 @@ class UsosSueloController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UsoSueloRequest $request)
     {
         $usossuelo = new UsoSuelo($request->all());
         //dd($formas);

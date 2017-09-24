@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Forma;
 use Laracasts\Flash\Flash;
+use App\Http\Requests\FormaRequest;
 
 class FormasController extends Controller
 {
@@ -39,7 +40,7 @@ class FormasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FormaRequest $request)
     {
         $formas = new Forma($request->all());
         //dd($formas);

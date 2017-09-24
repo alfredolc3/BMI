@@ -10,6 +10,7 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">Nuevo Frente</div>
 					<div class="panel-body">
+						@include('partials.error')
 						{!!Form::open(['route'=>'admin.frentes.store', 'method'=>'POST'])!!}
 
 						<div class="form-group">

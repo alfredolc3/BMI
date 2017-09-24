@@ -26,7 +26,7 @@
 
 					<div class="form-group">
 						{!!Form::label('type', 'Tipo')!!}
-						{!!Form::select('type', [''=>'Seleccione tipo de usuario', 'Normal'=>'Normal', 'Administrador'=>'Administrador'], null, ['class'=>'form-control',])!!}
+						{!!Form::select('type', ['Normal'=>'Normal', 'Administrador'=>'Administrador'], $user->type, ['class'=>'form-control',])!!}
 					</div>
 
 					<div class="form-group">

@@ -40,8 +40,8 @@
 	<body>
 		<div class="container">
 			<div class="content">
-				<div class="title">BMI</div>
-				<div class="links"><a href="{{ route('auth.register') }}">Register</a> | <a href="{{ route('auth.login') }}">Login</a></div>
+				<div class="title"><b>Base de Mercado Inmobiliario</b></div>
+				<a href="{{ route('auth.login') }}"><img src="/img/Bmi (5).jpg" class="user-image" alt="User Image"/>
 			</div>
 		</div>
 	</body>

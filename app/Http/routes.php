@@ -21,7 +21,7 @@ Route::get('/', function () {
 });
 
 
-Route::group(['prefix' => 'admin'], function(){
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
 	//crear nuevos registros
 	Route::resource('users','UsersController');
 	Route::resource('formas','FormasController');
@@ -49,6 +49,14 @@ Route::group(['prefix' => 'admin'], function(){
 	Route::get('usossuelo/{id}/destroy',['uses' => 'UsossueloController@destroy', 'as' => 'admin.usossuelo.destroy']);
 
 });
+
+
+// Authentication routes...
+/*Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::get('auth/logout', 'Auth\AuthController@getLogout');
+*/
+
 
 
 Route::get('nregistro', function () {

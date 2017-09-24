@@ -10,6 +10,7 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">Nuevo Uso Suelo</div>
 					<div class="panel-body">
+						@include('partials.error')
 						{!!Form::open(['route'=>'admin.usossuelo.store', 'method'=>'POST'])!!}
 
 						<div class="form-group">

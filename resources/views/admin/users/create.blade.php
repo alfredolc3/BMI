@@ -13,16 +13,7 @@
 				<div class="panel-heading">Nuevo Usuario </div>
 				<div class="panel-body">
 
-					@if(count($errors) > 0)
-						<div class="alert alert-danger" role="alert">
-							<ul>
-							@foreach($errors->all() as $message)
-								<li>{{ $message }}</li>
-							@endforeach
-							</ul>
-						</div>
-					@endif
-
+					@include('partials.error')
 
 					{!!Form::open(['route'=> 'admin.users.store', 'method'=>'POST'])!!}
 
@@ -43,7 +34,7 @@
 
 					<div class="form-group">
 						{!!Form::label('type', 'Tipo')!!}
-						{!!Form::select('type', [''=>'Seleccione tipo de usuario', 'Normal'=>'Normal', 'Administrador'=>'Administrador'], null, ['class'=>'form-control',])!!}
+						{!!Form::select('type', ['Normal'=>'Normal', 'Administrador'=>'Administrador'], null, ['class'=>'form-control', 'placeholder' => 'Seleccione una opcion...', 'required'])!!}
 					</div>
 
 					<div class="form-group">

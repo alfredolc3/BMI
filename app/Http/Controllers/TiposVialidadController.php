@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\TipoVialidad;
 use Laracasts\Flash\Flash;
+use App\Http\Requests\TipoVialidadRequest;
 
 class TiposVialidadController extends Controller
 {
@@ -38,7 +39,7 @@ class TiposVialidadController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TipoVialidadRequest $request)
     {
         $tiposvialidad = new TipoVialidad($request->all());
         //dd($tiposvialidad);

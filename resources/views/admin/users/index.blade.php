@@ -13,6 +13,7 @@
 				<div class="panel-heading">Usuarios  </div>
 				<div class="panel-body">
 				<a href="{{route('admin.users.create')}}" class="btn btn-info"> Registrar Nuevo Usuario</a>
+
 				<!--Buscador -->
 					{!! Form::open(['route'=>'admin.users.index', 'method' => 'GET', 'class'=>'navbar-form pull-right'])!!}
 					<div class="input-group">
@@ -21,6 +22,7 @@
 					</div>
 						{!! Form::close()!!}
 				<!--Fin del Buscador -->
+				
 					<table class="table table-striped">
 						<thead>
 							<th>ID</th>

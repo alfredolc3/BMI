@@ -10,6 +10,7 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">Nuevas ubicaciones de manzanas</div>
 					<div class="panel-body">
+						@include('partials.error')
 						{!!Form::open(['route'=>'admin.ubicacionesmanzana.store', 'method'=>'POST'])!!}
 
 						<div class="form-group">

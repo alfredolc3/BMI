@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\UbicacionManzana;
 use Laracasts\Flash\Flash;
+use App\Http\Requests\UbicacionManzanaRequest;
 
 class UbicacionesManzanaController extends Controller
 {
@@ -39,7 +40,7 @@ class UbicacionesManzanaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UbicacionManzanaRequest $request)
     {
         $ubicacionesmanzana = new UbicacionManzana($request->all());
         $ubicacionesmanzana->save();

@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\TipoTerreno;
 use Laracasts\Flash\Flash;
+use App\Http\Requests\TipoTerrenoRequest;
 
 class TiposTerrenoController extends Controller
 {
@@ -38,7 +39,7 @@ class TiposTerrenoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TipoTerrenoRequest $request)
     {
         $tiposterreno = new TipoTerreno($request->all());
         //dd($tiposterreno);
