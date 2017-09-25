@@ -32,9 +32,12 @@
 								<tr>
 									<td>{{$regimen->id}}</td>
 									<td>{{$regimen->regimen}}</td>
-									<td><a href="{{route('admin.regimenes.destroy', $regimen->id)}}" onclick="return confirm('¿Seguro que deseas eliminarlo?')" class="btn btn-danger"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a>
+									<td>
+										<a href="{{route('admin.regimenes.destroy', $regimen->id)}}" onclick="return confirm('¿Seguro que deseas eliminarlo?')" class="btn btn-danger"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+										</a>
 
-										<a href="{{route('admin.regimenes.edit', $regimen->id)}}" class="btn btn-warning"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a></td>
+										<a href="{{route('admin.regimenes.edit', $regimen->id)}}" class="btn btn-warning"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a>
+									</td>
 								</tr>
 							@endforeach	
 						</tbody>

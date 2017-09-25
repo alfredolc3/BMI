@@ -41,6 +41,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
 	Route::get('formas/{id}/destroy',['uses' => 'FormasController@destroy', 'as' => 'admin.formas.destroy']);
 	Route::get('frentes/{id}/destroy',['uses' => 'FrentesController@destroy', 'as' => 'admin.frentes.destroy']);
 	Route::get('regimenes/{id}/destroy',['uses' => 'RegimenesController@destroy', 'as' => 'admin.regimenes.destroy']);
+	Route::get('sepomex/{id}/destroy',['uses' => 'SepomexController@destroy', 'as' => 'admin.sepomex.destroy']);
 	Route::get('tipologiasinmueble/{id}/destroy',['uses' => 'TipologiasInmuebleController@destroy', 'as' => 'admin.tipologiasinmueble.destroy']);
 	Route::get('tiposterreno/{id}/destroy',['uses' => 'TiposTerrenoController@destroy', 'as' => 'admin.tiposterreno.destroy']);
 	Route::get('tiposvialidad/{id}/destroy',['uses' => 'TiposVialidadController@destroy', 'as' => 'admin.tiposvialidad.destroy']);
