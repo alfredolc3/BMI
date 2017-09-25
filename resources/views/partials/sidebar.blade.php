@@ -33,6 +33,7 @@
                     <li><a href="{{route('admin.frentes.index')}}"><i class='glyphicon glyphicon-plus'></i>  Frentes </a></li>
                     <li><a href="{{route('admin.regimenes.index')}}"><i class='glyphicon glyphicon-plus'></i>Regimen de Propiedad </a></li>
                     <li><a href="{{route('admin.sepomex.index')}}"><i class='glyphicon glyphicon-plus'></i>SEPOMEX</a></li>
+                    <li><a href="{{route('admin.servicios.index')}}"><i class='glyphicon glyphicon-plus'></i>Servicios</a></li>
                     <li><a href="{{route('admin.tipologiasinmueble.index')}}"><i class='glyphicon glyphicon-plus'></i>Tipos de Inmueble</a></li>
                     <li><a href="{{route('admin.tiposterreno.index')}}"><i class='glyphicon glyphicon-plus'></i>Tipos de Terreno</a></li>
                     <li><a href="{{route('admin.tiposvialidad.index')}}"><i class='glyphicon glyphicon-plus'></i>Tipos de Vialidad</a></li>
