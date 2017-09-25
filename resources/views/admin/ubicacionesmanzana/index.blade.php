@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('htmlheader_title')
-    Nuevo Registro
+    Admin-Ubicaciones dentro de la Manzana
 @endsection
 
 

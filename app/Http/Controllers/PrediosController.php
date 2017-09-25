@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Servicio;
+use Laracasts\Flash\Flash;
 
-class registroscontroller extends Controller
+class PrediosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +17,7 @@ class registroscontroller extends Controller
      */
     public function index()
     {
-        //
+        return view('predios.index');
     }
 
     /**
@@ -26,7 +27,10 @@ class registroscontroller extends Controller
      */
     public function create()
     {
-        return view('')//
+         $servicios = Servicio::orderBy('servicio','ASC')->lists('servicio');
+        
+        return view('predios.create')
+            ->with('servicios', $servicios);
     }
 
     /**

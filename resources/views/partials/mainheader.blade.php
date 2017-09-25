@@ -33,7 +33,7 @@
                             <img src="/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
                             <p>
                                 {{ Auth::user()->name }}
-                                <small>Member since Nov. 2012</small>
+                                <small>Miembro desde {{ Auth::user()->created_at }}</small>
                             </p>
                         </li>
                         <!-- Menu Footer-->

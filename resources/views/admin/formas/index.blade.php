@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('htmlheader_title')
-    Nuevo Registro
+   Admin-Formas
 @endsection
 
 
