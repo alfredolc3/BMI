@@ -31,7 +31,8 @@
 @section('js')
 	<script>
 	$('.select-servicio').chosen({
-		placeholder_text_multiple: 'Seleccione los servicios que tiene el predio'
+		placeholder_text_multiple: 'Seleccione los servicios que tiene el predio',
+		no_results_text: 'No se encontro el servicio'
 	//	search_contains: true
 	})
 	</script>
