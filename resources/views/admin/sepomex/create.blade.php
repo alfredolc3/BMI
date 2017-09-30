@@ -29,8 +29,8 @@
 						</div>
 
 						<div class="form-group">
-							{!!Form::label('tzona', 'Tipo de Zona')!!}
-							{!!Form::select('tzona', ['Urbano'=>'Urbano', 'Rural'=>'Rustico'], null, ['class'=>'form-control', 'placeholder' => 'Seleccione una opcion...', 'required'])!!}
+							{!!Form::label('tpredio', 'Tipo de Prdio')!!}
+							{!!Form::select('tpredio', ['Urbano'=>'Urbano', 'Rural'=>'Rustico'], null, ['class'=>'form-control', 'placeholder' => 'Seleccione una opcion...', 'required'])!!}
 						</div>
 
 						<div class="form-group">

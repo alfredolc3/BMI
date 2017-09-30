@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('htmlheader_title')
-    Home
+    Nuevo Predio
 @endsection
 
 
@@ -10,10 +10,19 @@
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
 			<div class="panel panel-default">
-				<div class="panel-heading">Home</div>
+				<div class="panel-heading">Nuevo Predio</div>
 
 				<div class="panel-body">
 
+					<a href="#">Terreno</a>
+					<br><a href="#">Casa Habitación</a>
+					<br><a href="#">Local o Edificio Comercial</a>
+					<br><a href="#">Local o Edificio de Oficina</a>
+					<br><a href="#">Bodega o Nave Comercial</a>
+					<br><a href="#">Terreno Agropecuario</a>
+					<br>
+					<br>
+					<br>
 
 					<div class="form-group">
 						{!! Form::label('servicios','Servicios')!!}

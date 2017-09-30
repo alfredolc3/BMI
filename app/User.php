@@ -38,4 +38,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     {
         return $query->where('name', 'LIKE', "%$name%");
     }
+
+    public function Admin()
+    {
+        return $this->type === 'Administrador';
+    }
 }

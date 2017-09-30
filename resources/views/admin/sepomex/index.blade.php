@@ -44,7 +44,7 @@
 									<td>{{$sepome->estado}}</td>
 									<td>{{$sepome->municipio}}</td>
 									<td>{{$sepome->ciudad}}</td>
-									<td>{{$sepome->tipoZona}}</td>
+									<td>{{$sepome->tipoPredio}}</td>
 									<td>{{$sepome->cp}}</td>
 									<td>{{$sepome->tipoAsentamiento . ' '. $sepome->asentamiento}}</td>
 									<td>

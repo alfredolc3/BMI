@@ -21,7 +21,7 @@ Route::get('/', function () {
 });
 
 
-Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
+Route::group(['prefix' => 'admin', 'middleware' => ['auth','Admin']], function(){
 	//crear nuevos registros
 	Route::resource('users','UsersController');
 	Route::resource('formas','FormasController');
@@ -35,6 +35,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
 	Route::resource('topografias','TopografiasController');
 	Route::resource('ubicacionesmanzana','UbicacionesManzanaController');
 	Route::resource('usossuelo','UsosSueloController');
+	Route::resource('zonas','ZonasController');
+
 
 	//eliminar registros
 
@@ -50,12 +52,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
 	Route::get('topografias/{id}/destroy',['uses' => 'TopografiasController@destroy', 'as' => 'admin.topografias.destroy']);
 	Route::get('ubicacionesmanzana/{id}/destroy',['uses' => 'UbicacionesManzanaController@destroy', 'as' => 'admin.ubicacionesmanzana.destroy']);
 	Route::get('usossuelo/{id}/destroy',['uses' => 'UsossueloController@destroy', 'as' => 'admin.usossuelo.destroy']);
+	Route::get('zonas/{id}/destroy',['uses' => 'ZonasController@destroy', 'as' => 'admin.zonas.destroy']);
 
 });
 
 
 Route::resource('predios','PrediosController');
-
+Route::resource('generales','PrediosController@generales');
+Route::resource('especificos','PrediosController@especificos');
 
 //Route::get('/registros/', function () {
   //  return view('create');

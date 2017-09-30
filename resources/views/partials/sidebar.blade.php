@@ -24,7 +24,8 @@
             <li class="treeview">
                 <a href="#"><i class='glyphicon glyphicon-book'></i><span>Biblioteca Digital</span></a>
             </li>
-            <li class=""><a href="{{ url('home') }}"><i class='fa fa-edit'></i> 
+            @if(Auth::user()->Admin())
+                <li class=""><a href="{{ url('home') }}"><i class='fa fa-edit'></i> 
                 <span>Catalogos</span>
                 <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
@@ -40,8 +41,11 @@
                     <li><a href="{{route('admin.topografias.index')}}"><i class='glyphicon glyphicon-plus'></i>Topografias</a></li>
                     <li><a href="{{route('admin.ubicacionesmanzana.index')}}"><i class='glyphicon glyphicon-plus'></i>Ubicaciones de Manzana</a></li>
                     <li><a href="{{route('admin.usossuelo.index')}}"><i class='glyphicon glyphicon-plus'></i>Usos de Suelo</a></li>
+                    <li><a href="{{route('admin.zonas.index')}}"><i class='glyphicon glyphicon-plus'></i>Clasificacion de Zonas</a></li>
                 </ul>
             </li>
+            @endif
+            
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

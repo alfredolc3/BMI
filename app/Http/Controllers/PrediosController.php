@@ -88,4 +88,16 @@ class PrediosController extends Controller
     {
         //
     }
+
+
+
+    public function generales()
+    {
+        return view('predios.generales');
+    }
+
+    public function especificos()
+    {
+        return view('predios.especificos');
+    }
 }

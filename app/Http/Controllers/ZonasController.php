@@ -6,11 +6,11 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Frente;
+use App\Zona;
 use Laracasts\Flash\Flash;
-use App\Http\Requests\FrenteRequest;
+use App\Http\Requests\ZonaRequest;
 
-class FrentesController extends Controller
+class ZonasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,8 +19,8 @@ class FrentesController extends Controller
      */
     public function index()
     {
-        $frentes = Frente::orderBy('id', 'ASC')->paginate(5);
-        return view('admin.frentes.index')->with('frentes', $frentes);
+        $zonas = Zona::orderBy('id', 'ASC')->paginate(5);
+        return view('admin.zonas.index')->with('zonas', $zonas);
     }
 
     /**
@@ -30,7 +30,7 @@ class FrentesController extends Controller
      */
     public function create()
     {
-        return view('admin.frentes.create');
+         return view('admin.zonas.create');
     }
 
     /**
@@ -39,14 +39,14 @@ class FrentesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(FrenteRequest $request)
+    public function store(ZonaRequest $request)
     {
-        $frentes = new Frente($request->all());
-        //dd($frentes);
+         $zonas = new Frente($request->all());
+        //dd($zonas);
         //dd($request->all());
-        $frentes->save();
-        Flash::success("Se ha registrado ". $frentes->frente . " de forma exitosa!");
-        return redirect()->route('admin.frentes.index');
+        $zonas->save();
+        Flash::success("Se ha registrado ". $zonas->zona . " de forma exitosa!");
+        return redirect()->route('admin.zonas.index');
     }
 
     /**
@@ -68,8 +68,8 @@ class FrentesController extends Controller
      */
     public function edit($id)
     {
-        $frentes = Frente::find($id);
-        return view('admin.frentes.edit')->with('frente',$frentes);
+        $zonas = Zona::find($id);
+        return view('admin.zonas.edit')->with('zona',$zonas);
     }
 
     /**
@@ -81,12 +81,12 @@ class FrentesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $frentes = Frente::find($id);
-        $frentes->frente = $request->frente;
-        $frentes->save();
+        $zonas = Zona::find($id);
+        $zonas->zona = $request->zona;
+        $zonas->save();
 
-        Flash::warning('El Frente '. $frentes->frente . ' ha sido editado con exito!');
-        return redirect()->route('admin.frentes.index');
+        Flash::warning('El Zona '. $zonas->zona . ' ha sido editado con exito!');
+        return redirect()->route('admin.zonas.index');
 
     }
 
@@ -98,11 +98,11 @@ class FrentesController extends Controller
      */
     public function destroy($id)
     {
-        $frentes = Frente::find($id);
-        $frentes->delete();
+        $zonas = Zona::find($id);
+        $zonas->delete();
 
-        Flash::error('El frente '. $frentes->frente . ' a sido borrado de forma exitosa!');
-        return redirect()->route('admin.frentes.index');
+        Flash::error('El zona '. $zonas->zona . ' a sido borrado de forma exitosa!');
+        return redirect()->route('admin.zonas.index');
         //dd($user);
     }
 }
