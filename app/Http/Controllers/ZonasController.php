@@ -41,7 +41,7 @@ class ZonasController extends Controller
      */
     public function store(ZonaRequest $request)
     {
-         $zonas = new Frente($request->all());
+         $zonas = new Zona($request->all());
         //dd($zonas);
         //dd($request->all());
         $zonas->save();

@@ -24,7 +24,7 @@ class ZonaRequest extends Request
     public function rules()
     {
         return [
-            'zona' =>  'min:4|max:120|required|unique:zonas',
+            'zona' =>  'min:4|max:120|required|unique:clasificacioneszona',
         ];
     }
 }
