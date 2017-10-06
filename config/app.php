@@ -152,6 +152,7 @@ return [
         Acacha\AdminLTETemplateLaravel\app\Providers\AdminLTETemplateServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
+        GeneaLabs\Phpgmaps\PhpgmapsServiceProvider::class,
 
         
     ],
@@ -210,6 +211,7 @@ return [
         'Html'      => Collective\Html\HtmlFacade::class,
         'AdminLTE'  => Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::class,
         'Flash'     => Laracasts\Flash\Flash::class,
+        'Gmaps'     => GeneaLabs\Phpgmaps\Facades\PhpgmapsFacade::class,
 
     ],
 

@@ -61,6 +61,9 @@ Route::resource('predios','PrediosController');
 Route::resource('generales','PrediosController@generales');
 Route::resource('especificos','PrediosController@especificos');
 
+
+
+Route::get('/gmaps', ['as ' => 'gmaps', 'uses' => 'GmapsController@index']);	
 //Route::get('/registros/', function () {
   //  return view('create');
     //Route::get('registros','RegistrosController');

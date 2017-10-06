@@ -16,7 +16,8 @@
 					@include('partials.error')
 						{!!Form::open()!!}
 
-						<h3><B>UBICACION DEL PREDIO</B></h3>
+						
+						<div class="d-inline-block bg-primary"><h3><B>UBICACION DEL PREDIO</B></h3></div>
 
 						<div class="form-group">
 							{!!Form::label('calle', 'Calle')!!}
@@ -54,7 +55,7 @@
 						</div>
 
 
-						<h3><B>Coordenadas Greograficas</B></h3>
+						<div class="d-inline-block bg-primary"><h3><B>COORDENADAS GEOGRAFICAS</B></h3></div>
 
 						<div class="form-group">
 							{!!Form::label('longitud', 'Longitud')!!}
@@ -69,7 +70,7 @@
 							{!!Form::number('altitud', null,['class'=>'form-control', 'placeholder'=>'Altitud', 'required'])!!}
 						</div>																		
 						
-						<h3><B>TIPO Y REGIMEN </B></h3>
+						<div class="d-inline-block bg-primary"><h3><B>TIPO Y REGIMEN </B></h3></div>
 
 						<div class="form-group">
 							{!!Form::label('tpredio', 'Tipo de Predio')!!}
