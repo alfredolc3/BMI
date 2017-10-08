@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('htmlheader_title')
-    Predios
+Predios
 @endsection
 
 @section('main-content')
@@ -11,12 +11,10 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">Predio Comparables </div>
 				<div class="panel-body">
-				<a href="#" class="btn btn-info"> Nuevo Predio </a>
-				
-				</div>
+					Predios Existentes que haya guardado el perito 5 si es usuario gratuito 
 
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
-@endsection
+	@endsection

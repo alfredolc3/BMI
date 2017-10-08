@@ -7,5 +7,5 @@
        
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2017 </strong> Created by ALC & EAR
+    <strong>Copyright &copy; 2017 </strong> Created by ALC
 </footer>

@@ -95,7 +95,7 @@ return [
     |
     */
 
-    'log' => 'single',
+    'log' => 'daily',
 
     /*
     |--------------------------------------------------------------------------
@@ -153,7 +153,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
         GeneaLabs\Phpgmaps\PhpgmapsServiceProvider::class,
-
+        Yajra\Datatables\DatatablesServiceProvider::class
         
     ],
 

@@ -29,7 +29,8 @@
         "Acacha\\AdminLTETemplateLaravel\\app\\Providers\\AdminLTETemplateServiceProvider",
         "Collective\\Html\\HtmlServiceProvider",
         "Laracasts\\Flash\\FlashServiceProvider",
-        "GeneaLabs\\Phpgmaps\\PhpgmapsServiceProvider"
+        "GeneaLabs\\Phpgmaps\\PhpgmapsServiceProvider",
+        "Yajra\\Datatables\\DatatablesServiceProvider"
     ],
     "eager": [
         "Illuminate\\Auth\\AuthServiceProvider",
@@ -48,7 +49,8 @@
         "App\\Providers\\RouteServiceProvider",
         "Acacha\\AdminLTETemplateLaravel\\app\\Providers\\AdminLTETemplateServiceProvider",
         "Laracasts\\Flash\\FlashServiceProvider",
-        "GeneaLabs\\Phpgmaps\\PhpgmapsServiceProvider"
+        "GeneaLabs\\Phpgmaps\\PhpgmapsServiceProvider",
+        "Yajra\\Datatables\\DatatablesServiceProvider"
     ],
     "deferred": {
         "command.app.name": "Illuminate\\Foundation\\Providers\\ArtisanServiceProvider",

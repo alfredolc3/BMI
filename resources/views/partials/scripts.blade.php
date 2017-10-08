@@ -6,6 +6,10 @@
 <script src="{{ asset('/js/bootstrap.min.js') }}" type="text/javascript"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('/js/app.min.js') }}" type="text/javascript"></script>
+
+<script src="{{ asset('/js/funciones.js') }}" type="text/javascript"></script>
+
+<script src="{{ asset('/js/DataTables-1.10.16/js/jquery.dataTables.min.js') }}" type="text/javascript"></script>
 <!-- Chosen-->
 <script src="{{ asset('/plugins/chosen/chosen.jquery.js') }}"></script>
 <!-- Optionally, you can add Slimscroll and FastClick plugins.

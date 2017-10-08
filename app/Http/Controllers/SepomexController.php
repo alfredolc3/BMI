@@ -12,6 +12,32 @@ use Laracasts\Flash\Flash;
 
 class SepomexController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->respuesta = [
+            'status' => 'success',
+            'mensaje' => '',
+            'data' => []
+        ];
+        $this->codigoHttp = 200;
+    }
+
+    public function json(Request $request){
+        $asentamientos = new Sepomex();
+        $asentamientos = $asentamientos->buscar($request->all());
+
+        if ($request->datatable) {
+            $datatable = app('datatables')->of($asentamientos)
+                ->addColumn('opciones', function ($datos) {
+                });
+            return $datatable->make(true);
+        }
+
+        $respuesta['data'] = $asentamientos;
+        return response()->json($respuesta);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -20,8 +46,16 @@ class SepomexController extends Controller
     public function index(Request $request)
     {
 
+
+        $estados = Estado::orderBy('estado','ASC')->lists('estado','estado'); //list(valor, clave) si solo pones valor la clave sera default de codigo
+        $tiposasentamientos = Tipoasentamiento::orderBy('tipoasentamiento','ASC')->lists('tipoasentamiento','tipoasentamiento');
+
+
         $sepomex = Sepomex::search($request->asentamiento)->orderBy('id', 'ASC')->paginate(20);
-        return view('admin.sepomex.index')->with('sepomex', $sepomex);
+        return view('admin.sepomex.index')
+                ->with('sepomex', $sepomex)
+                ->with('estados', $estados)
+                ->with('tiposasentamientos', $tiposasentamientos);
         //dd('nuevo');
     }
 

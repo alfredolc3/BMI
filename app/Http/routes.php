@@ -27,7 +27,11 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth','Admin']], function()
 	Route::resource('formas','FormasController');
 	Route::resource('frentes','FrentesController');
 	Route::resource('regimenes','RegimenesController');
+
+	get('sepomex/json', 'SepomexController@json');
 	Route::resource('sepomex','SepomexController');
+
+
 	Route::resource('servicios','ServiciosController');
 	Route::resource('tipologiasinmueble','TipologiasInmuebleController');
 	Route::resource('tiposterreno','TiposTerrenoController');
@@ -57,9 +61,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth','Admin']], function()
 });
 
 
-Route::resource('predios','PrediosController');
-Route::resource('generales','PrediosController@generales');
-Route::resource('especificos','PrediosController@especificos');
+//Route::resource('predios','PrediosController');
+Route::get('generales','PrediosController@generales');
+Route::get('especificos','PrediosController@especificos');
 
 
 
