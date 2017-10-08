@@ -29,7 +29,7 @@
 						</div>
 
 						<div class="form-group">
-							{!!Form::label('tpredio', 'Tipo de Prdio')!!}
+							{!!Form::label('tpredio', 'Tipo de Predio')!!}
 							{!!Form::select('tpredio', ['Urbano'=>'Urbano', 'Rural'=>'Rustico'], null, ['class'=>'form-control', 'placeholder' => 'Seleccione una opcion...', 'required'])!!}
 						</div>
 
@@ -45,7 +45,7 @@
 
 
 						<div class="form-group">
-							{!!Form::label('asentamiento', 'Asentamiento')!!}
+							{!!Form::label('asentamiento', 'Nombre de Asentamiento')!!}
 							{!!Form::text('asentamiento', null,['class'=>'form-control', 'placeholder'=>'Asentamiento', 'required'])!!}
 						</div>
 						<div class="form-group">

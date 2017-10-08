@@ -21,52 +21,59 @@ Route::get('/', function () {
 });
 
 
-Route::group(['prefix' => 'admin', 'middleware' => ['auth','Admin']], function(){
-	//crear nuevos registros
-	Route::resource('users','UsersController');
-	Route::resource('formas','FormasController');
-	Route::resource('frentes','FrentesController');
-	Route::resource('regimenes','RegimenesController');
-	Route::resource('sepomex','SepomexController');
-	Route::resource('servicios','ServiciosController');
-	Route::resource('tipologiasinmueble','TipologiasInmuebleController');
-	Route::resource('tiposterreno','TiposTerrenoController');
-	Route::resource('tiposvialidad','TiposVialidadController');
-	Route::resource('topografias','TopografiasController');
-	Route::resource('ubicacionesmanzana','UbicacionesManzanaController');
-	Route::resource('usossuelo','UsosSueloController');
-	Route::resource('zonas','ZonasController');
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'Admin']], function () {
+    //crear nuevos registros
+    Route::resource('users', 'UsersController');
+    Route::resource('formas', 'FormasController');
+    Route::resource('frentes', 'FrentesController');
+    Route::resource('regimenes', 'RegimenesController');
+
+    get('sepomex/json', 'SepomexController@json');
+    Route::resource('sepomex', 'SepomexController');
 
 
-	//eliminar registros
+    Route::resource('servicios', 'ServiciosController');
+    Route::resource('tipologiasinmueble', 'TipologiasInmuebleController');
+    Route::resource('tiposterreno', 'TiposTerrenoController');
+    Route::resource('tiposvialidad', 'TiposVialidadController');
+    Route::resource('topografias', 'TopografiasController');
+    Route::resource('ubicacionesmanzana', 'UbicacionesManzanaController');
+    Route::resource('usossuelo', 'UsosSueloController');
+    Route::resource('zonas', 'ZonasController');
 
-	Route::get('users/{id}/destroy', ['uses' 	=> 'UsersController@destroy','as'	=>	'admin.users.destroy']);
-	Route::get('formas/{id}/destroy',['uses' => 'FormasController@destroy', 'as' => 'admin.formas.destroy']);
-	Route::get('frentes/{id}/destroy',['uses' => 'FrentesController@destroy', 'as' => 'admin.frentes.destroy']);
-	Route::get('regimenes/{id}/destroy',['uses' => 'RegimenesController@destroy', 'as' => 'admin.regimenes.destroy']);
-	Route::get('sepomex/{id}/destroy',['uses' => 'SepomexController@destroy', 'as' => 'admin.sepomex.destroy']);
-	Route::get('servicios/{id}/destroy',['uses' => 'ServiciosController@destroy', 'as' => 'admin.servicios.destroy']);
-	Route::get('tipologiasinmueble/{id}/destroy',['uses' => 'TipologiasInmuebleController@destroy', 'as' => 'admin.tipologiasinmueble.destroy']);
-	Route::get('tiposterreno/{id}/destroy',['uses' => 'TiposTerrenoController@destroy', 'as' => 'admin.tiposterreno.destroy']);
-	Route::get('tiposvialidad/{id}/destroy',['uses' => 'TiposVialidadController@destroy', 'as' => 'admin.tiposvialidad.destroy']);
-	Route::get('topografias/{id}/destroy',['uses' => 'TopografiasController@destroy', 'as' => 'admin.topografias.destroy']);
-	Route::get('ubicacionesmanzana/{id}/destroy',['uses' => 'UbicacionesManzanaController@destroy', 'as' => 'admin.ubicacionesmanzana.destroy']);
-	Route::get('usossuelo/{id}/destroy',['uses' => 'UsossueloController@destroy', 'as' => 'admin.usossuelo.destroy']);
-	Route::get('zonas/{id}/destroy',['uses' => 'ZonasController@destroy', 'as' => 'admin.zonas.destroy']);
+
+    //eliminar registros
+
+    Route::get('users/{id}/destroy', ['uses' => 'UsersController@destroy', 'as' => 'admin.users.destroy']);
+    Route::get('formas/{id}/destroy', ['uses' => 'FormasController@destroy', 'as' => 'admin.formas.destroy']);
+    Route::get('frentes/{id}/destroy', ['uses' => 'FrentesController@destroy', 'as' => 'admin.frentes.destroy']);
+    Route::get('regimenes/{id}/destroy', ['uses' => 'RegimenesController@destroy', 'as' => 'admin.regimenes.destroy']);
+    Route::get('sepomex/{id}/destroy', ['uses' => 'SepomexController@destroy', 'as' => 'admin.sepomex.destroy']);
+    Route::get('servicios/{id}/destroy', ['uses' => 'ServiciosController@destroy', 'as' => 'admin.servicios.destroy']);
+    Route::get('tipologiasinmueble/{id}/destroy', ['uses' => 'TipologiasInmuebleController@destroy', 'as' => 'admin.tipologiasinmueble.destroy']);
+    Route::get('tiposterreno/{id}/destroy', ['uses' => 'TiposTerrenoController@destroy', 'as' => 'admin.tiposterreno.destroy']);
+    Route::get('tiposvialidad/{id}/destroy', ['uses' => 'TiposVialidadController@destroy', 'as' => 'admin.tiposvialidad.destroy']);
+    Route::get('topografias/{id}/destroy', ['uses' => 'TopografiasController@destroy', 'as' => 'admin.topografias.destroy']);
+    Route::get('ubicacionesmanzana/{id}/destroy', ['uses' => 'UbicacionesManzanaController@destroy', 'as' => 'admin.ubicacionesmanzana.destroy']);
+    Route::get('usossuelo/{id}/destroy', ['uses' => 'UsossueloController@destroy', 'as' => 'admin.usossuelo.destroy']);
+    Route::get('zonas/{id}/destroy', ['uses' => 'ZonasController@destroy', 'as' => 'admin.zonas.destroy']);
 
 });
 
 
-Route::resource('predios','PrediosController');
-Route::resource('generales','PrediosController@generales');
-Route::resource('especificos','PrediosController@especificos');
+Route::group(['namespace' => 'Predios', 'prefix' => 'predios'], function () {
 
+    Route::get('generales', 'GeneralesController@index');
+    Route::post('generales', 'GeneralesController@store');
+});
+    Route::get('predios/especificos', 'PrediosController@especificos');
 
+Route::resource('predios', 'PrediosController');
 
-Route::get('/gmaps', ['as ' => 'gmaps', 'uses' => 'GmapsController@index']);	
+Route::get('/gmaps', ['as ' => 'gmaps', 'uses' => 'GmapsController@index']);
 //Route::get('/registros/', function () {
-  //  return view('create');
-    //Route::get('registros','RegistrosController');
+//  return view('create');
+//Route::get('registros','RegistrosController');
 //});
 
 
