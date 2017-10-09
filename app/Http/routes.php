@@ -65,8 +65,12 @@ Route::group(['namespace' => 'Predios', 'prefix' => 'predios'], function () {
 
     Route::get('generales', 'GeneralesController@index');
     Route::post('generales', 'GeneralesController@store');
+
+    Route::get('especificos', 'EspecificosController@index');
+    Route::post('especificos', 'EspecificosController@store');
+
 });
-    Route::get('predios/especificos', 'PrediosController@especificos');
+    
 
 Route::resource('predios', 'PrediosController');
 
