@@ -13,9 +13,6 @@ Admin-Asentamientos
 				<div class="panel-heading">Listado de Ciudades </div>
 				<div class="panel-body">
 
-<br>
-<br>
-
 					<form id="formAsentamiento">
 						<div class="row">
 

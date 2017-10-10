@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('htmlheader_title')
-    Nuevo Predio
+Nuevo Predio
 @endsection
 
 
@@ -10,98 +10,85 @@
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
 			<div class="panel panel-default">
-				<div class="panel-heading">Nuevo Predio</div>
+				<div class="panel-heading">Datos Generales del Nuevo Predio</div>
 
 				<div class="panel-body">
-
-					<a href="#">Terreno</a>
-					<br><a href="#">Casa Habitación</a>
-					<br><a href="#">Local o Edificio Comercial</a>
-					<br><a href="#">Local o Edificio de Oficina</a>
-					<br><a href="#">Bodega o Nave Comercial</a>
-					<br><a href="#">Terreno Agropecuario</a>
-					<br>
-					<br>
-					<br>
-
-					<!-- Custom Tabs -->
-					<div class="nav-tabs-custom">
-						<ul class="nav nav-tabs">
-							<li class="active"><a href="#generales" data-toggle="tab" aria-expanded="true">Datos Generales</a></li>
-							<li class=""><a href="#especificos" data-toggle="tab" aria-expanded="false">Datos Especificos</a></li>
-							<li class=""><a href="#caracteristicas" data-toggle="tab" aria-expanded="false">Caracteristicas</a></li>
-							<li class=""><a href="#imagenes" data-toggle="tab" aria-expanded="false">Imagenes</a></li>
-						</ul>
-						<div class="tab-content">
-							<div class="tab-pane active" id="generales">
-								<b>How to use:</b>
-
-								<p>Exactly like the original bootstrap tabs except you should use
-									the custom wrapper <code>.nav-tabs-custom</code> to achieve this style.</p>
-									A wonderful serenity has taken possession of my entire soul,
-									like these sweet mornings of spring which I enjoy with my whole heart.
-									I am alone, and feel the charm of existence in this spot,
-									which was created for the bliss of souls like mine. I am so happy,
-									my dear friend, so absorbed in the exquisite sense of mere tranquil existence,
-									that I neglect my talents. I should be incapable of drawing a single stroke
-									at the present moment; and yet I feel that I never was a greater artist than now.
-								</div>
-								<!-- /.tab-pane -->
-								<div class="tab-pane" id="especificos">
-									The European languages are members of the same family. Their separate existence is a myth.
-									For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ
-									in their grammar, their pronunciation and their most common words. Everyone realizes why a
-									new common language would be desirable: one could refuse to pay expensive translators. To
-									achieve this, it would be necessary to have uniform grammar, pronunciation and more common
-									words. If several languages coalesce, the grammar of the resulting language is more simple
-									and regular than that of the individual languages.
-								</div>
-								<!-- /.tab-pane -->
-								<div class="tab-pane" id="caracteristicas">
-									Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-									Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-									when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-									It has survived not only five centuries, but also the leap into electronic typesetting,
-									remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
-									sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
-									like Aldus PageMaker including versions of Lorem Ipsum.
-								</div>
-								<!-- /.tab-pane -->
-								<div class="tab-pane" id="imagenes">
-									Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-									Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-									when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-									It has survived not only five centuries, but also the leap into electronic typesetting,
-									remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
-									sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
-									like Aldus PageMaker including versions of Lorem Ipsum.
-								</div>
-								<!-- /.tab-pane -->
+					@include('partials.error')
+					{!!Form::open()!!}
+					<div class="row">
+						<div class="col-md-4">
+							<div class="form-group">
+								{!!Form::label('predio', 'Predio a Registrar')!!}
+								{!!Form::select('predio', ['Terreno'=>'Terreno', 'Casa Habitación'=>'Casa Habitación', 'Local o Edificio Comercial'=>'Local o Edificio Comercial', 'Local o Edificio de Oficina'=>'Local o Edificio de Oficina','Bodega o Nave Comercial'=>'Bodega o Nave Comercial', 'Terreno Agropecuario'=>'Terreno Agropecuario'], null, ['class'=>'form-control', 'placeholder' => 'Seleccione una opcion...', 'required'])!!}
 							</div>
-							<!-- /.tab-content -->
 						</div>
-						<!-- nav-tabs-custom -->
+						<div class="col-md-3">
+							<div class="form-group">
+								{!!Form::label('fecha', 'Fecha')!!}
+								{!!Form::date('fecha', null, ['class'=>'form-control', 'required'])!!}
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="form-group">
+								{!!Form::label('toperacion', 'Tipo de Operacion')!!}
+								{!!Form::select('toperacion', ['Renta'=>'Renta', 'Venta'=>'Venta'], null, ['class'=>'form-control', 'placeholder' => 'Seleccione una opcion...', 'required'])!!}
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								{!!Form::label('informante', 'Informante')!!}
+								{!!Form::text('informante', null,['class'=>'form-control', 'placeholder'=>'Empresa o Persona', 'required'])!!}
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="form-group">
+								{!!Form::label('telefono', 'Telefono')!!}
+								{!!Form::number('telefono', null,['class'=>'form-control', 'placeholder'=>'__-__-__-__-__', 'required'])!!}
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								{!!Form::label('link', 'Link Web')!!}
+								{!!Form::text('link', null,['class'=>'form-control', 'placeholder'=>'link de venta o informacion'])!!}
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="form-group">
+								{!!Form::label('voperacion', 'Valor de Operacion')!!}
+								{!!Form::number('voperacion', null,['class'=>'form-control', 'placeholder'=>'Valor de la Operacion', 'required'])!!}
+							</div>
+						</div>
 
-					<div class="form-group">
-						{!! Form::label('servicios','Servicios')!!}
-						{!! Form::select('servicios[]', $servicios, null, ['class' => 'form-control select-servicio', 'multiple', 'required'])!!}
 					</div>
+						<div class="form-group">
+							{!! Form::submit('Registrar',['class' => 'btn btn-primary']) !!}
+						</div>	
 
 
+					{!!Form::close()!!}	
+					
 				</div>
+
+				<div class="form-group">
+					{!! Form::label('servicios','Servicios')!!}
+					{!! Form::select('servicios[]', $servicios, null, ['class' => 'form-control select-servicio', 'multiple', 'required'])!!}
+				</div>
+
+
 			</div>
 		</div>
 	</div>
 </div>
+</div>
 @endsection
 
 @section('js')
-	<script>
+<script>
 	$('.select-servicio').chosen({
 		placeholder_text_multiple: 'Seleccione los servicios que tiene el predio',
 		no_results_text: 'No se encontro el servicio'
 	//	search_contains: true
-	})
-	</script>
+})
+</script>
 @endsection
 
