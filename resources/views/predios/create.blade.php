@@ -14,12 +14,16 @@ Nuevo Predio
 
 				<div class="panel-body">
 					@include('partials.error')
-					{!!Form::open()!!}
+					{!!Form::open(['route'=>'predios.store', 'method'=>'POST'])!!}
+
+
+					
+					
 					<div class="row">
 						<div class="col-md-4">
 							<div class="form-group">
-								{!!Form::label('predio', 'Predio a Registrar')!!}
-								{!!Form::select('predio', ['Terreno'=>'Terreno', 'Casa Habitación'=>'Casa Habitación', 'Local o Edificio Comercial'=>'Local o Edificio Comercial', 'Local o Edificio de Oficina'=>'Local o Edificio de Oficina','Bodega o Nave Comercial'=>'Bodega o Nave Comercial', 'Terreno Agropecuario'=>'Terreno Agropecuario'], null, ['class'=>'form-control', 'placeholder' => 'Seleccione una opcion...', 'required'])!!}
+								{!!Form::label('tinmueble', 'Tipo de Inmueble')!!}
+								{!!Form::select('tinmueble', $tinmuebles, null, ['class'=>'form-control', 'placeholder' => 'Seleccione una opcion...', 'required'])!!}
 							</div>
 						</div>
 						<div class="col-md-3">

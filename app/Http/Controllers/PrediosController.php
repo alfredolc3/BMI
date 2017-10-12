@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Datoprincipal;
 use App\Servicio;
+use App\Tipologiainmueble;
 use Laracasts\Flash\Flash;
 
 class PrediosController extends Controller
@@ -17,7 +19,8 @@ class PrediosController extends Controller
      */
     public function index()
     {
-        return view('predios.index');
+        $datosprincipales = Datoprincipal::orderBy('id', 'ASC')->paginate(5);
+        return view('predios.index')->with('datosprincipales', $datosprincipales);
     }
 
     /**
@@ -27,9 +30,11 @@ class PrediosController extends Controller
      */
     public function create()
     {
-         $servicios = Servicio::orderBy('servicio','ASC')->lists('servicio');
-        
+
+        $datosprincipales = Tipologiainmueble::orderBy('id', 'ASC')->lists('tipoInmueble');
+        $servicios = Servicio::orderBy('servicio','ASC')->lists('servicio');
         return view('predios.create')
+            ->with('tinmuebles', $datosprincipales)
             ->with('servicios', $servicios);
     }
 
@@ -41,7 +46,11 @@ class PrediosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $datosprincipales = new Datoprincipal($request->all());
+        $datosprincipales->idUser = \Auth::user()->id;
+        $datosprincipales->save();
+        Flash::success("Se ha registrado el nuevo Inmueble de forma exitosa!");
+        return redirect()->route('predios.index');
     }
 
     /**
@@ -63,7 +72,8 @@ class PrediosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $datosprincipales = Datoprincipal::find($id);
+        return view('predios.edit')->with('datosprincipales',$datosprincipales);
     }
 
     /**
@@ -75,7 +85,17 @@ class PrediosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $datosprincipales = Datoprincipal::find($id);
+        $datosprincipales->fechaRegistro = $request->fechaRegistro;
+        $datosprincipales->tipoOperacion = $request->tipoOperacion;
+        $datosprincipales->informante = $request->informante;
+        $datosprincipales->telefono = $request->telefono;
+        $datosprincipales->linkWeb = $request->linkWeb;
+        $datosprincipales->valorOperacion = $request->valorOperacion;
+        $datosprincipales->save();
+
+        Flash::warning('El Inmueble ha sido modificado con exito!');
+        return redirect()->route('predios.index');
     }
 
     /**
