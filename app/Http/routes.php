@@ -21,7 +21,7 @@ Route::get('/', function () {
 });
 
 
-Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'Admin']], function () {
+Route::group(['namespace'=>'Admin' ,'prefix' => 'admin', 'middleware' => ['auth', 'Admin']], function () {
     //crear nuevos registros
     Route::resource('users', 'UsersController');
     Route::resource('formas', 'FormasController');
@@ -63,18 +63,19 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'Admin']], function 
 
 Route::group(['namespace' => 'Predios', 'prefix' => 'predios'], function () {
 
-    Route::get('generales', 'GeneralesController@index');
-    Route::post('generales', 'GeneralesController@store');
+    Route::resource('predios', 'PrediosController');
 
-    Route::get('especificos', 'EspecificosController@index');
-    Route::post('especificos', 'EspecificosController@store');
+    //Route::get('generales', 'GeneralesController@index');
+    //Route::post('generales', 'GeneralesController@store');
+
+    Route::resource('especificos', 'EspecificosController');
+    //Route::post('especificos', 'EspecificosController@store');
 
 });
     
 
-Route::resource('predios', 'PrediosController');
 
-Route::get('/gmaps', ['as ' => 'gmaps', 'uses' => 'GmapsController@index']);
+//Route::get('/gmaps', ['as ' => 'gmaps', 'uses' => 'GmapsController@index']);
 //Route::get('/registros/', function () {
 //  return view('create');
 //Route::get('registros','RegistrosController');

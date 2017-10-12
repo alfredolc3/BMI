@@ -1,15 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Topografia;
+use App\Servicio;
 use Laracasts\Flash\Flash;
-use App\Http\Requests\TopografiaRequest;
-class TopografiasController extends Controller
+use App\Http\Requests\ServicioRequest;
+
+class ServiciosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +19,8 @@ class TopografiasController extends Controller
      */
     public function index()
     {
-        $topografias = Topografia::orderBy('id', 'ASC')->paginate(5);
-        return view('admin.topografias.index')->with('topografias', $topografias);
+        $servicios = Servicio::orderBy('id', 'ASC')->paginate(5);
+        return view('admin.servicios.index')->with('servicios', $servicios);
     }
 
     /**
@@ -29,7 +30,7 @@ class TopografiasController extends Controller
      */
     public function create()
     {
-        return view('admin.topografias.create');
+        return view('admin.servicios.create');
     }
 
     /**
@@ -38,12 +39,14 @@ class TopografiasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(TopografiaRequest $request)
+    public function store(ServicioRequest $request)
     {
-        $topografias = new Topografia($request->all());
-        $topografias->save();
-        Flash::success("Se ha registrado ". $topografias->topografia . " de forma exitosa!");
-        return redirect()->route('admin.topografias.index');
+        $servicios = new Servicio($request->all());
+        //dd($servicios);
+        //dd($request->all());
+        $servicios->save();
+        Flash::success("Se ha registrado ". $servicios->regimen . " de forma exitosa!");
+        return redirect()->route('admin.servicios.index');
     }
 
     /**
@@ -65,8 +68,8 @@ class TopografiasController extends Controller
      */
     public function edit($id)
     {
-        $topografias = Topografia::find($id);
-        return view('admin.topografias.edit')->with('topografia',$topografias);
+        $servicios = Servicio::find($id);
+        return view('admin.servicios.edit')->with('servicio',$servicios);
     }
 
     /**
@@ -78,12 +81,12 @@ class TopografiasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $topografias = Topografia::find($id);
-        $topografias->topografia = $request->topografia;
-        $topografias->save();
+        $servicios = Servicio::find($id);
+        $servicios->servicio = $request->servicio;
+        $servicios->save();
 
-        Flash::warning('La Topografia '. $topografias->topografia . ' ha sido editado con exito!');
-        return redirect()->route('admin.topografias.index');
+        Flash::warning('El Servicio '. $servicios->servicio . ' ha sido editado con exito!');
+        return redirect()->route('admin.servicios.index');
     }
 
     /**
@@ -92,13 +95,13 @@ class TopografiasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-       public function destroy($id)
+    public function destroy($id)
     {
-        $topografias = Topografia::find($id);
-        $topografias->delete();
+        $servicios = servicio::find($id);
+        $servicios->delete();
 
-        Flash::error('La topografia '. $topografias->topografia . ' a sido borrado de forma exitosa!');
-        return redirect()->route('admin.topografias.index');
+        Flash::error('El servicio '. $servicios->servicio . ' a sido borrado de forma exitosa!');
+        return redirect()->route('admin.servicios.index');
         //dd($user);
     }
 }

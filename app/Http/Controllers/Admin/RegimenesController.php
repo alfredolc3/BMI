@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Zona;
+use App\Regimen;
 use Laracasts\Flash\Flash;
-use App\Http\Requests\ZonaRequest;
+use App\Http\Requests\RegimenRequest;
 
-class ZonasController extends Controller
+class RegimenesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,8 +19,8 @@ class ZonasController extends Controller
      */
     public function index()
     {
-        $zonas = Zona::orderBy('id', 'ASC')->paginate(5);
-        return view('admin.zonas.index')->with('zonas', $zonas);
+        $regimenes = Regimen::orderBy('id', 'ASC')->paginate(5);
+        return view('admin.regimenes.index')->with('regimenes', $regimenes);
     }
 
     /**
@@ -30,7 +30,7 @@ class ZonasController extends Controller
      */
     public function create()
     {
-         return view('admin.zonas.create');
+        return view('admin.regimenes.create');
     }
 
     /**
@@ -39,14 +39,14 @@ class ZonasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ZonaRequest $request)
+    public function store(RegimenRequest $request)
     {
-         $zonas = new Zona($request->all());
-        //dd($zonas);
+        $regimenes = new Regimen($request->all());
+        //dd($regimenes);
         //dd($request->all());
-        $zonas->save();
-        Flash::success("Se ha registrado ". $zonas->zona . " de forma exitosa!");
-        return redirect()->route('admin.zonas.index');
+        $regimenes->save();
+        Flash::success("Se ha registrado ". $regimenes->regimen . " de forma exitosa!");
+        return redirect()->route('admin.regimenes.index');
     }
 
     /**
@@ -68,8 +68,8 @@ class ZonasController extends Controller
      */
     public function edit($id)
     {
-        $zonas = Zona::find($id);
-        return view('admin.zonas.edit')->with('zona',$zonas);
+        $regimenes = Regimen::find($id);
+        return view('admin.regimenes.edit')->with('regimen',$regimenes);
     }
 
     /**
@@ -81,13 +81,12 @@ class ZonasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $zonas = Zona::find($id);
-        $zonas->zona = $request->zona;
-        $zonas->save();
+        $regimenes = Regimen::find($id);
+        $regimenes->regimen = $request->regimen;
+        $regimenes->save();
 
-        Flash::warning('El Zona '. $zonas->zona . ' ha sido editado con exito!');
-        return redirect()->route('admin.zonas.index');
-
+        Flash::warning('El Regimen '. $regimenes->regimen . ' ha sido editado con exito!');
+        return redirect()->route('admin.regimenes.index');
     }
 
     /**
@@ -98,11 +97,11 @@ class ZonasController extends Controller
      */
     public function destroy($id)
     {
-        $zonas = Zona::find($id);
-        $zonas->delete();
+        $regimenes = regimen::find($id);
+        $regimenes->delete();
 
-        Flash::error('El zona '. $zonas->zona . ' a sido borrado de forma exitosa!');
-        return redirect()->route('admin.zonas.index');
+        Flash::error('El regimen '. $regimenes->regimen . ' a sido borrado de forma exitosa!');
+        return redirect()->route('admin.regimenes.index');
         //dd($user);
     }
 }

@@ -1,16 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Servicio;
-use Laracasts\Flash\Flash;
-use App\Http\Requests\ServicioRequest;
 
-class ServiciosController extends Controller
+class GmapsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,8 +16,32 @@ class ServiciosController extends Controller
      */
     public function index()
     {
-        $servicios = Servicio::orderBy('id', 'ASC')->paginate(5);
-        return view('admin.servicios.index')->with('servicios', $servicios);
+        //configuaración
+        $config = array();
+        $config['center'] = 'auto';
+        $config['map_width'] = 500;
+        $config['map_height'] = 500;
+        $config['zoom'] = 15;
+        $config['onboundschanged'] = 'if (!centreGot) {
+            var mapCentre = map.getCenter();
+            marker_0.setOptions({
+                position: new google.maps.LatLng(18.1396252,-92.8527465)
+
+            });
+        }
+        centreGot = true;';
+
+        \Gmaps::initialize($config);
+
+        // Colocar el marcador 
+        // Una vez se conozca la posición del usuario
+        $marker = array();
+        \Gmaps::add_marker($marker);
+
+        $map = \Gmaps::create_map();
+
+        //Devolver vista con datos del mapa
+        return view('gmaps', compact('map'));
     }
 
     /**
@@ -30,7 +51,7 @@ class ServiciosController extends Controller
      */
     public function create()
     {
-        return view('admin.servicios.create');
+        //
     }
 
     /**
@@ -39,14 +60,9 @@ class ServiciosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ServicioRequest $request)
+    public function store(Request $request)
     {
-        $servicios = new Servicio($request->all());
-        //dd($servicios);
-        //dd($request->all());
-        $servicios->save();
-        Flash::success("Se ha registrado ". $servicios->regimen . " de forma exitosa!");
-        return redirect()->route('admin.servicios.index');
+        //
     }
 
     /**
@@ -68,8 +84,7 @@ class ServiciosController extends Controller
      */
     public function edit($id)
     {
-        $servicios = Servicio::find($id);
-        return view('admin.servicios.edit')->with('servicio',$servicios);
+        //
     }
 
     /**
@@ -81,12 +96,7 @@ class ServiciosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $servicios = Servicio::find($id);
-        $servicios->servicio = $request->servicio;
-        $servicios->save();
-
-        Flash::warning('El Servicio '. $servicios->servicio . ' ha sido editado con exito!');
-        return redirect()->route('admin.servicios.index');
+        //
     }
 
     /**
@@ -97,11 +107,6 @@ class ServiciosController extends Controller
      */
     public function destroy($id)
     {
-        $servicios = servicio::find($id);
-        $servicios->delete();
-
-        Flash::error('El servicio '. $servicios->servicio . ' a sido borrado de forma exitosa!');
-        return redirect()->route('admin.servicios.index');
-        //dd($user);
+        //
     }
 }

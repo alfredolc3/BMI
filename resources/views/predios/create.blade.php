@@ -14,7 +14,7 @@ Nuevo Predio
 
 				<div class="panel-body">
 					@include('partials.error')
-					{!!Form::open(['route'=>'predios.store', 'method'=>'POST'])!!}
+					{!!Form::open(['route'=>'predios.predios.store', 'method'=>'POST'])!!}
 
 
 					
@@ -22,20 +22,20 @@ Nuevo Predio
 					<div class="row">
 						<div class="col-md-4">
 							<div class="form-group">
-								{!!Form::label('tinmueble', 'Tipo de Inmueble')!!}
-								{!!Form::select('tinmueble', $tinmuebles, null, ['class'=>'form-control', 'placeholder' => 'Seleccione una opcion...', 'required'])!!}
+								{!!Form::label('idTipoInmueble', 'Tipo de Inmueble')!!}
+								{!!Form::select('idTipoInmueble', $tinmuebles, null, ['class'=>'form-control', 'placeholder' => 'Seleccione una opcion...', 'required'])!!}
 							</div>
 						</div>
 						<div class="col-md-3">
 							<div class="form-group">
-								{!!Form::label('fecha', 'Fecha')!!}
-								{!!Form::date('fecha', null, ['class'=>'form-control', 'required'])!!}
+								{!!Form::label('fechaRegistro', 'Fecha')!!}
+								{!!Form::date('fechaRegistro', null, ['class'=>'form-control', 'required'])!!}
 							</div>
 						</div>
 						<div class="col-md-3">
 							<div class="form-group">
-								{!!Form::label('toperacion', 'Tipo de Operacion')!!}
-								{!!Form::select('toperacion', ['Renta'=>'Renta', 'Venta'=>'Venta'], null, ['class'=>'form-control', 'placeholder' => 'Seleccione una opcion...', 'required'])!!}
+								{!!Form::label('tipoOperacion', 'Tipo de Operacion')!!}
+								{!!Form::select('tipoOperacion', ['Renta'=>'Renta', 'Venta'=>'Venta'], null, ['class'=>'form-control', 'placeholder' => 'Seleccione una opcion...', 'required'])!!}
 							</div>
 						</div>
 						<div class="col-md-6">
@@ -52,14 +52,14 @@ Nuevo Predio
 						</div>
 						<div class="col-md-6">
 							<div class="form-group">
-								{!!Form::label('link', 'Link Web')!!}
-								{!!Form::text('link', null,['class'=>'form-control', 'placeholder'=>'link de venta o informacion'])!!}
+								{!!Form::label('linkWeb', 'Link Web')!!}
+								{!!Form::text('linkWeb', null,['class'=>'form-control', 'placeholder'=>'link de venta o informacion'])!!}
 							</div>
 						</div>
 						<div class="col-md-3">
 							<div class="form-group">
-								{!!Form::label('voperacion', 'Valor de Operacion')!!}
-								{!!Form::number('voperacion', null,['class'=>'form-control', 'placeholder'=>'Valor de la Operacion', 'required'])!!}
+								{!!Form::label('valorOperacion', 'Valor de Operacion')!!}
+								{!!Form::number('valorOperacion', null,['class'=>'form-control', 'placeholder'=>'Valor de la Operacion', 'required'])!!}
 							</div>
 						</div>
 

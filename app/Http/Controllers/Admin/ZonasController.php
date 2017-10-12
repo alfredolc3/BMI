@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\TipoVialidad;
+use App\Zona;
 use Laracasts\Flash\Flash;
-use App\Http\Requests\TipoVialidadRequest;
+use App\Http\Requests\ZonaRequest;
 
-class TiposVialidadController extends Controller
+class ZonasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,8 +19,8 @@ class TiposVialidadController extends Controller
      */
     public function index()
     {
-        $tiposvialidad = TipoVialidad::orderBy('id', 'ASC')->paginate(5);
-        return view('admin.tiposvialidad.index')->with('tiposvialidad', $tiposvialidad);
+        $zonas = Zona::orderBy('id', 'ASC')->paginate(5);
+        return view('admin.zonas.index')->with('zonas', $zonas);
     }
 
     /**
@@ -30,7 +30,7 @@ class TiposVialidadController extends Controller
      */
     public function create()
     {
-        return view('admin.tiposvialidad.create');
+         return view('admin.zonas.create');
     }
 
     /**
@@ -39,14 +39,14 @@ class TiposVialidadController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(TipoVialidadRequest $request)
+    public function store(ZonaRequest $request)
     {
-        $tiposvialidad = new TipoVialidad($request->all());
-        //dd($tiposvialidad);
+         $zonas = new Zona($request->all());
+        //dd($zonas);
         //dd($request->all());
-        $tiposvialidad->save();
-        Flash::success("Se ha registrado ". $tiposvialidad->tipoVialidad . " de forma exitosa!");
-        return redirect()->route('admin.tiposvialidad.index');
+        $zonas->save();
+        Flash::success("Se ha registrado ". $zonas->zona . " de forma exitosa!");
+        return redirect()->route('admin.zonas.index');
     }
 
     /**
@@ -68,8 +68,8 @@ class TiposVialidadController extends Controller
      */
     public function edit($id)
     {
-         $tiposvialidad = TipoVialidad::find($id);
-        return view('admin.tiposvialidad.edit')->with('tiposvialidad',$tiposvialidad);
+        $zonas = Zona::find($id);
+        return view('admin.zonas.edit')->with('zona',$zonas);
     }
 
     /**
@@ -81,12 +81,13 @@ class TiposVialidadController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $tiposvialidad = TipoVialidad::find($id);
-        $tiposvialidad->tipoVialidad = $request->tipoVialidad;
-        $tiposvialidad->save();
+        $zonas = Zona::find($id);
+        $zonas->zona = $request->zona;
+        $zonas->save();
 
-        Flash::warning('La vialidad '. $tiposvialidad->tipoVialidad . ' ha sido editado con exito!');
-        return redirect()->route('admin.tiposvialidad.index');
+        Flash::warning('El Zona '. $zonas->zona . ' ha sido editado con exito!');
+        return redirect()->route('admin.zonas.index');
+
     }
 
     /**
@@ -97,11 +98,11 @@ class TiposVialidadController extends Controller
      */
     public function destroy($id)
     {
-        $tiposvialidad = TipoVialidad::find($id);
-        $tiposvialidad->delete();
+        $zonas = Zona::find($id);
+        $zonas->delete();
 
-        Flash::error('El tipo de vialidad '. $tiposvialidad->tipoVialidad . ' a sido borrado de forma exitosa!');
-        return redirect()->route('admin.tiposvialidad.index');
+        Flash::error('El zona '. $zonas->zona . ' a sido borrado de forma exitosa!');
+        return redirect()->route('admin.zonas.index');
         //dd($user);
     }
 }

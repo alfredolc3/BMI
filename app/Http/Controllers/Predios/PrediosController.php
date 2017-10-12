@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Predios;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -31,7 +31,7 @@ class PrediosController extends Controller
     public function create()
     {
 
-        $datosprincipales = Tipologiainmueble::orderBy('id', 'ASC')->lists('tipoInmueble');
+        $datosprincipales = Tipologiainmueble::orderBy('id', 'ASC')->lists('tipoInmueble','id');
         $servicios = Servicio::orderBy('servicio','ASC')->lists('servicio');
         return view('predios.create')
             ->with('tinmuebles', $datosprincipales)
@@ -48,9 +48,11 @@ class PrediosController extends Controller
     {
         $datosprincipales = new Datoprincipal($request->all());
         $datosprincipales->idUser = \Auth::user()->id;
+        //dd($datosprincipales);
+        //dd($request->all());
         $datosprincipales->save();
         Flash::success("Se ha registrado el nuevo Inmueble de forma exitosa!");
-        return redirect()->route('predios.index');
+        return redirect()->route('predios.predios.index');
     }
 
     /**

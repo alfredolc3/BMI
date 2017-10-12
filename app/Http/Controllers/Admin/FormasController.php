@@ -1,13 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Forma;
+use Laracasts\Flash\Flash;
+use App\Http\Requests\FormaRequest;
 
-class GmapsController extends Controller
+class FormasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,32 +19,9 @@ class GmapsController extends Controller
      */
     public function index()
     {
-        //configuaración
-        $config = array();
-        $config['center'] = 'auto';
-        $config['map_width'] = 500;
-        $config['map_height'] = 500;
-        $config['zoom'] = 15;
-        $config['onboundschanged'] = 'if (!centreGot) {
-            var mapCentre = map.getCenter();
-            marker_0.setOptions({
-                position: new google.maps.LatLng(18.1396252,-92.8527465)
+        $formas = Forma::orderBy('id', 'ASC')->paginate(5);
+        return view('admin.formas.index')->with('formas', $formas);
 
-            });
-        }
-        centreGot = true;';
-
-        \Gmaps::initialize($config);
-
-        // Colocar el marcador 
-        // Una vez se conozca la posición del usuario
-        $marker = array();
-        \Gmaps::add_marker($marker);
-
-        $map = \Gmaps::create_map();
-
-        //Devolver vista con datos del mapa
-        return view('gmaps', compact('map'));
     }
 
     /**
@@ -51,7 +31,7 @@ class GmapsController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.formas.create');
     }
 
     /**
@@ -60,9 +40,14 @@ class GmapsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FormaRequest $request)
     {
-        //
+        $formas = new Forma($request->all());
+        //dd($formas);
+        //dd($request->all());
+        $formas->save();
+        Flash::success("Se ha registrado ". $formas->forma . " de forma exitosa!");
+        return redirect()->route('admin.formas.index');
     }
 
     /**
@@ -84,7 +69,8 @@ class GmapsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $formas = Forma::find($id);
+        return view('admin.formas.edit')->with('forma',$formas);
     }
 
     /**
@@ -96,7 +82,15 @@ class GmapsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $formas = Forma::find($id);
+        $formas->forma = $request->forma;
+        $formas->save();
+
+        Flash::warning('La Forma '. $formas->forma . ' ha sido editado con exito!');
+        return redirect()->route('admin.formas.index');
+
+        
+        //dd($request->all());
     }
 
     /**
@@ -105,8 +99,13 @@ class GmapsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+   public function destroy($id)
     {
-        //
+        $formas = forma::find($id);
+        $formas->delete();
+
+        Flash::error('La forma '. $formas->forma . ' a sido borrada de forma exitosa!');
+        return redirect()->route('admin.formas.index');
+        //dd($user);
     }
 }

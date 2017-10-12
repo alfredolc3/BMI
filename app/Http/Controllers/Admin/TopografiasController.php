@@ -1,16 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Regimen;
+use App\Topografia;
 use Laracasts\Flash\Flash;
-use App\Http\Requests\RegimenRequest;
-
-class RegimenesController extends Controller
+use App\Http\Requests\TopografiaRequest;
+class TopografiasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,8 +18,8 @@ class RegimenesController extends Controller
      */
     public function index()
     {
-        $regimenes = Regimen::orderBy('id', 'ASC')->paginate(5);
-        return view('admin.regimenes.index')->with('regimenes', $regimenes);
+        $topografias = Topografia::orderBy('id', 'ASC')->paginate(5);
+        return view('admin.topografias.index')->with('topografias', $topografias);
     }
 
     /**
@@ -30,7 +29,7 @@ class RegimenesController extends Controller
      */
     public function create()
     {
-        return view('admin.regimenes.create');
+        return view('admin.topografias.create');
     }
 
     /**
@@ -39,14 +38,12 @@ class RegimenesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(RegimenRequest $request)
+    public function store(TopografiaRequest $request)
     {
-        $regimenes = new Regimen($request->all());
-        //dd($regimenes);
-        //dd($request->all());
-        $regimenes->save();
-        Flash::success("Se ha registrado ". $regimenes->regimen . " de forma exitosa!");
-        return redirect()->route('admin.regimenes.index');
+        $topografias = new Topografia($request->all());
+        $topografias->save();
+        Flash::success("Se ha registrado ". $topografias->topografia . " de forma exitosa!");
+        return redirect()->route('admin.topografias.index');
     }
 
     /**
@@ -68,8 +65,8 @@ class RegimenesController extends Controller
      */
     public function edit($id)
     {
-        $regimenes = Regimen::find($id);
-        return view('admin.regimenes.edit')->with('regimen',$regimenes);
+        $topografias = Topografia::find($id);
+        return view('admin.topografias.edit')->with('topografia',$topografias);
     }
 
     /**
@@ -81,12 +78,12 @@ class RegimenesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $regimenes = Regimen::find($id);
-        $regimenes->regimen = $request->regimen;
-        $regimenes->save();
+        $topografias = Topografia::find($id);
+        $topografias->topografia = $request->topografia;
+        $topografias->save();
 
-        Flash::warning('El Regimen '. $regimenes->regimen . ' ha sido editado con exito!');
-        return redirect()->route('admin.regimenes.index');
+        Flash::warning('La Topografia '. $topografias->topografia . ' ha sido editado con exito!');
+        return redirect()->route('admin.topografias.index');
     }
 
     /**
@@ -95,13 +92,13 @@ class RegimenesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+       public function destroy($id)
     {
-        $regimenes = regimen::find($id);
-        $regimenes->delete();
+        $topografias = Topografia::find($id);
+        $topografias->delete();
 
-        Flash::error('El regimen '. $regimenes->regimen . ' a sido borrado de forma exitosa!');
-        return redirect()->route('admin.regimenes.index');
+        Flash::error('La topografia '. $topografias->topografia . ' a sido borrado de forma exitosa!');
+        return redirect()->route('admin.topografias.index');
         //dd($user);
     }
 }
