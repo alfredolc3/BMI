@@ -100,7 +100,7 @@ Nuevo Predio
 						<div class="col-md-4">
 							<div class="form-group">
 								{!!Form::label('rpropiedad', 'Regimen de Propiedad')!!}
-								{!!Form::select('rpropiedad', ['Renta'=>'Renta', 'Venta'=>'Venta'], null, ['class'=>'form-control', 'placeholder' => 'Seleccione Regimen de Propiedad', 'required'])!!}
+								{!!Form::select('rpropiedad', $regimen, null, ['class'=>'form-control', 'placeholder' => 'Seleccione Regimen de Propiedad', 'required'])!!}
 							</div>
 						</div>
 						<div class="col-md-4">

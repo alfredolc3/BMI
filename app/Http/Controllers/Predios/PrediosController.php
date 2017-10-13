@@ -75,7 +75,7 @@ class PrediosController extends Controller
     public function edit($id)
     {
         $datosprincipales = Datoprincipal::find($id);
-        return view('predios.edit')->with('datosprincipales',$datosprincipales);
+        return view('predios.predios.edit')->with('datosprincipales',$datosprincipales);
     }
 
     /**

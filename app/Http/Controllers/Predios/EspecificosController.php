@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Regimen;
 
 class EspecificosController extends Controller
 {
@@ -16,7 +17,10 @@ class EspecificosController extends Controller
      */
     public function index()
     {
-                return view('predios.especificos');
+                
+            $regimen = Regimen::orderBy('id', 'ASC')->lists('regimen','id');
+                return view('predios.especificos')
+                ->with('regimen', $regimen);
     }
 
     /**
