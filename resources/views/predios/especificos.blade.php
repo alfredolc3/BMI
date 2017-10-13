@@ -14,7 +14,7 @@ Nuevo Predio
 
 				<div class="panel-body">
 					@include('partials.error')
-					{!!Form::open()!!}
+					{!!Form::open(['route'=>'predios.especificos.store', 'method'=>'POST'])!!}
 
 
 					<div class="d-inline-block bg-primary"><h3><B>UBICACION DEL PREDIO</B></h3></div>
@@ -106,7 +106,7 @@ Nuevo Predio
 						<div class="col-md-4">
 							<div class="form-group">
 								{!!Form::label('tterreno', 'Tipo de Terreno')!!}
-								{!!Form::select('tterreno', ['Renta'=>'Renta', 'Venta'=>'Venta'], null, ['class'=>'form-control', 'placeholder' => 'Seleccione Tipo de Terreno...', 'required'])!!}
+								{!!Form::select('tterreno', $tipoTerreno, null, ['class'=>'form-control', 'placeholder' => 'Seleccione Tipo de Terreno...', 'required'])!!}
 							</div>
 						</div>
 					</div>

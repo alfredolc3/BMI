@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Regimen;
+use App\Datoespecifico;
+use App\Tipoterreno;
 
 class EspecificosController extends Controller
 {
@@ -17,10 +19,12 @@ class EspecificosController extends Controller
      */
     public function index()
     {
-                
+
             $regimen = Regimen::orderBy('id', 'ASC')->lists('regimen','id');
+            $tipoTerreno = Tipoterreno::orderBy('id', 'ASC')->lists('tipoTerreno','id');
                 return view('predios.especificos')
-                ->with('regimen', $regimen);
+                ->with('regimen', $regimen)
+                ->with('tipoTerreno', $tipoTerreno);                
     }
 
     /**
@@ -41,7 +45,13 @@ class EspecificosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $datosespecificos = new Datoespecifico($request->all());
+        $datosespecificos->idUser = \Auth::user()->id;
+        //dd($datosespecificos);
+        dd($request->all());
+        //$datosespecificos->save();
+        //Flash::success("Se ha registrado la información especifica de forma exitosa!");
+        //return redirect()->route('predios.predios.index');
     }
 
     /**
@@ -75,7 +85,28 @@ class EspecificosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $datosespecificos = Datoespecifico::find($id);
+        $datosespecificos->calle = $request->calle;
+        $datosespecificos->numero = $request->numero;
+        $datosespecificos->cp = $request->informante;
+        $datosespecificos->colonia = $request->telefono;
+        $datosespecificos->estado = $request->linkWeb;
+        $datosespecificos->municipio = $request->linkWeb;
+        $datosespecificos->ciudad = $request->linkWeb;
+        $datosespecificos->longitud = $request->longitud;
+        $datosespecificos->latitud = $request->latitud;
+        $datosespecificos->altitud = $request->altitud;
+        $datosespecificos->tpredio = $request->tipoPredio;
+        $datosespecificos->rpropiedad = $request->idRegimenPropiedad;
+        $datosespecificos->tterreno = $request->idTipoTerreno;
+        $datosespecificos->sterreno = $request->superficieTerreno;
+        $datosespecificos->scontrsuccion = $request->superficieConstruccion;
+        $datosespecificos->scomun = $request->superficiencomun;
+        $datosespecificos->indiviso = $request->indiviso;
+        $datosespecificos->save();
+
+        Flash::warning('El Inmueble ha sido modificado con exito!');
+        return redirect()->route('predios.index');
     }
 
     /**
