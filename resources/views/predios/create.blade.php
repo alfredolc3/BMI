@@ -72,27 +72,10 @@ Nuevo Predio
 					{!!Form::close()!!}	
 					
 				</div>
-
-				<div class="form-group">
-					{!! Form::label('servicios','Servicios')!!}
-					{!! Form::select('servicios[]', $servicios, null, ['class' => 'form-control select-servicio', 'multiple', 'required'])!!}
-				</div>
-
-
 			</div>
 		</div>
 	</div>
 </div>
 </div>
-@endsection
-
-@section('js')
-<script>
-	$('.select-servicio').chosen({
-		placeholder_text_multiple: 'Seleccione los servicios que tiene el predio',
-		no_results_text: 'No se encontro el servicio'
-	//	search_contains: true
-})
-</script>
 @endsection
 

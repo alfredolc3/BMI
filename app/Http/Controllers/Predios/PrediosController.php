@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Datoprincipal;
-use App\Servicio;
 use App\Tipologiainmueble;
 use Laracasts\Flash\Flash;
 
@@ -32,10 +31,10 @@ class PrediosController extends Controller
     {
 
         $datosprincipales = Tipologiainmueble::orderBy('id', 'ASC')->lists('tipoInmueble','id');
-        $servicios = Servicio::orderBy('servicio','ASC')->lists('servicio');
+       // $servicios = Servicio::orderBy('servicio','ASC')->lists('servicio');
         return view('predios.create')
-            ->with('tinmuebles', $datosprincipales)
-            ->with('servicios', $servicios);
+            ->with('tinmuebles', $datosprincipales);
+        ///    ->with('servicios', $servicios);
     }
 
     /**

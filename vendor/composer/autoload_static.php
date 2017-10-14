@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitf2c850d7534800fb5a87c20396882478
+class ComposerStaticInit527f465c2b6cd55383a812879ad3e319
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -367,26 +367,26 @@ class ComposerStaticInitf2c850d7534800fb5a87c20396882478
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Events\\Event' => __DIR__ . '/../..' . '/app/Events/Event.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\Admin\\FormasController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/FormasController.php',
+        'App\\Http\\Controllers\\Admin\\FrentesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/FrentesController.php',
+        'App\\Http\\Controllers\\Admin\\GmapsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/GmapsController.php',
+        'App\\Http\\Controllers\\Admin\\RegimenesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/RegimenesController.php',
+        'App\\Http\\Controllers\\Admin\\SepomexController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SepomexController.php',
+        'App\\Http\\Controllers\\Admin\\ServiciosController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ServiciosController.php',
+        'App\\Http\\Controllers\\Admin\\TipologiasInmuebleController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/TipologiasInmuebleController.php',
+        'App\\Http\\Controllers\\Admin\\TiposTerrenoController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/TiposTerrenoController.php',
+        'App\\Http\\Controllers\\Admin\\TiposVialidadController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/TiposVialidadController.php',
+        'App\\Http\\Controllers\\Admin\\TopografiasController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/TopografiasController.php',
+        'App\\Http\\Controllers\\Admin\\UbicacionesManzanaController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/UbicacionesManzanaController.php',
+        'App\\Http\\Controllers\\Admin\\UsersController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/UsersController.php',
+        'App\\Http\\Controllers\\Admin\\UsosSueloController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/UsosSueloController.php',
+        'App\\Http\\Controllers\\Admin\\ZonasController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ZonasController.php',
         'App\\Http\\Controllers\\Auth\\AuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/AuthController.php',
         'App\\Http\\Controllers\\Auth\\PasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/PasswordController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
-        'App\\Http\\Controllers\\FormasController' => __DIR__ . '/../..' . '/app/Http/Controllers/FormasController.php',
-        'App\\Http\\Controllers\\FrentesController' => __DIR__ . '/../..' . '/app/Http/Controllers/FrentesController.php',
-        'App\\Http\\Controllers\\GmapsController' => __DIR__ . '/../..' . '/app/Http/Controllers/GmapsController.php',
-        'App\\Http\\Controllers\\PrediosController' => __DIR__ . '/../..' . '/app/Http/Controllers/PrediosController.php',
         'App\\Http\\Controllers\\Predios\\EspecificosController' => __DIR__ . '/../..' . '/app/Http/Controllers/Predios/EspecificosController.php',
         'App\\Http\\Controllers\\Predios\\GeneralesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Predios/GeneralesController.php',
-        'App\\Http\\Controllers\\RegimenesController' => __DIR__ . '/../..' . '/app/Http/Controllers/RegimenesController.php',
-        'App\\Http\\Controllers\\SepomexController' => __DIR__ . '/../..' . '/app/Http/Controllers/SepomexController.php',
-        'App\\Http\\Controllers\\ServiciosController' => __DIR__ . '/../..' . '/app/Http/Controllers/ServiciosController.php',
-        'App\\Http\\Controllers\\TipologiasInmuebleController' => __DIR__ . '/../..' . '/app/Http/Controllers/TipologiasInmuebleController.php',
-        'App\\Http\\Controllers\\TiposTerrenoController' => __DIR__ . '/../..' . '/app/Http/Controllers/TiposTerrenoController.php',
-        'App\\Http\\Controllers\\TiposVialidadController' => __DIR__ . '/../..' . '/app/Http/Controllers/TiposVialidadController.php',
-        'App\\Http\\Controllers\\TopografiasController' => __DIR__ . '/../..' . '/app/Http/Controllers/TopografiasController.php',
-        'App\\Http\\Controllers\\UbicacionesManzanaController' => __DIR__ . '/../..' . '/app/Http/Controllers/UbicacionesManzanaController.php',
-        'App\\Http\\Controllers\\UsersController' => __DIR__ . '/../..' . '/app/Http/Controllers/UsersController.php',
-        'App\\Http\\Controllers\\UsosSueloController' => __DIR__ . '/../..' . '/app/Http/Controllers/UsosSueloController.php',
-        'App\\Http\\Controllers\\ZonasController' => __DIR__ . '/../..' . '/app/Http/Controllers/ZonasController.php',
+        'App\\Http\\Controllers\\Predios\\PrediosController' => __DIR__ . '/../..' . '/app/Http/Controllers/Predios/PrediosController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Admin' => __DIR__ . '/../..' . '/app/Http/Middleware/Admin.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
@@ -3947,10 +3947,10 @@ class ComposerStaticInitf2c850d7534800fb5a87c20396882478
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitf2c850d7534800fb5a87c20396882478::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitf2c850d7534800fb5a87c20396882478::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitf2c850d7534800fb5a87c20396882478::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitf2c850d7534800fb5a87c20396882478::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit527f465c2b6cd55383a812879ad3e319::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit527f465c2b6cd55383a812879ad3e319::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit527f465c2b6cd55383a812879ad3e319::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit527f465c2b6cd55383a812879ad3e319::$classMap;
 
         }, null, ClassLoader::class);
     }
