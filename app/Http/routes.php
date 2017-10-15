@@ -21,7 +21,7 @@ Route::get('/', function () {
 });
 
 
-Route::group(['namespace'=>'Admin' ,'prefix' => 'admin', 'middleware' => ['auth', 'Admin']], function () {
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['auth', 'Admin']], function () {
     //crear nuevos registros
     Route::resource('users', 'UsersController');
     Route::resource('formas', 'FormasController');
@@ -65,12 +65,20 @@ Route::group(['namespace' => 'Predios', 'prefix' => 'predios'], function () {
 
     Route::resource('predios', 'PrediosController');
 
-    Route::resource('especificos', 'EspecificosController');
+    get('especificos/{id}', [
+        'as' => 'predios.especificos.edit',
+        'uses' => 'EspecificosController@index'
+    ]);
+    post('especificos/{id}', [
+        'as' => 'predios.especificos.store',
+        'uses' => 'EspecificosController@store'
+    ]);
+    //Route::resource('especificos', 'EspecificosController');
     Route::resource('caracteristicas', 'CaracteristicasController');
 
 
 });
-    
+
 
 
 //Route::get('/gmaps', ['as ' => 'gmaps', 'uses' => 'GmapsController@index']);

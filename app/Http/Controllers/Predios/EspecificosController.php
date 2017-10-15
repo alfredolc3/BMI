@@ -17,10 +17,11 @@ class EspecificosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index($id = null)
     {
-        if ($request->has('id')) {
-            return $this->edit($request->id);
+        //dd($id);
+        if ($id) {
+            return $this->edit($id);
         }
 
         $regimen = Regimen::orderBy('id', 'ASC')->lists('regimen', 'id');
@@ -48,13 +49,22 @@ class EspecificosController extends Controller
      */
     public function store(Request $request)
     {
-        $datosespecificos = new Datoespecifico($request->all());
-        $datosespecificos->idUser = \Auth::user()->id;
+        $datosEspecificos = new Datoespecifico();
+        if($id){
+            $datosEspecificos = Datoespecifico::find($id);
+        }
+        $datosEspecificos->fill($request->all());
+        $datosEspecificos->save();
+
+        Flash::success("Se ha registrado la información especifica de forma exitosa!");
+        return redirect()->route('predios.predios.index');
+
+        //$datosespecificos = new Datoespecifico($request->all());
+        //$datosespecificos->idUser = \Auth::user()->id;
         //dd($datosespecificos);
-        dd($request->all());
+        //dd($request->all());
         //$datosespecificos->save();
-        //Flash::success("Se ha registrado la información especifica de forma exitosa!");
-        //return redirect()->route('predios.predios.index');
+
     }
 
     /**
