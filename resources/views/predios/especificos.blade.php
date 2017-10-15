@@ -14,7 +14,7 @@ Nuevo Predio
 
 				<div class="panel-body">
 					@include('partials.error')
-					{!!Form::open(['route'=>'predios.especificos.store', 'method'=>'POST'])!!}
+					{!!Form::model($especificos, ['route'=>'predios.especificos.store', 'method'=>'POST'])!!}
 
 
 					<div class="d-inline-block bg-primary"><h3><B>UBICACION DEL PREDIO</B></h3></div>
@@ -22,7 +22,7 @@ Nuevo Predio
 						<div class="col-md-5">
 							<div class="form-group">
 								{!!Form::label('calle', 'Calle')!!}
-								{!!Form::text('calle', $especificos->calle, ['class'=>'form-control', 'required'])!!}
+								{!!Form::text('calle', null, ['class'=>'form-control', 'required'])!!}
 							</div>
 						</div>
 						

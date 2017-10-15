@@ -446,16 +446,16 @@
         },
         {
             "name": "genealabs/phpgmaps",
-            "version": "0.4.1",
+            "version": "0.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GeneaLabs/Phpgmaps.git",
-                "reference": "3799573539a93ae1841bbd3a7dcd95bc50d7439c"
+                "reference": "2aa79643d1b231fa952997062d6240b97b5cf668"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GeneaLabs/Phpgmaps/zipball/3799573539a93ae1841bbd3a7dcd95bc50d7439c",
-                "reference": "3799573539a93ae1841bbd3a7dcd95bc50d7439c",
+                "url": "https://api.github.com/repos/GeneaLabs/Phpgmaps/zipball/2aa79643d1b231fa952997062d6240b97b5cf668",
+                "reference": "2aa79643d1b231fa952997062d6240b97b5cf668",
                 "shasum": ""
             },
             "require": {
@@ -497,7 +497,8 @@
                 "laravel",
                 "phpgmaps"
             ],
-            "time": "2017-05-16T18:50:20+00:00"
+            "abandoned": "GeneaLabs/laravel-maps",
+            "time": "2017-10-14T12:23:53+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",

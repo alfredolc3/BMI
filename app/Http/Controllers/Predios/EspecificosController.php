@@ -17,21 +17,17 @@ class EspecificosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id=null)
+    public function index(Request $request)
     {
-        if(!empty($id))
-        {
-            $this->edit($id);
-            
+        if ($request->has('id')) {
+            return $this->edit($request->id);
         }
 
-        $regimen = Regimen::orderBy('id', 'ASC')->lists('regimen','id');
-        $tipoTerreno = Tipoterreno::orderBy('id', 'ASC')->lists('tipoTerreno','id');
-            return view('predios.especificos')
+        $regimen = Regimen::orderBy('id', 'ASC')->lists('regimen', 'id');
+        $tipoTerreno = Tipoterreno::orderBy('id', 'ASC')->lists('tipoTerreno', 'id');
+        return view('predios.especificos')
             ->with('regimen', $regimen)
-            ->with('tipoTerreno', $tipoTerreno);  
-
-
+            ->with('tipoTerreno', $tipoTerreno);
     }
 
     /**
@@ -47,7 +43,7 @@ class EspecificosController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -64,7 +60,7 @@ class EspecificosController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -75,13 +71,14 @@ class EspecificosController extends Controller
     public function edit($id)
     {
         $datosespecificos = Datoespecifico::find($id);
-        $regimen = Regimen::orderBy('id', 'ASC')->lists('regimen','id');
-        $tipoTerreno = Tipoterreno::orderBy('id', 'ASC')->lists('tipoTerreno','id');
-            return view('predios.especificos')
+
+        $regimen = Regimen::orderBy('id', 'ASC')->lists('regimen', 'id');
+        $tipoTerreno = Tipoterreno::orderBy('id', 'ASC')->lists('tipoTerreno', 'id');
+        return view('predios.especificos')
             ->with('regimen', $regimen)
             ->with('tipoTerreno', $tipoTerreno)
-            ->with('especificos',$datosespecificos);
-            
+            ->with('especificos', $datosespecificos);
+
     }
 
 
@@ -114,7 +111,7 @@ class EspecificosController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
