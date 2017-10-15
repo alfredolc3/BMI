@@ -12,7 +12,9 @@ use Laracasts\Flash\Flash;
 
 class SepomexController extends Controller
 {
-
+    protected $respuesta;
+    protected $codigoHttp;
+    
     public function __construct()
     {
         $this->respuesta = [

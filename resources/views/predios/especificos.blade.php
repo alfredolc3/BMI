@@ -15,55 +15,37 @@ Nuevo Predio
 				<div class="panel-body">
 					@include('partials.error')
 					{!!Form::model($especificos, ['route'=>'predios.especificos.store', 'method'=>'POST'])!!}
-
+					{!! Form::hidden('idDatosPrincipales') !!}
 
 					<div class="d-inline-block bg-primary"><h3><B>UBICACION DEL PREDIO</B></h3></div>
 					<div class="row">
 						<div class="col-md-5">
 							<div class="form-group">
 								{!!Form::label('calle', 'Calle')!!}
-								{!!Form::text('calle', null, ['class'=>'form-control', 'required'])!!}
+								{!!Form::text('calle', null, ['class'=>'form-control'])!!}
 							</div>
 						</div>
 						
-						<div class="col-md-2">
+						<div class="col-md-1">
 							<div class="form-group">
 								{!!Form::label('numero', 'Numero')!!}
-								{!!Form::text('numero', null, ['class'=>'form-control', 'required'])!!}
+								{!!Form::text('numero', null, ['class'=>'form-control'])!!}
 							</div>
 						</div>
 
 						<div class="col-md-2">
 							<div class="form-group">
 								{!!Form::label('cp', 'Codigo Postal')!!}
-								{!!Form::number('cp', null,['class'=>'form-control', 'placeholder'=>'Codigo Postal', 'required'])!!}
+								<div class="input-group">
+							      {!!Form::number('cp', null,['class'=>'form-control'])!!}
+							      <span class="input-group-btn">
+							        <button class="btn btn-warning" id="cp-buscar" type="button" data-toggle="tooltip" title="Buscar"><i class="fa fa-search"></i></button>
+							      </span>
+							    </div><!-- /input-group -->
 							</div>
 						</div>
-						<div class="col-md-3">
-							<div class="form-group">
-								{!!Form::label('colonia', 'Colonia')!!}
-								{!!Form::select('colonia', ['Renta'=>'Renta', 'Venta'=>'Venta'], null, ['class'=>'form-control', 'placeholder' => 'Seleccione colonia...', 'required'])!!}
-							</div>
-						</div>
-
-						<div class="col-md-4">
-							<div class="form-group">
-								{!!Form::label('estado', 'Estado')!!}
-								{!!Form::select('estado', ['Renta'=>'Renta', 'Venta'=>'Venta'], null, ['class'=>'form-control', 'placeholder' => 'Seleccione estado...', 'required'])!!}
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="form-group">
-								{!!Form::label('municipio', 'Municipio')!!}
-								{!!Form::select('municipio', ['Renta'=>'Renta', 'Venta'=>'Venta'], null, ['class'=>'form-control', 'placeholder' => 'Seleccione municipio...', 'required'])!!}
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="form-group">
-								{!!Form::label('ciudad', 'Ciudad')!!}
-								{!!Form::select('ciudad', ['Renta'=>'Renta', 'Venta'=>'Venta'], null, ['class'=>'form-control', 'placeholder' => 'Seleccione ciudad...', 'required'])!!}
-							</div>
-						</div>
+						<div id="asentamientos"></div>
+						
 					</div>
 
 
@@ -72,19 +54,19 @@ Nuevo Predio
 						<div class="col-md-4">
 							<div class="form-group">
 								{!!Form::label('longitud', 'Longitud')!!}
-								{!!Form::number('longitud', null,['class'=>'form-control', 'placeholder'=>'Longitud', 'required'])!!}
+								{!!Form::number('longitud', null,['class'=>'form-control', 'placeholder'=>'Longitud'])!!}
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
 								{!!Form::label('latitud', 'Latitud')!!}
-								{!!Form::number('latitud', null,['class'=>'form-control', 'placeholder'=>'Latitud', 'required'])!!}
+								{!!Form::number('latitud', null,['class'=>'form-control', 'placeholder'=>'Latitud'])!!}
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
 								{!!Form::label('altitud', 'Altitud')!!}
-								{!!Form::number('altitud', null,['class'=>'form-control', 'placeholder'=>'Altitud', 'required'])!!}
+								{!!Form::number('altitud', null,['class'=>'form-control', 'placeholder'=>'Altitud'])!!}
 							</div>			
 						</div>															
 					</div>
@@ -94,19 +76,19 @@ Nuevo Predio
 						<div class="col-md-4">
 							<div class="form-group">
 								{!!Form::label('tpredio', 'Tipo de Predio')!!}
-								{!!Form::select('tpredio', ['Urbano'=>'Urbano', 'Rustico'=>'Rustico'], null, ['class'=>'form-control', 'placeholder' => 'Seleccione tipo de inmueble', 'required'])!!}
+								{!!Form::select('tpredio', ['Urbano'=>'Urbano', 'Rustico'=>'Rustico'], null, ['class'=>'form-control', 'placeholder' => 'Seleccione tipo de inmueble'])!!}
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
 								{!!Form::label('rpropiedad', 'Regimen de Propiedad')!!}
-								{!!Form::select('rpropiedad', $regimen, null, ['class'=>'form-control', 'placeholder' => 'Seleccione Regimen de Propiedad', 'required'])!!}
+								{!!Form::select('rpropiedad', $regimen, null, ['class'=>'form-control', 'placeholder' => 'Seleccione Regimen de Propiedad'])!!}
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
 								{!!Form::label('tterreno', 'Tipo de Terreno')!!}
-								{!!Form::select('tterreno', $tipoTerreno, null, ['class'=>'form-control', 'placeholder' => 'Seleccione Tipo de Terreno...', 'required'])!!}
+								{!!Form::select('tterreno', $tipoTerreno, null, ['class'=>'form-control', 'placeholder' => 'Seleccione Tipo de Terreno...'])!!}
 							</div>
 						</div>
 					</div>
@@ -115,25 +97,25 @@ Nuevo Predio
 						<div class="col-md-3">
 					<div class="form-group">
 						{!!Form::label('sterreno', 'Superficie de Terreno')!!}
-						{!!Form::number('sterreno', null,['class'=>'form-control', 'placeholder'=>'Superficie de Terreno', 'required'])!!}
+						{!!Form::number('sterreno', null,['class'=>'form-control', 'placeholder'=>'Superficie de Terreno'])!!}
 					</div>
 						</div>
 						<div class="col-md-3">
 					<div class="form-group">
 						{!!Form::label('sconstruccion', 'Superficie de Construccion')!!}
-						{!!Form::number('sconstruccion', null,['class'=>'form-control', 'placeholder'=>'Superficie de Construccion', 'required'])!!}
+						{!!Form::number('sconstruccion', null,['class'=>'form-control', 'placeholder'=>'Superficie de Construccion'])!!}
 					</div>
 						</div>
 						<div class="col-md-3">
 					<div class="form-group">
 						{!!Form::label('scomun', 'Superficie Comun')!!}
-						{!!Form::number('scomun', null,['class'=>'form-control', 'placeholder'=>'Superficie Comun', 'required'])!!}
+						{!!Form::number('scomun', null,['class'=>'form-control', 'placeholder'=>'Superficie Comun'])!!}
 					</div>
 					</div>
 					<div class="col-md-3">
 					<div class="form-group">
 						{!!Form::label('indiviso', 'Indiviso')!!}
-						{!!Form::number('indiviso', null,['class'=>'form-control', 'placeholder'=>'Indiviso', 'required'])!!}
+						{!!Form::number('indiviso', null,['class'=>'form-control', 'placeholder'=>'Indiviso'])!!}
 					</div>
 					</div>
 					</div>
@@ -149,4 +131,8 @@ Nuevo Predio
 		</div>
 	</div>
 </div>
+@endsection
+
+@section('js')
+<script type="text/javascript" src="/js/predios/especificos.js"></script>
 @endsection
