@@ -50,8 +50,9 @@ class EspecificosController extends Controller
     public function store(Request $request)
     {
         $datosEspecificos = new Datoespecifico();
-        if($id){
-            $datosEspecificos = Datoespecifico::find($id);
+        if (!$datosEspecificos) {
+            $datosEspecificos = Datoespecifico::where('idDatosPrincipales', $request->idDatosPrincipales)
+                ->first();
         }
         $datosEspecificos->fill($request->all());
         $datosEspecificos->save();
@@ -80,7 +81,12 @@ class EspecificosController extends Controller
 
     public function edit($id)
     {
-        $datosespecificos = Datoespecifico::find($id);
+        $datosespecificos = Datoespecifico::where('idDatosPrincipales', $id)
+            ->first();
+        if(!$datosespecificos){
+            $datosespecificos = new \stdClass();
+            $datosespecificos->idDatosPrincipales = $id;
+        }
 
         $regimen = Regimen::orderBy('id', 'ASC')->lists('regimen', 'id');
         $tipoTerreno = Tipoterreno::orderBy('id', 'ASC')->lists('tipoTerreno', 'id');

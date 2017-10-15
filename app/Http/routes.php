@@ -69,7 +69,7 @@ Route::group(['namespace' => 'Predios', 'prefix' => 'predios'], function () {
         'as' => 'predios.especificos.edit',
         'uses' => 'EspecificosController@index'
     ]);
-    post('especificos/{id}', [
+    post('especificos', [
         'as' => 'predios.especificos.store',
         'uses' => 'EspecificosController@store'
     ]);
