@@ -33,7 +33,7 @@ Predios
 									<td>{{$datos->tipoOperacion}}</td>
 									<td>{{$datos->valorOperacion}}</td>
 									<td>
-										<a href="{{route('predios.predios.edit', $datos->id)}}" data-toggle="tooltip" title="Editar Datos Genreales" class="btn btn-success"><span class="glyphicon glyphicon-pencil"></span></a>
+										<a href="{{route('predios.predios.edit', $datos->id)}}" data-toggle="tooltip" title="Editar Datos Generales" class="btn btn-success"><span class="glyphicon glyphicon-pencil"></span></a>
 										<a href="{{route('predios.especificos.index', $datos->id)}}" data-toggle="tooltip" title="Editar Datos Especificos" class="btn btn-info"><span class="fa fa-book"></span></a>
 										<a href="{{route('predios.caracteristicas.index', $datos->id)}}" data-toggle="tooltip" title="Editar Caracteristicas de Predio" class="btn btn-primary"><span class="fa fa-home"></span></a>
 										<a href="#" data-toggle="tooltip" title="Cargar Imagenes" class="btn btn-warning"><span class="glyphicon glyphicon-picture"></span></a>
