@@ -21,7 +21,6 @@ class FormasController extends Controller
     {
         $formas = Forma::orderBy('id', 'ASC')->paginate(5);
         return view('admin.formas.index')->with('formas', $formas);
-
     }
 
     /**

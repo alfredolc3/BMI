@@ -22,7 +22,7 @@ Nuevo Predio
 						<div class="col-md-5">
 							<div class="form-group">
 								{!!Form::label('calle', 'Calle')!!}
-								{!!Form::text('calle', null, ['class'=>'form-control', 'required'])!!}
+								{!!Form::text('calle', $especificos->calle, ['class'=>'form-control', 'required'])!!}
 							</div>
 						</div>
 						

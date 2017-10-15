@@ -17,14 +17,21 @@ class EspecificosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id=null)
     {
+        if(!empty($id))
+        {
+            $this->edit($id);
+            
+        }
 
-            $regimen = Regimen::orderBy('id', 'ASC')->lists('regimen','id');
-            $tipoTerreno = Tipoterreno::orderBy('id', 'ASC')->lists('tipoTerreno','id');
-                return view('predios.especificos')
-                ->with('regimen', $regimen)
-                ->with('tipoTerreno', $tipoTerreno);                
+        $regimen = Regimen::orderBy('id', 'ASC')->lists('regimen','id');
+        $tipoTerreno = Tipoterreno::orderBy('id', 'ASC')->lists('tipoTerreno','id');
+            return view('predios.especificos')
+            ->with('regimen', $regimen)
+            ->with('tipoTerreno', $tipoTerreno);  
+
+
     }
 
     /**
@@ -65,24 +72,19 @@ class EspecificosController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        //
+        $datosespecificos = Datoespecifico::find($id);
+        $regimen = Regimen::orderBy('id', 'ASC')->lists('regimen','id');
+        $tipoTerreno = Tipoterreno::orderBy('id', 'ASC')->lists('tipoTerreno','id');
+            return view('predios.especificos')
+            ->with('regimen', $regimen)
+            ->with('tipoTerreno', $tipoTerreno)
+            ->with('especificos',$datosespecificos);
+            
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
         $datosespecificos = Datoespecifico::find($id);
