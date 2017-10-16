@@ -14,8 +14,8 @@ Nuevo Predio
 
 				<div class="panel-body">
 					@include('partials.error')
-					{!!Form::open(['route'=>'predios.caracteristicas.store', 'method'=>'POST'])!!}
-
+					{!!Form::model(['route'=>'predios.caracteristicas.store', 'method'=>'POST'])!!}
+					{!! Form::hidden('idDatosPrincipales') !!}
 
 					<div class="d-inline-block bg-primary"><h3><B>CARACTERISTICAS GENERALES Y DE UBICACION</B></h3></div>
 					<div class="row">

@@ -19,7 +19,7 @@ Nuevo Predio
 
 					<div class="d-inline-block bg-primary"><h3><B>UBICACION DEL PREDIO</B></h3></div>
 					<div class="row">
-						<div class="col-md-5">
+						<div class="col-md-4">
 							<div class="form-group">
 								{!!Form::label('calle', 'Calle')!!}
 								{!!Form::text('calle', null, ['class'=>'form-control'])!!}
@@ -28,8 +28,15 @@ Nuevo Predio
 						
 						<div class="col-md-1">
 							<div class="form-group">
-								{!!Form::label('numero', 'Numero')!!}
-								{!!Form::text('numero', null, ['class'=>'form-control'])!!}
+								{!!Form::label('numero int.', 'N. Int')!!}
+								{!!Form::text('numero int.', null, ['class'=>'form-control'])!!}
+							</div>
+						</div>
+
+						<div class="col-md-1">
+							<div class="form-group">
+								{!!Form::label('numero ext.', 'N. Ext')!!}
+								{!!Form::text('numero ext.', null, ['class'=>'form-control'])!!}
 							</div>
 						</div>
 

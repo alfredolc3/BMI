@@ -16,9 +16,6 @@ Nuevo Predio
 					@include('partials.error')
 					{!!Form::open(['route'=>'predios.predios.store', 'method'=>'POST'])!!}
 
-
-					
-					
 					<div class="row">
 						<div class="col-md-4">
 							<div class="form-group">
