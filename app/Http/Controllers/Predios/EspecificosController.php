@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Predios;
 
 use Illuminate\Http\Request;
-
+use App\Http\Requests\EspecificoRequest;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Regimen;
@@ -43,7 +43,7 @@ class EspecificosController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(EspecificoRequest $request)
     {
         $datosEspecificos = new Datoespecifico();
         if (!$datosEspecificos) {

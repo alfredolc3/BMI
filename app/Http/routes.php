@@ -77,8 +77,25 @@ Route::group(['namespace' => 'Predios', 'prefix' => 'predios'], function () {
     get('/buscar-cp', 'EspecificosController@buscarcp'); 
 
 
+    get('caracteristicas/{id}', [
+        'as' => 'predios.caracteristicas.edit', 
+        'uses' => 'CaracteristicasController@index'
+    ]);
+
+    post('caracteristicas', [
+        'as' => 'predios.caracteristicas.store', 
+        'uses' => 'CaracteristicasController@store'
+    ]);
+
+
+    get('imagenes/{id}', [
+        'as' => 'predios.imagenes.edit', 
+        'uses' => 'ImagenesController@index'
+    ]);
+    
+    //Route::resource('imagenes', 'ImagenesController');
     //Route::resource('especificos', 'EspecificosController');
-    Route::resource('caracteristicas', 'CaracteristicasController');
+    //Route::resource('caracteristicas', 'CaracteristicasController');
 
 
 

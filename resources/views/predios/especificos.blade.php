@@ -61,19 +61,19 @@ Nuevo Predio
 						<div class="col-md-4">
 							<div class="form-group">
 								{!!Form::label('longitud', 'Longitud')!!}
-								{!!Form::number('longitud', null,['class'=>'form-control', 'placeholder'=>'Longitud'])!!}
+								{!!Form::number('longitud', null,['class'=>'form-control', 'step'=>'any', 'placeholder'=>'Longitud'])!!}
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
 								{!!Form::label('latitud', 'Latitud')!!}
-								{!!Form::number('latitud', null,['class'=>'form-control', 'placeholder'=>'Latitud'])!!}
+								{!!Form::number('latitud', null,['class'=>'form-control', 'step'=>'any','placeholder'=>'Latitud'])!!}
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
 								{!!Form::label('altitud', 'Altitud')!!}
-								{!!Form::number('altitud', null,['class'=>'form-control', 'placeholder'=>'Altitud'])!!}
+								{!!Form::number('altitud', null,['class'=>'form-control', 'step'=>'any', 'placeholder'=>'Altitud'])!!}
 							</div>			
 						</div>															
 					</div>
@@ -104,25 +104,25 @@ Nuevo Predio
 						<div class="col-md-3">
 					<div class="form-group">
 						{!!Form::label('sterreno', 'Superficie de Terreno')!!}
-						{!!Form::number('sterreno', null,['class'=>'form-control', 'placeholder'=>'Superficie de Terreno'])!!}
+						{!!Form::number('sterreno', null,['class'=>'form-control', 'step'=>'any', 'placeholder'=>'Superficie de Terreno'])!!}
 					</div>
 						</div>
 						<div class="col-md-3">
 					<div class="form-group">
 						{!!Form::label('sconstruccion', 'Superficie de Construccion')!!}
-						{!!Form::number('sconstruccion', null,['class'=>'form-control', 'placeholder'=>'Superficie de Construccion'])!!}
+						{!!Form::number('sconstruccion', null,['class'=>'form-control', 'step'=>'any', 'placeholder'=>'Superficie de Construccion'])!!}
 					</div>
 						</div>
 						<div class="col-md-3">
 					<div class="form-group">
 						{!!Form::label('scomun', 'Superficie Comun')!!}
-						{!!Form::number('scomun', null,['class'=>'form-control', 'placeholder'=>'Superficie Comun'])!!}
+						{!!Form::number('scomun', null,['class'=>'form-control', 'step'=>'any', 'placeholder'=>'Superficie Comun'])!!}
 					</div>
 					</div>
 					<div class="col-md-3">
 					<div class="form-group">
 						{!!Form::label('indiviso', 'Indiviso')!!}
-						{!!Form::number('indiviso', null,['class'=>'form-control', 'placeholder'=>'Indiviso'])!!}
+						{!!Form::number('indiviso', null,['class'=>'form-control', 'step'=>'any', 'placeholder'=>'Indiviso'])!!}
 					</div>
 					</div>
 					</div>
