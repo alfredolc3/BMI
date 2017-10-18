@@ -61,16 +61,16 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['aut
 });
 
 
-Route::group(['namespace' => 'Predios', 'prefix' => 'predios'], function () {
+Route::group(['namespace' => 'Predios', 'prefix' => 'datos'], function () {
 
     Route::resource('predios', 'PrediosController');
 
     get('especificos/{id}', [
-        'as' => 'predios.especificos.edit',
+        'as' => 'datos.especificos.edit',
         'uses' => 'EspecificosController@index'
     ]);
     post('especificos', [
-        'as' => 'predios.especificos.store',
+        'as' => 'datos.especificos.store',
         'uses' => 'EspecificosController@store'
     ]);
     
@@ -78,18 +78,18 @@ Route::group(['namespace' => 'Predios', 'prefix' => 'predios'], function () {
 
 
     get('caracteristicas/{id}', [
-        'as' => 'predios.caracteristicas.edit', 
+        'as' => 'datos.caracteristicas.edit', 
         'uses' => 'CaracteristicasController@index'
     ]);
 
     post('caracteristicas', [
-        'as' => 'predios.caracteristicas.store', 
+        'as' => 'datos.caracteristicas.store', 
         'uses' => 'CaracteristicasController@store'
     ]);
 
 
     get('imagenes/{id}', [
-        'as' => 'predios.imagenes.edit', 
+        'as' => 'datos.imagenes.edit', 
         'uses' => 'ImagenesController@index'
     ]);
     

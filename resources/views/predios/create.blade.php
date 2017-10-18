@@ -14,7 +14,7 @@ Nuevo Predio
 
 				<div class="panel-body">
 					@include('partials.error')
-					{!!Form::open(['route'=>'predios.predios.store', 'method'=>'POST'])!!}
+					{!!Form::open(['route'=>'datos.predios.store', 'method'=>'POST'])!!}
 
 					<div class="row">
 						<div class="col-md-4">

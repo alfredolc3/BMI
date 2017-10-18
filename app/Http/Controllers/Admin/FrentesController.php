@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Frente;
+use App\Models\Admin\Frente;
 use Laracasts\Flash\Flash;
 use App\Http\Requests\FrenteRequest;
 

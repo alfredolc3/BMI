@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Topografia;
+use App\Models\Admin\Topografia;
 use Laracasts\Flash\Flash;
 use App\Http\Requests\TopografiaRequest;
 class TopografiasController extends Controller

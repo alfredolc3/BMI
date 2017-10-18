@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Servicio;
+use App\Models\Admin\Servicio;
 use Laracasts\Flash\Flash;
 use App\Http\Requests\ServicioRequest;
 

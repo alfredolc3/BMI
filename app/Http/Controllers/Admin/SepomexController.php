@@ -5,9 +5,9 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Sepomex;
-use App\Estado;
-use App\Tipoasentamiento;
+use App\Models\Admin\Sepomex;
+use App\Models\Admin\Estado;
+use App\Models\Admin\Tipoasentamiento;
 use Laracasts\Flash\Flash;
 
 class SepomexController extends Controller

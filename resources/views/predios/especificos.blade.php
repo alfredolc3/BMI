@@ -14,7 +14,7 @@ Nuevo Predio
 
 				<div class="panel-body">
 					@include('partials.error')
-					{!!Form::model($especificos, ['route'=>'predios.especificos.store', 'method'=>'POST'])!!}
+					{!!Form::model($especificos, ['route'=>'datos.especificos.store', 'method'=>'POST'])!!}
 					{!! Form::hidden('idDatosPrincipales') !!}
 
 					<div class="d-inline-block bg-primary"><h3><B>UBICACION DEL PREDIO</B></h3></div>

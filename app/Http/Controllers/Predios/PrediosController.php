@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Predios;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Datoprincipal;
-use App\Tipologiainmueble;
+use App\Models\Predios\Datoprincipal;
+use App\Models\Admin\Tipologiainmueble;
 use Laracasts\Flash\Flash;
 
 class PrediosController extends Controller
@@ -71,7 +71,7 @@ class PrediosController extends Controller
         $datosprincipales->save();
 
         Flash::warning('El Inmueble ha sido modificado con exito!');
-        return redirect()->route('predios.predios.index');
+        return redirect()->route('predios.index');
     }
 
 

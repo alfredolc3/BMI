@@ -14,7 +14,7 @@ Editar Predio
 
 				<div class="panel-body">
 					@include('partials.error')
-					{!!Form::open(['route'=>['predios.predios.update', $datosprincipales], 'method'=>'PUT'])!!}
+					{!!Form::open(['route'=>['datos.predios.update', $datosprincipales], 'method'=>'PUT'])!!}
 
 					<div class="row">
 						<div class="col-md-4">

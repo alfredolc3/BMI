@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 use App\Http\Requests\EspecificoRequest;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Regimen;
-use App\Datoespecifico;
-use App\Tipoterreno;
-use App\Sepomex;
+use App\Models\Admin\Regimen;
+use App\Models\predios\Datoespecifico;
+use App\Models\Admin\Tipoterreno;
+use App\Models\Admin\Sepomex;
 
 class EspecificosController extends Controller
 {
@@ -54,7 +54,7 @@ class EspecificosController extends Controller
         $datosEspecificos->save();
 
         Flash::success("Se ha registrado la información especifica de forma exitosa!");
-        return redirect()->route('predios.predios.index');
+        return redirect()->route('predios.index');
 
         //$datosespecificos = new Datoespecifico($request->all());
         //$datosespecificos->idUser = \Auth::user()->id;

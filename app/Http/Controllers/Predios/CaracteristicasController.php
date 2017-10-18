@@ -6,15 +6,15 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Caracteristicapredio;
-use App\Servicio;
-use App\Usosuelo;
-use App\Ubicacionmanzana;
-use App\Tipovialidad;
-use App\Zona;
-use App\Topografia;
-use App\Forma;
-use App\Frente;
+use App\Models\Predios\Caracteristicapredio;
+use App\Models\Admin\Servicio;
+use App\Models\Admin\Usosuelo;
+use App\Models\Admin\Ubicacionmanzana;
+use App\Models\Admin\Tipovialidad;
+use App\Models\Admin\Zona;
+use App\Models\Admin\Topografia;
+use App\Models\Admin\Forma;
+use App\Models\Admin\Frente;
 
 class CaracteristicasController extends Controller
 {
@@ -64,7 +64,7 @@ class CaracteristicasController extends Controller
         $caracteristicas->save();
 
         Flash::success("Se ha registrado las caracteristicas de forma exitosa!");
-        return redirect()->route('predios.predios.index');
+        return redirect()->route('predios.index');
 
     }
 
