@@ -27,14 +27,14 @@ class AddCaracteristicasPredioTable extends Migration
             $table->string('vistasPanoramicas');
 
             //comienzan claves foraneas
-            $table->foreign('idDatosPrincipales')->references('id')->on('datosPrincipales')->onDelete('cascade');
-            $table->foreign('idUsoSuelo')->references('id')->on('usosSuelo')->onDelete('cascade');
-            $table->foreign('idUbicacionManzana')->references('id')->on('ubicacionesManzana')->onDelete('cascade');
-            $table->foreign('idTipoVialidad')->references('id')->on('tiposVialidad')->onDelete('cascade');
-            $table->foreign('idClasificacionZona')->references('id')->on('clasificacionesZona')->onDelete('cascade');
-            $table->foreign('idTopografia')->references('id')->on('topografias')->onDelete('cascade');
-            $table->foreign('idForma')->references('id')->on('formas')->onDelete('cascade');
-            $table->foreign('idFrente')->references('id')->on('frentes')->onDelete('cascade');
+            $table->foreign('idDatosPrincipales')->references('id')->on('datosPrincipales')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('idUsoSuelo')->references('id')->on('usosSuelo')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('idUbicacionManzana')->references('id')->on('ubicacionesManzana')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('idTipoVialidad')->references('id')->on('tiposVialidad')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('idClasificacionZona')->references('id')->on('clasificacionesZona')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('idTopografia')->references('id')->on('topografias')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('idForma')->references('id')->on('formas')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('idFrente')->references('id')->on('frentes')->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();
         });

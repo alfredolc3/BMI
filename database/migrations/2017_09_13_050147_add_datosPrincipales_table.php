@@ -15,13 +15,15 @@ class AddDatosPrincipalesTable extends Migration
         Schema::create('datosPrincipales', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('idUser')->unsigned();
+            $table->integer('idTipoInmueble')->unsigned();
             $table->date('fechaRegistro');
             $table->string('informante');
             $table->string('telefono');
             $table->string('linkWeb');
             $table->string('valorOperacion');
 
-             $table->foreign('idUser')->references('id')->on('users')->onDelete('cascade');
+             $table->foreign('idUser')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+             $table->foreign('idUser')->references('id')->on('tipologiasinmueble')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

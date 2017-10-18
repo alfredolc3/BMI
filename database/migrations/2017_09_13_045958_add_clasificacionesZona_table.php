@@ -14,7 +14,7 @@ class AddClasificacionesZonaTable extends Migration
     {
         Schema::create('clasificacionesZona', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('clasificacionZona');
+            $table->string('zona');
             $table->timestamps();
         });
     }
