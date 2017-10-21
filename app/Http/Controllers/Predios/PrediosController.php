@@ -8,6 +8,9 @@ use App\Http\Controllers\Controller;
 use App\Models\Predios\Datoprincipal;
 use App\Models\Admin\Tipologiainmueble;
 use Laracasts\Flash\Flash;
+use App\Http\Requests\PrediosRequest;
+
+
 
 class PrediosController extends Controller
 {
@@ -30,7 +33,7 @@ class PrediosController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(PrediosRequest $request)
     {
         $datosprincipales = new Datoprincipal($request->all());
         $datosprincipales->idUser = \Auth::user()->id;

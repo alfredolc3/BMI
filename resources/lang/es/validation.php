@@ -21,7 +21,7 @@ return [
     'alpha_dash'           => ':attribute sólo debe contener letras, números y guiones.',
     'alpha_num'            => ':attribute sólo debe contener letras y números.',
     'array'                => ':attribute debe ser un conjunto.',
-    'before'               => ':attribute debe ser una fecha anterior a :date.',
+    'before'               => ':attribute debe ser una fecha anterior o igual a hoy.',
     'before_or_equal'      => ':attribute debe ser una fecha anterior o igual a :date.',
     'between'              => [
         'numeric' => ':attribute tiene que estar entre :min - :max.',

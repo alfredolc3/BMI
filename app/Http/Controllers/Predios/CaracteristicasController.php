@@ -15,6 +15,8 @@ use App\Models\Admin\Zona;
 use App\Models\Admin\Topografia;
 use App\Models\Admin\Forma;
 use App\Models\Admin\Frente;
+use App\Http\Requests\CaracteristicasPredioRequest;
+
 
 
 class CaracteristicasController extends Controller
@@ -57,7 +59,7 @@ class CaracteristicasController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(CaracteristicasPredioRequest $request)
     {
        
        // dd($request->all());
