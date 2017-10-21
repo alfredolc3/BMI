@@ -2250,6 +2250,64 @@
         ]
     },
     {
+        "name": "genealabs/phpgmaps",
+        "version": "0.4.3",
+        "version_normalized": "0.4.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/GeneaLabs/Phpgmaps.git",
+            "reference": "2aa79643d1b231fa952997062d6240b97b5cf668"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/GeneaLabs/Phpgmaps/zipball/2aa79643d1b231fa952997062d6240b97b5cf668",
+            "reference": "2aa79643d1b231fa952997062d6240b97b5cf668",
+            "shasum": ""
+        },
+        "require": {
+            "laravel/framework": "5.*",
+            "php": ">=5.4.0"
+        },
+        "time": "2017-10-14T12:23:53+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-laravel4": "1.0-dev",
+                "dev-develop": "2.0-dev",
+                "dev-master": "2.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "GeneaLabs\\Phpgmaps\\": "src/GeneaLabs/Phpgmaps/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Mike Bronner",
+                "email": "mike@genealabs.com",
+                "role": "maintainer"
+            },
+            {
+                "name": "Michael Hopkins",
+                "role": "developer"
+            }
+        ],
+        "description": "Laravel implementation of BIOSTALL's CodeIgniter Google Maps API, originally by Michael Hopkins at Appitventures.",
+        "keywords": [
+            "biostall",
+            "googlemaps",
+            "laravel",
+            "phpgmaps"
+        ],
+        "abandoned": "GeneaLabs/laravel-maps"
+    },
+    {
         "name": "laracasts/flash",
         "version": "3.0.2",
         "version_normalized": "3.0.2.0",
@@ -4116,63 +4174,5 @@
             "testing",
             "xunit"
         ]
-    },
-    {
-        "name": "genealabs/phpgmaps",
-        "version": "0.4.3",
-        "version_normalized": "0.4.3.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/GeneaLabs/Phpgmaps.git",
-            "reference": "2aa79643d1b231fa952997062d6240b97b5cf668"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/GeneaLabs/Phpgmaps/zipball/2aa79643d1b231fa952997062d6240b97b5cf668",
-            "reference": "2aa79643d1b231fa952997062d6240b97b5cf668",
-            "shasum": ""
-        },
-        "require": {
-            "laravel/framework": "5.*",
-            "php": ">=5.4.0"
-        },
-        "time": "2017-10-14T12:23:53+00:00",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-laravel4": "1.0-dev",
-                "dev-develop": "2.0-dev",
-                "dev-master": "2.0-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "GeneaLabs\\Phpgmaps\\": "src/GeneaLabs/Phpgmaps/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Mike Bronner",
-                "email": "mike@genealabs.com",
-                "role": "maintainer"
-            },
-            {
-                "name": "Michael Hopkins",
-                "role": "developer"
-            }
-        ],
-        "description": "Laravel implementation of BIOSTALL's CodeIgniter Google Maps API, originally by Michael Hopkins at Appitventures.",
-        "keywords": [
-            "biostall",
-            "googlemaps",
-            "laravel",
-            "phpgmaps"
-        ],
-        "abandoned": "GeneaLabs/laravel-maps"
     }
 ]

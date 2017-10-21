@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit527f465c2b6cd55383a812879ad3e319
+class ComposerStaticInit98aadd26ea78bb825a169c619eeeadbb
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -360,9 +360,104 @@ class ComposerStaticInit527f465c2b6cd55383a812879ad3e319
         'AddTopografiasTable' => __DIR__ . '/../..' . '/database/migrations/2017_09_13_050023_add_topografias_table.php',
         'AddUbicacionesManzanaTable' => __DIR__ . '/../..' . '/database/migrations/2017_09_13_045900_add_ubicacionesManzana_table.php',
         'AddUsosSueloTable' => __DIR__ . '/../..' . '/database/migrations/2017_09_13_045754_add_usosSuelo_table.php',
+<<<<<<< Updated upstream
         'AlterCaracteristicaspredioTable' => __DIR__ . '/../..' . '/database/migrations/2017_10_20_044407_alter_caracteristicaspredio_table.php',
         'AlterDatosespecificosTable' => __DIR__ . '/../..' . '/database/migrations/2017_10_20_050051_alter_datosespecificos_table.php',
         'AlterDatosprincipalesTable' => __DIR__ . '/../..' . '/database/migrations/2017_10_20_034839_alter_datosprincipales_table.php',
+=======
+        'App\\Console\\Commands\\Inspire' => __DIR__ . '/../..' . '/app/Console/Commands/Inspire.php',
+        'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
+        'App\\Events\\Event' => __DIR__ . '/../..' . '/app/Events/Event.php',
+        'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\Admin\\FormasController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/FormasController.php',
+        'App\\Http\\Controllers\\Admin\\FrentesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/FrentesController.php',
+        'App\\Http\\Controllers\\Admin\\GmapsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/GmapsController.php',
+        'App\\Http\\Controllers\\Admin\\RegimenesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/RegimenesController.php',
+        'App\\Http\\Controllers\\Admin\\SepomexController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SepomexController.php',
+        'App\\Http\\Controllers\\Admin\\ServiciosController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ServiciosController.php',
+        'App\\Http\\Controllers\\Admin\\TipologiasInmuebleController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/TipologiasInmuebleController.php',
+        'App\\Http\\Controllers\\Admin\\TiposTerrenoController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/TiposTerrenoController.php',
+        'App\\Http\\Controllers\\Admin\\TiposVialidadController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/TiposVialidadController.php',
+        'App\\Http\\Controllers\\Admin\\TopografiasController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/TopografiasController.php',
+        'App\\Http\\Controllers\\Admin\\UbicacionesManzanaController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/UbicacionesManzanaController.php',
+        'App\\Http\\Controllers\\Admin\\UsersController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/UsersController.php',
+        'App\\Http\\Controllers\\Admin\\UsosSueloController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/UsosSueloController.php',
+        'App\\Http\\Controllers\\Admin\\ZonasController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ZonasController.php',
+        'App\\Http\\Controllers\\Auth\\AuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/AuthController.php',
+        'App\\Http\\Controllers\\Auth\\PasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/PasswordController.php',
+        'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\Predios\\CaracteristicasController' => __DIR__ . '/../..' . '/app/Http/Controllers/Predios/CaracteristicasController.php',
+        'App\\Http\\Controllers\\Predios\\EspecificosController' => __DIR__ . '/../..' . '/app/Http/Controllers/Predios/EspecificosController.php',
+        'App\\Http\\Controllers\\Predios\\ImagenesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Predios/ImagenesController.php',
+        'App\\Http\\Controllers\\Predios\\PrediosController' => __DIR__ . '/../..' . '/app/Http/Controllers/Predios/PrediosController.php',
+        'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
+        'App\\Http\\Middleware\\Admin' => __DIR__ . '/../..' . '/app/Http/Middleware/Admin.php',
+        'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
+        'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
+        'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
+        'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Http\\Requests\\EspecificoRequest' => __DIR__ . '/../..' . '/app/Http/Requests/EspecificoRequest.php',
+        'App\\Http\\Requests\\FormaRequest' => __DIR__ . '/../..' . '/app/Http/Requests/FormaRequest.php',
+        'App\\Http\\Requests\\FrenteRequest' => __DIR__ . '/../..' . '/app/Http/Requests/FrenteRequest.php',
+        'App\\Http\\Requests\\RegimenRequest' => __DIR__ . '/../..' . '/app/Http/Requests/RegimenRequest.php',
+        'App\\Http\\Requests\\Request' => __DIR__ . '/../..' . '/app/Http/Requests/Request.php',
+        'App\\Http\\Requests\\ServicioRequest' => __DIR__ . '/../..' . '/app/Http/Requests/ServicioRequest.php',
+        'App\\Http\\Requests\\TipoTerrenoRequest' => __DIR__ . '/../..' . '/app/Http/Requests/TipoTerrenoRequest.php',
+        'App\\Http\\Requests\\TipoVialidadRequest' => __DIR__ . '/../..' . '/app/Http/Requests/TipoVialidadRequest.php',
+        'App\\Http\\Requests\\TipologiaInmuebleRequest' => __DIR__ . '/../..' . '/app/Http/Requests/TipologiaInmuebleRequest.php',
+        'App\\Http\\Requests\\TopografiaRequest' => __DIR__ . '/../..' . '/app/Http/Requests/TopografiaRequest.php',
+        'App\\Http\\Requests\\UbicacionManzanaRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UbicacionManzanaRequest.php',
+        'App\\Http\\Requests\\UserRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UserRequest.php',
+        'App\\Http\\Requests\\UsoSueloRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UsoSueloRequest.php',
+        'App\\Http\\Requests\\ZonaRequest' => __DIR__ . '/../..' . '/app/Http/Requests/ZonaRequest.php',
+        'App\\Jobs\\Job' => __DIR__ . '/../..' . '/app/Jobs/Job.php',
+        'App\\Models\\Admin\\estado' => __DIR__ . '/../..' . '/app/models/admin/estado.php',
+        'App\\Models\\Admin\\forma' => __DIR__ . '/../..' . '/app/models/admin/forma.php',
+        'App\\Models\\Admin\\frente' => __DIR__ . '/../..' . '/app/models/admin/frente.php',
+        'App\\Models\\Admin\\predios_servicios' => __DIR__ . '/../..' . '/app/models/admin/predios_servicios.php',
+        'App\\Models\\Admin\\regimen' => __DIR__ . '/../..' . '/app/models/admin/regimen.php',
+        'App\\Models\\Admin\\sepomex' => __DIR__ . '/../..' . '/app/models/admin/sepomex.php',
+        'App\\Models\\Admin\\servicio' => __DIR__ . '/../..' . '/app/models/admin/servicio.php',
+        'App\\Models\\Admin\\tipoasentamiento' => __DIR__ . '/../..' . '/app/models/admin/tipoasentamiento.php',
+        'App\\Models\\Admin\\tipologiainmueble' => __DIR__ . '/../..' . '/app/models/admin/tipologiainmueble.php',
+        'App\\Models\\Admin\\tipoterreno' => __DIR__ . '/../..' . '/app/models/admin/tipoterreno.php',
+        'App\\Models\\Admin\\tipovialidad' => __DIR__ . '/../..' . '/app/models/admin/tipovialidad.php',
+        'App\\Models\\Admin\\topografia' => __DIR__ . '/../..' . '/app/models/admin/topografia.php',
+        'App\\Models\\Admin\\ubicacionmanzana' => __DIR__ . '/../..' . '/app/models/admin/ubicacionmanzana.php',
+        'App\\Models\\Admin\\usosuelo' => __DIR__ . '/../..' . '/app/models/admin/usosuelo.php',
+        'App\\Models\\Admin\\zona' => __DIR__ . '/../..' . '/app/models/admin/zona.php',
+        'App\\Models\\Predios\\caracteristicapredio' => __DIR__ . '/../..' . '/app/models/predios/caracteristicapredio.php',
+        'App\\Models\\Predios\\datoespecifico' => __DIR__ . '/../..' . '/app/models/predios/datoespecifico.php',
+        'App\\Models\\Predios\\datoprincipal' => __DIR__ . '/../..' . '/app/models/predios/datoprincipal.php',
+        'App\\Models\\Predios\\imagen' => __DIR__ . '/../..' . '/app/models/predios/imagen.php',
+        'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
+        'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
+        'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\User' => __DIR__ . '/../..' . '/app/User.php',
+        'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
+        'Carbon\\CarbonInterval' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
+        'Carbon\\Exceptions\\InvalidDateException' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
+        'ClassPreloader\\ClassList' => __DIR__ . '/..' . '/classpreloader/classpreloader/src/ClassList.php',
+        'ClassPreloader\\ClassLoader' => __DIR__ . '/..' . '/classpreloader/classpreloader/src/ClassLoader.php',
+        'ClassPreloader\\ClassNode' => __DIR__ . '/..' . '/classpreloader/classpreloader/src/ClassNode.php',
+        'ClassPreloader\\ClassPreloader' => __DIR__ . '/..' . '/classpreloader/classpreloader/src/ClassPreloader.php',
+        'ClassPreloader\\Config' => __DIR__ . '/..' . '/classpreloader/classpreloader/src/Config.php',
+        'ClassPreloader\\Exceptions\\DirConstantException' => __DIR__ . '/..' . '/classpreloader/classpreloader/src/Exceptions/DirConstantException.php',
+        'ClassPreloader\\Exceptions\\FileConstantException' => __DIR__ . '/..' . '/classpreloader/classpreloader/src/Exceptions/FileConstantException.php',
+        'ClassPreloader\\Exceptions\\StrictTypesException' => __DIR__ . '/..' . '/classpreloader/classpreloader/src/Exceptions/StrictTypesException.php',
+        'ClassPreloader\\Exceptions\\VisitorExceptionInterface' => __DIR__ . '/..' . '/classpreloader/classpreloader/src/Exceptions/VisitorExceptionInterface.php',
+        'ClassPreloader\\Factory' => __DIR__ . '/..' . '/classpreloader/classpreloader/src/Factory.php',
+        'ClassPreloader\\Parser\\AbstractNodeVisitor' => __DIR__ . '/..' . '/classpreloader/classpreloader/src/Parser/AbstractNodeVisitor.php',
+        'ClassPreloader\\Parser\\DirVisitor' => __DIR__ . '/..' . '/classpreloader/classpreloader/src/Parser/DirVisitor.php',
+        'ClassPreloader\\Parser\\FileVisitor' => __DIR__ . '/..' . '/classpreloader/classpreloader/src/Parser/FileVisitor.php',
+        'ClassPreloader\\Parser\\NodeTraverser' => __DIR__ . '/..' . '/classpreloader/classpreloader/src/Parser/NodeTraverser.php',
+        'ClassPreloader\\Parser\\StrictTypesVisitor' => __DIR__ . '/..' . '/classpreloader/classpreloader/src/Parser/StrictTypesVisitor.php',
+        'Collective\\Html\\FormBuilder' => __DIR__ . '/..' . '/laravelcollective/html/src/FormBuilder.php',
+        'Collective\\Html\\FormFacade' => __DIR__ . '/..' . '/laravelcollective/html/src/FormFacade.php',
+        'Collective\\Html\\HtmlBuilder' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlBuilder.php',
+        'Collective\\Html\\HtmlFacade' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlFacade.php',
+        'Collective\\Html\\HtmlServiceProvider' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlServiceProvider.php',
+>>>>>>> Stashed changes
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
@@ -915,10 +1010,10 @@ class ComposerStaticInit527f465c2b6cd55383a812879ad3e319
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit527f465c2b6cd55383a812879ad3e319::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit527f465c2b6cd55383a812879ad3e319::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit527f465c2b6cd55383a812879ad3e319::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit527f465c2b6cd55383a812879ad3e319::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit98aadd26ea78bb825a169c619eeeadbb::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit98aadd26ea78bb825a169c619eeeadbb::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit98aadd26ea78bb825a169c619eeeadbb::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit98aadd26ea78bb825a169c619eeeadbb::$classMap;
 
         }, null, ClassLoader::class);
     }
