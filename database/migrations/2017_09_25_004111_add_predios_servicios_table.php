@@ -14,10 +14,10 @@ class AddPrediosServiciosTable extends Migration
     {
         Schema::create('predios_servicios', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('idDatosPrincipales')->unsigned();
+            $table->integer('idCaracteristicasPredio')->unsigned();
             $table->integer('idServicios')->unsigned();
 
-            $table->foreign('idDatosPrincipales')->references('id')->on('datosPrincipales')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('idCaracteristicasPredio')->references('id')->on('caracteristicasPredio')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('idServicios')->references('id')->on('servicios')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });

@@ -9,4 +9,11 @@ class servicio extends Model
     protected $table = "servicios";
 
     protected $fillable = ['servicio'];
+
+    public function caracteristicaspredio()
+    {
+    	return $this->belongsToMany('App\Models\Predios\Caracteristicapredio');
+    }
 }
+
+ 

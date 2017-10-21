@@ -14,17 +14,19 @@ class PrediosController extends Controller
 
     public function index()
     {
+        
         $datosprincipales = Datoprincipal::orderBy('id', 'ASC')->paginate(5);
-        return view('predios.index')->with('datosprincipales', $datosprincipales);
+        return view('predios.index')
+        ->with('datosprincipales', $datosprincipales);
     }
 
 
     public function create()
     {
 
-        $datosprincipales = Tipologiainmueble::orderBy('id', 'ASC')->lists('tipoInmueble','id');
+        $tinmuebles = Tipologiainmueble::orderBy('id', 'ASC')->lists('tipoInmueble','id');
         return view('predios.create')
-            ->with('tinmuebles', $datosprincipales);
+            ->with('tinmuebles', $tinmuebles);
     }
 
 
@@ -36,7 +38,7 @@ class PrediosController extends Controller
         //dd($request->all());
         $datosprincipales->save();
         Flash::success("Se ha registrado el nuevo Inmueble de forma exitosa!");
-        return redirect()->route('predios.index');
+        return redirect()->route('datos.predios.index');
     }
 
 
@@ -67,11 +69,12 @@ class PrediosController extends Controller
         $datosprincipales->informante = $request->informante;
         $datosprincipales->telefono = $request->telefono;
         $datosprincipales->linkWeb = $request->linkWeb;
+        $datosprincipales->tipoValor = $request->tipoValor;
         $datosprincipales->valorOperacion = $request->valorOperacion;
         $datosprincipales->save();
 
         Flash::warning('El Inmueble ha sido modificado con exito!');
-        return redirect()->route('predios.index');
+        return redirect()->route('datos.predios.index');
     }
 
 

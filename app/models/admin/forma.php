@@ -11,8 +11,5 @@ class forma extends Model
     protected $fillable = ['forma'];
 
 
-    public function caracteristicaspredio()
-    {
-    	return $this->hasMany('App\caracteristicapredio');
-    }
+
 }

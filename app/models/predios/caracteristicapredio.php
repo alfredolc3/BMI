@@ -8,10 +8,10 @@ class caracteristicapredio extends Model
 {
     protected $table = "caracteristicaspredio";
 
-    protected $fillable = ['idDatosPrincipales', 'idUsoSuelo','idUbicacionManzana','idTipoVialidad','proximidadUrbana','idClasificacionZona','idTopografia', 'idForma','servicios','idFrente','vistasPanoramicas'];
+    protected $fillable = ['idDatosPrincipales', 'idUbicacionManzana','idTipoVialidad','proximidadUrbana','idClasificacionZona','idTopografia', 'idForma','idFrente','vistasPanoramicas'];
 
-    public function forma()
-    {
-    	return $this->belongsTo('App\forma');
-    }
+    public function services()
+	{
+		return $this->belongsToMany('App\Models\Admin\Servicio');
+	}
 }

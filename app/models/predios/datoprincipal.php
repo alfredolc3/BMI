@@ -8,5 +8,5 @@ class datoprincipal extends Model
 {
      protected $table = "datosprincipales";
 
-    protected $fillable = ['idUser', 'idTipoInmueble', 'fechaRegistro', 'tipoOperacion', 'informante', 'telefono', 'linkWeb', 'valorOperacion'];
+    protected $fillable = ['idUser', 'idTipoInmueble', 'fechaRegistro', 'tipoOperacion', 'informante', 'telefono', 'linkWeb', 'tipoValor','valorOperacion'];
 }

@@ -14,17 +14,12 @@ Nuevo Predio
 
 				<div class="panel-body">
 					@include('partials.error')
-					{!!Form::model(['route'=>'datos.caracteristicas.update', 'method'=>'POST'])!!}
-					{!! Form::hidden('idDatosPrincipales') !!}
+					{!!Form::open(['route'=>'datos.caracteristicas.store', 'method'=>'POST'])!!}
+
+					{!! Form::hidden('idDatosPrincipales', $idDatosPrincipales) !!}
 
 					<div class="d-inline-block bg-primary"><h3><B>CARACTERISTICAS GENERALES Y DE UBICACION</B></h3></div>
 					<div class="row">
-						<div class="col-md-4">
-							<div class="form-group">
-								{!!Form::label('UsoSuelo', 'Uso de Suelo')!!}
-								{!!Form::select('UsoSuelo', $usoSuelo, null, ['class'=>'form-control', 'placeholder' => 'Seleccione uso de suelo...', 'required'])!!}
-							</div>
-						</div>
 						
 						<div class="col-md-4">
 							<div class="form-group">
@@ -80,7 +75,7 @@ Nuevo Predio
 						<div class="col-md-4">
 							<div class="form-group">
 								{!!Form::label('vistasPanoramicas', 'Vistas Panoramicas')!!}
-								{!!Form::select('vistasPanoramicas', ['Renta'=>'Renta', 'Venta'=>'Venta'], null, ['class'=>'form-control', 'placeholder' => 'Seleccione vistas panoramicas...', 'required'])!!}
+								{!!Form::select('vistasPanoramicas', ['Si'=>'Si', 'No'=>'No'], null, ['class'=>'form-control', 'placeholder' => 'Seleccione vistas panoramicas...', 'required'])!!}
 							</div>
 						</div>	
 						<div class="col-md-8">

@@ -10,6 +10,7 @@ use App\Models\Admin\Regimen;
 use App\Models\predios\Datoespecifico;
 use App\Models\Admin\Tipoterreno;
 use App\Models\Admin\Sepomex;
+use App\Models\Admin\Usosuelo;
 
 class EspecificosController extends Controller
 {
@@ -30,14 +31,19 @@ class EspecificosController extends Controller
 
     public function index($id = null)
     {
-        //dd($id);
-        if ($id) {
-            return $this->edit($id);
+        //Consulto en la base si existe las caracteristicas del predio de datos principales
+        $especificos = Datoespecifico::where('idDatosPrincipales', $id)->first();
+
+        if ($especificos!=null) {
+           //dd('si hay datos');
+           return $this->edit($id);
         }
 
+        $usossuelo = Usosuelo::orderBy('usoSuelo', 'ASC')->lists('usoSuelo','id');
         $regimen = Regimen::orderBy('id', 'ASC')->lists('regimen', 'id');
         $tipoTerreno = Tipoterreno::orderBy('id', 'ASC')->lists('tipoTerreno', 'id');
-        return view('predios.especificos')
+        return view('predios.especificos.index')
+            ->with('usoSuelo', $usossuelo)
             ->with('regimen', $regimen)
             ->with('tipoTerreno', $tipoTerreno);
     }
@@ -54,7 +60,7 @@ class EspecificosController extends Controller
         $datosEspecificos->save();
 
         Flash::success("Se ha registrado la información especifica de forma exitosa!");
-        return redirect()->route('predios.index');
+        return redirect()->route('predios.especificos.index');
 
         //$datosespecificos = new Datoespecifico($request->all());
         //$datosespecificos->idUser = \Auth::user()->id;
@@ -73,9 +79,11 @@ class EspecificosController extends Controller
             $datosespecificos->idDatosPrincipales = $id;
         }
 
+        $usossuelo = Usosuelo::orderBy('usoSuelo', 'ASC')->lists('usoSuelo','id');
         $regimen = Regimen::orderBy('id', 'ASC')->lists('regimen', 'id');
         $tipoTerreno = Tipoterreno::orderBy('id', 'ASC')->lists('tipoTerreno', 'id');
-        return view('predios.especificos')
+        return view('predios.especificos.index')
+            ->with('usoSuelo', $usossuelo)
             ->with('regimen', $regimen)
             ->with('tipoTerreno', $tipoTerreno)
             ->with('especificos', $datosespecificos);

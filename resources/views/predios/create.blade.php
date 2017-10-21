@@ -35,7 +35,7 @@ Nuevo Predio
 								{!!Form::select('tipoOperacion', ['Renta'=>'Renta', 'Venta'=>'Venta'], null, ['class'=>'form-control', 'placeholder' => 'Seleccione una opcion...', 'required'])!!}
 							</div>
 						</div>
-						<div class="col-md-6">
+						<div class="col-md-5">
 							<div class="form-group">
 								{!!Form::label('informante', 'Informante')!!}
 								{!!Form::text('informante', null,['class'=>'form-control', 'placeholder'=>'Empresa o Persona', 'required'])!!}
@@ -47,7 +47,7 @@ Nuevo Predio
 								{!!Form::number('telefono', null,['class'=>'form-control', 'placeholder'=>'__-__-__-__-__', 'required'])!!}
 							</div>
 						</div>
-						<div class="col-md-6">
+						<div class="col-md-5">
 							<div class="form-group">
 								{!!Form::label('linkWeb', 'Link Web')!!}
 								{!!Form::text('linkWeb', null,['class'=>'form-control', 'placeholder'=>'link de venta o informacion'])!!}
@@ -55,7 +55,13 @@ Nuevo Predio
 						</div>
 						<div class="col-md-3">
 							<div class="form-group">
-								{!!Form::label('valorOperacion', 'Valor de Operacion')!!}
+								{!!Form::label('tipoValor', 'Tipo de Valor')!!}
+								{!!Form::select('tipoValor', ['Valor de avaluo'=>'Valor de avaluo', 'Valor de investigacion'=>'Valor de investigacion'], null, ['class'=>'form-control', 'placeholder' => 'Seleccione una opcion...', 'required'])!!}
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="form-group">
+								{!!Form::label('valorOperacion', 'Valor')!!}
 								{!!Form::number('valorOperacion', null,['class'=>'form-control', 'placeholder'=>'Valor de la Operacion', 'required'])!!}
 							</div>
 						</div>

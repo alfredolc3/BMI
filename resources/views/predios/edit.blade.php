@@ -55,6 +55,12 @@ Editar Predio
 						</div>
 						<div class="col-md-3">
 							<div class="form-group">
+								{!!Form::label('tipoValor', 'Tipo de Valor')!!}
+								{!!Form::select('tipoValor', ['Valor de avaluo'=>'Valor de avaluo', 'Valor de investigacion'=>'Valor de investigacion'], $datosprincipales->tipoValor, ['class'=>'form-control', 'placeholder' => 'Seleccione una opcion...'])!!}
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="form-group">
 								{!!Form::label('valorOperacion', 'Valor de Operacion')!!}
 								{!!Form::number('valorOperacion', $datosprincipales->valorOperacion, ['class'=>'form-control', 'placeholder'=>'Valor de la Operacion', 'required'])!!}
 							</div>

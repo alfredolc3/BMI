@@ -8,5 +8,5 @@ class datoespecifico extends Model
 {
     protected $table = "datosespecificos";
 
-    protected $fillable = ['idDatosPrincipales', 'calle', 'numero', 'idSepomex', 'longitud', 'latitud', 'altitud', 'idTipologiaInmueble', 'idRegimenPropiedad', 'idTipoTerreno', 'superficieTerreno', 'superficieConstruccion', 'superficieComun', 'indiviso'];
+    protected $fillable = ['idDatosPrincipales', 'idSepomex', 'calle', 'numeroInt.', 'numeroExt.','longitud', 'latitud', 'altitud', 'tipoPredio', 'idRegimenPropiedad', 'idTipoTerreno', 'superficieTerreno', 'superficieConstruccion', 'idUsoSuelo'];
 }

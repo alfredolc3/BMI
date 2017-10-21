@@ -17,8 +17,8 @@ class AddDatosEspecificosTable extends Migration
             $table->integer('idDatosPrincipales')->unsigned();
             $table->integer('idSepomex')->unsigned();
             $table->string('calle');
-            $table->integer('numero int.');
-            $table->integer('numero ext.');
+            $table->integer('numeroInt.');
+            $table->integer('numeroExt.');
             $table->string('longitud');
             $table->string('latitud');
             $table->string('altitud');

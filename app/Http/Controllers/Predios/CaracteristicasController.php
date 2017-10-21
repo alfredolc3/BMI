@@ -7,14 +7,15 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Predios\Caracteristicapredio;
+use App\Models\Predios\Predios_servicios;
 use App\Models\Admin\Servicio;
-use App\Models\Admin\Usosuelo;
 use App\Models\Admin\Ubicacionmanzana;
 use App\Models\Admin\Tipovialidad;
 use App\Models\Admin\Zona;
 use App\Models\Admin\Topografia;
 use App\Models\Admin\Forma;
 use App\Models\Admin\Frente;
+
 
 class CaracteristicasController extends Controller
 {
@@ -23,14 +24,19 @@ class CaracteristicasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id = null)
+    public function index($id )
     {
+        //Consulto en la base si existe las caracteristicas del predio de datos principales
+        $caracteristicas = Caracteristicapredio::where('idDatosPrincipales', $id)->first();
 
-        if ($id) {
-            return $this->edit($id);
+        if ($caracteristicas!=null) {
+           //dd('si hay datos');
+           return $this->edit($id);
         }
 
-        $usossuelo = Usosuelo::orderBy('usoSuelo', 'ASC')->lists('usoSuelo','id');
+        //dd('no hay datos');
+
+        
         $manzana = Ubicacionmanzana::orderBy('ubicacionManzana', 'ASC')->lists('ubicacionManzana','id');
         $vialidad = Tipovialidad::orderBy('tipoVialidad', 'ASC')->lists('tipoVialidad','id');
         $zona = Zona::orderBy('zona', 'ASC')->lists('zona','id');
@@ -38,8 +44,8 @@ class CaracteristicasController extends Controller
         $forma = Forma::orderBy('forma', 'ASC')->lists('forma','id');
         $frente = Frente::orderBy('frente', 'ASC')->lists('frente','id');
         $servicios = Servicio::orderBy('servicio','ASC')->lists('servicio','id');
-            return view('predios.caracteristicas')
-                ->with('usoSuelo', $usossuelo)
+            return view('predios.caracteristicas.index')
+                ->with('idDatosPrincipales', $id)
                 ->with('ubicacionManzana', $manzana)
                 ->with('tipoVialidad', $vialidad)
                 ->with('zona', $zona)
@@ -53,31 +59,30 @@ class CaracteristicasController extends Controller
 
     public function store(Request $request)
     {
-
-
+       
+       // dd($request->all());
+       // dd($request->servicios);
+        
         $caracteristicas = new Caracteristicapredio();
-        if (!$caracteristicas) {
-            $caracteristicas = Caracteristicapredio::where('idDatosPrincipales', $request->idDatosPrincipales)
-                ->first();
-        }
         $caracteristicas->fill($request->all());
         $caracteristicas->save();
 
+        $caracteristicas->services->sync($request->servicios);
+
+        
+        //Nota aun no puedo guardar los datos
+
         Flash::success("Se ha registrado las caracteristicas de forma exitosa!");
         return redirect()->route('predios.index');
-
+        
     }
 
     public function edit($id)
     {
-        $caracteristicas = Caracteristicapredio::where('idDatosPrincipales', $id)
-            ->first();
-        if(!$caracteristicas){
-            $caracteristicas = new \stdClass();
-            $caracteristicas->idDatosPrincipales = $id;
-        }
+        $caracteristicas = Caracteristicapredio::where('idDatosPrincipales', $id)->first();
+        $servicios = Predios_servicios::where('idDatosPrincipales', $id)->first();
 
-        $usossuelo = Usosuelo::orderBy('usoSuelo', 'ASC')->lists('usoSuelo','id');
+        
         $manzana = Ubicacionmanzana::orderBy('ubicacionManzana', 'ASC')->lists('ubicacionManzana','id');
         $vialidad = Tipovialidad::orderBy('tipoVialidad', 'ASC')->lists('tipoVialidad','id');
         $zona = Zona::orderBy('zona', 'ASC')->lists('zona','id');
@@ -85,8 +90,8 @@ class CaracteristicasController extends Controller
         $forma = Forma::orderBy('forma', 'ASC')->lists('forma','id');
         $frente = Frente::orderBy('frente', 'ASC')->lists('frente','id');
         $servicios = Servicio::orderBy('servicio','ASC')->lists('servicio','id');
-        return view('predios.caracteristicas')
-               ->with('usoSuelo', $usossuelo)
+        return view('predios.caracteristicas.edit')
+                ->with('caracteristicas', $caracteristicas)
                 ->with('ubicacionManzana', $manzana)
                 ->with('tipoVialidad', $vialidad)
                 ->with('zona', $zona)
@@ -100,15 +105,20 @@ class CaracteristicasController extends Controller
 
     public function update(Request $request, $id)
     {
-        //
+        $caracteristicas = Caracteristicapredio::where('idDatosPrincipales', $id)->first();
+        $servicios = Predios_servicios::where('idDatosPrincipales', $id)->first();
+        
+         $caracteristicas->fill($request->all());
+         $servicios->fill($request->all());
+
+         $caracteristicas->save();
+         $servicios->save();
+
+        Flash::success("Se ha modificado las caracteristicas de forma exitosa!");
+        return redirect()->route('predios.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function destroy($id)
     {
         //

@@ -34,9 +34,9 @@ Predios
 									<td>{{$datos->valorOperacion}}</td>
 									<td>
 										<a href="{{route('datos.predios.edit', $datos->id)}}" data-toggle="tooltip" title="Editar Datos Generales" class="btn btn-success"><span class="glyphicon glyphicon-pencil"></span></a>
-										<a href="{{route('datos.especificos.edit', $datos->id)}}" data-toggle="tooltip" title="Editar Datos Especificos" class="btn btn-info"><span class="fa fa-book"></span></a>
-										<a href="{{route('datos.caracteristicas.edit', $datos->id)}}" data-toggle="tooltip" title="Editar Caracteristicas de Predio" class="btn btn-primary"><span class="fa fa-home"></span></a>
-										<a href="{{route('datos.imagenes.edit', $datos->id)}}" data-toggle="tooltip" title="Cargar Imagenes" class="btn btn-warning"><span class="glyphicon glyphicon-picture"></span></a>
+										<a href="{{route('datos.especificos.index', $datos->id)}}" data-toggle="tooltip" title="Editar Datos Especificos" class="btn btn-info"><span class="fa fa-book"></span></a>
+										<a href="{{route('datos.caracteristicas.index', $datos->id)}}" data-toggle="tooltip" title="Editar Caracteristicas de Predio" class="btn btn-primary"><span class="fa fa-home"></span></a>
+										<a href="{{route('datos.imagenes.index', $datos->id)}}" data-toggle="tooltip" title="Cargar Imagenes" class="btn btn-warning"><span class="glyphicon glyphicon-picture"></span></a>
 										<a href="#" onclick="return confirm('¿Seguro que deseas eliminarlo?')" class="btn btn-danger"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a>
 
 									</td>

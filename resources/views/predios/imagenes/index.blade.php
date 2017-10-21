@@ -32,21 +32,6 @@
 						</div>
 
 						<div class="form-group">
-							{!!Form::label('imagen4', 'Imagen 4')!!}
-							{!!Form::file('imagen4')!!}
-						</div>
-						
-						<div class="form-group">
-							{!!Form::label('imagen5', 'Imagen 5')!!}
-							{!!Form::file('imagen5')!!}
-						</div>
-
-						<div class="form-group">
-							{!!Form::label('imagen6', 'Imagen 6')!!}
-							{!!Form::file('imagen6')!!}
-						</div>
-
-						<div class="form-group">
 							{!!Form::label('observaciones', 'Observaciones')!!}
 							{!!Form::textarea('observaciones', null, ['class'=> 'form-control'])!!}
 						</div>
