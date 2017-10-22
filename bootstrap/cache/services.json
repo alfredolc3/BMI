@@ -28,7 +28,6 @@
         "App\\Providers\\RouteServiceProvider",
         "Acacha\\AdminLTETemplateLaravel\\app\\Providers\\AdminLTETemplateServiceProvider",
         "Collective\\Html\\HtmlServiceProvider",
-        "Cviebrock\\EloquentSluggable\\ServiceProvider",
         "Laracasts\\Flash\\FlashServiceProvider",
         "Yajra\\Datatables\\DatatablesServiceProvider"
     ],
@@ -48,7 +47,6 @@
         "App\\Providers\\EventServiceProvider",
         "App\\Providers\\RouteServiceProvider",
         "Acacha\\AdminLTETemplateLaravel\\app\\Providers\\AdminLTETemplateServiceProvider",
-        "Cviebrock\\EloquentSluggable\\ServiceProvider",
         "Laracasts\\Flash\\FlashServiceProvider",
         "Yajra\\Datatables\\DatatablesServiceProvider"
     ],

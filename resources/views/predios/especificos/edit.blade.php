@@ -1,5 +1,13 @@
 @extends('app')
 
+@section('css')
+<style type="text/css">
+	#map {
+        height: 100%;
+      }
+</style>
+@endsection
+
 @section('htmlheader_title')
 Nuevo Predio
 @endsection
@@ -57,6 +65,7 @@ Nuevo Predio
 
 
 					<div class="d-inline-block bg-primary"><h3><B>COORDENADAS GEOGRAFICAS</B></h3></div>
+					<div id="map"></div>
 					<div class="row">
 						<div class="col-md-4">
 							<div class="form-group">
@@ -138,5 +147,6 @@ Nuevo Predio
 @endsection
 
 @section('js')
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJ0i7nvxdKfnGnPzXmk7AHZCbBUopZr-4&callback=initMap"></script>
 <script type="text/javascript" src="/js/predios/especificos.js"></script>
 @endsection

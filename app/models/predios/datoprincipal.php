@@ -14,6 +14,6 @@ class datoprincipal extends Model
 
     public function tipologiainmueble()
     {
-    	return $this->belongsTo('App\Models\Admin\Tipologiainmueble'); //un predio solo puede tener un tipo de inmueble
+    	return $this->belongsTo('App\Models\Admin\Tipologiainmueble', 'idTipoInmueble'); //un predio solo puede tener un tipo de inmueble
     }
 }

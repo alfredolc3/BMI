@@ -44,7 +44,7 @@ Nuevo Predio
 						<div class="col-md-3">
 							<div class="form-group">
 								{!!Form::label('telefono', 'Telefono')!!}
-								{!!Form::number('telefono', null,['class'=>'form-control', 'placeholder'=>'__-__-__-__-__'])!!}
+								{!!Form::number('telefono', null,['class'=>'form-control', 'min'=>'0', 'placeholder'=>'__-__-__-__-__'])!!}
 							</div>
 						</div>
 						<div class="col-md-5">

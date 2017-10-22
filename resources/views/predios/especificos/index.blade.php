@@ -1,5 +1,13 @@
 @extends('app')
 
+@section('css')
+<style type="text/css">
+	#map {
+        height: 100%;
+      }
+</style>
+@endsection
+
 @section('htmlheader_title')
 Nuevo Predio
 @endsection
@@ -61,8 +69,9 @@ Nuevo Predio
 
 					<div class="row">
 						<div class="col-md-10">
-					<div class="d-inline-block bg-primary"><h3><CENTER><B>COORDENADAS GEOGRAFICAS</B></CENTER></h3></div>
-				</div>
+							<div class="d-inline-block bg-primary"><h3><CENTER><B>COORDENADAS GEOGRAFICAS</B></CENTER></h3></div>
+						</div>
+						<div id="map"></div>
 						<div class="col-md-3">
 							<div class="form-group">
 								{!!Form::label('longitud', 'Longitud')!!}
@@ -114,20 +123,20 @@ Nuevo Predio
 						</div>
 						<div class="col-md-3">
 							<div class="form-group">
-								{!!Form::label('sterreno', 'Superficie de Terreno')!!}
-								{!!Form::number('sterreno', null,['class'=>'form-control', 'step'=>'any', 'placeholder'=>'Superficie de Terreno'])!!}
+								{!!Form::label('superficieTerreno', 'Superficie de Terreno')!!}
+								{!!Form::number('superficieTerreno', null,['class'=>'form-control', 'step'=>'any', 'placeholder'=>'Superficie de Terreno'])!!}
 							</div>
 						</div>
 						<div class="col-md-3">
 							<div class="form-group">
-								{!!Form::label('sconstruccion', 'Superficie de Construccion')!!}
-								{!!Form::number('sconstruccion', null,['class'=>'form-control', 'step'=>'any', 'placeholder'=>'Superficie de Construccion'])!!}
+								{!!Form::label('superficieConstruccion', 'Superficie de Construccion')!!}
+								{!!Form::number('superficieConstruccion', null,['class'=>'form-control', 'step'=>'any', 'placeholder'=>'Superficie de Construccion'])!!}
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
-								{!!Form::label('UsoSuelo', 'Uso de Suelo')!!}
-								{!!Form::select('UsoSuelo', $usoSuelo, null, ['class'=>'form-control', 'placeholder' => 'Seleccione uso de suelo...'])!!}
+								{!!Form::label('idUsoSuelo', 'Uso de Suelo')!!}
+								{!!Form::select('idUsoSuelo', $usoSuelo, null, ['class'=>'form-control', 'placeholder' => 'Seleccione uso de suelo...'])!!}
 							</div>
 						</div>
 						
@@ -148,5 +157,6 @@ Nuevo Predio
 @endsection
 
 @section('js')
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJ0i7nvxdKfnGnPzXmk7AHZCbBUopZr-4"></script>
 <script type="text/javascript" src="/js/predios/especificos/especificos.js"></script>
 @endsection

@@ -54,15 +54,20 @@ class EspecificosController extends Controller
     {
         $datosEspecificos = new Datoespecifico();
         if (!$datosEspecificos) {
+
             $datosEspecificos = Datoespecifico::where('idDatosPrincipales', $request->idDatosPrincipales)
                 ->first();
         }
+
+        //dd($request->all());
+
+        
         $datosEspecificos->fill($request->all());
         $datosEspecificos->save();
 
         Flash::success("Se ha registrado la información especifica de forma exitosa!");
         return redirect()->route('predios.especificos.index');
-
+                
         //$datosespecificos = new Datoespecifico($request->all());
         //$datosespecificos->idUser = \Auth::user()->id;
         //dd($datosespecificos);
@@ -73,17 +78,18 @@ class EspecificosController extends Controller
 
     public function edit($id)
     {
-        $datosespecificos = Datoespecifico::where('idDatosPrincipales', $id)
-            ->first();
-        if(!$datosespecificos){
-            $datosespecificos = new \stdClass();
-            $datosespecificos->idDatosPrincipales = $id;
-        }
+
+         $datosespecificos = Datoespecifico::where('idDatosPrincipales', $id)->first();
+
+        $idDatosEspecificos = ($datosespecificos->id); //id de la tabla datosespecificos predio
+ 
+
 
         $usossuelo = Usosuelo::orderBy('usoSuelo', 'ASC')->lists('usoSuelo','id');
         $regimen = Regimen::orderBy('id', 'ASC')->lists('regimen', 'id');
         $tipoTerreno = Tipoterreno::orderBy('id', 'ASC')->lists('tipoTerreno', 'id');
         return view('predios.especificos.index')
+            ->with('idDatosPrincipales', $id)
             ->with('usoSuelo', $usossuelo)
             ->with('regimen', $regimen)
             ->with('tipoTerreno', $tipoTerreno)
