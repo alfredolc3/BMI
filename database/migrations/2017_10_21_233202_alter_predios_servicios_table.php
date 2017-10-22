@@ -12,11 +12,11 @@ class AlterPrediosServiciosTable extends Migration
      */
     public function up()
     {
+
+        Schema::rename('predios_servicios', 'caracteristicapredio_servicio');
         Schema::table('caracteristicapredio_servicio', function (Blueprint $table) {
             $table->renameColumn('idcaracteristicaspredio', 'caracteristicapredio_id');
             $table->renameColumn('idservicios', 'servicio_id');
-            Schema::rename('predios_servicios', 'caracteristicapredio_servicio');  
-            
         });
     }
 
