@@ -173,6 +173,6 @@
 @endsection
 
 @section('js')
-    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJ0i7nvxdKfnGnPzXmk7AHZCbBUopZr-4&callback=initMap"></script>
     <script type="text/javascript" src="/js/predios/especificos/especificos.js"></script>
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJ0i7nvxdKfnGnPzXmk7AHZCbBUopZr-4&callback=initMap"></script>
 @endsection
