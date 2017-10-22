@@ -12,7 +12,7 @@ class servicio extends Model
 
     public function caracteristicaspredio()
     {
-    	return $this->belongsToMany('App\Models\Predios\Caracteristicapredio');
+    	return $this->belongsToMany('App\Models\Predios\Caracteristicapredio')->withTimestamps(); //un servicios pueden tener muchos predios
     }
 }
 

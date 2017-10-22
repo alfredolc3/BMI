@@ -126,7 +126,7 @@ Nuevo Predio
 						<div class="col-md-4">
 							<div class="form-group">
 								{!!Form::label('UsoSuelo', 'Uso de Suelo')!!}
-								{!!Form::select('UsoSuelo', $usoSuelo, null, ['class'=>'form-control', 'placeholder' => 'Seleccione uso de suelo...', 'required'])!!}
+								{!!Form::select('UsoSuelo', $usoSuelo, null, ['class'=>'form-control', 'placeholder' => 'Seleccione uso de suelo...'])!!}
 							</div>
 						</div>
 						

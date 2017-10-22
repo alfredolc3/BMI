@@ -363,6 +363,7 @@ class ComposerStaticInit527f465c2b6cd55383a812879ad3e319
         'AlterCaracteristicaspredioTable' => __DIR__ . '/../..' . '/database/migrations/2017_10_20_044407_alter_caracteristicaspredio_table.php',
         'AlterDatosespecificosTable' => __DIR__ . '/../..' . '/database/migrations/2017_10_20_050051_alter_datosespecificos_table.php',
         'AlterDatosprincipalesTable' => __DIR__ . '/../..' . '/database/migrations/2017_10_20_034839_alter_datosprincipales_table.php',
+        'AlterPrediosServiciosTable' => __DIR__ . '/../..' . '/database/migrations/2017_10_21_233202_alter_predios_servicios_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',

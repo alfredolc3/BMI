@@ -10,7 +10,7 @@ Nuevo Predio
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
 			<div class="panel panel-default">
-				<div class="panel-heading">Carasteristicas de Predio</div>
+				<div class="panel-heading">Carasteristicas del Nuevo Predio</div>
 
 				<div class="panel-body">
 					@include('partials.error')
@@ -23,15 +23,15 @@ Nuevo Predio
 						
 						<div class="col-md-4">
 							<div class="form-group">
-								{!!Form::label('UbicacionManzana', 'Ubicacion dentro de la Manzana')!!}
-								{!!Form::select('UbicacionManzana', $ubicacionManzana, null, ['class'=>'form-control', 'placeholder' => 'Seleccione ubicacion de manzana...', 'required'])!!}
+								{!!Form::label('idUbicacionManzana', 'Ubicacion dentro de la Manzana')!!}
+								{!!Form::select('idUbicacionManzana', $ubicacionManzana, null, ['class'=>'form-control', 'placeholder' => 'Seleccione ubicacion de manzana...', 'required'])!!}
 							</div>
 						</div>
 
 						<div class="col-md-4">
 							<div class="form-group">
-								{!!Form::label('TipoVialidad', 'Tipo de Vialidad Colidante')!!}
-								{!!Form::select('TipoVialidad', $tipoVialidad, null, ['class'=>'form-control', 'placeholder' => 'Seleccione tipo de vialidad...', 'required'])!!}
+								{!!Form::label('idTipoVialidad', 'Tipo de Vialidad Colidante')!!}
+								{!!Form::select('idTipoVialidad', $tipoVialidad, null, ['class'=>'form-control', 'placeholder' => 'Seleccione tipo de vialidad...', 'required'])!!}
 							</div>
 						</div>
 
@@ -44,8 +44,8 @@ Nuevo Predio
 
 						<div class="col-md-4">
 							<div class="form-group">
-								{!!Form::label('ClasificacionZona', 'Clasficacion de la Zona')!!}
-								{!!Form::select('ClasificacionZona', $zona, null, ['class'=>'form-control', 'placeholder' => 'Seleccione Clasificacion de la zona...', 'required'])!!}
+								{!!Form::label('idClasificacionZona', 'Clasficacion de la Zona')!!}
+								{!!Form::select('idClasificacionZona', $zona, null, ['class'=>'form-control', 'placeholder' => 'Seleccione Clasificacion de la zona...', 'required'])!!}
 							</div>
 						</div>
 					</div>
@@ -55,21 +55,21 @@ Nuevo Predio
 					<div class="row">
 						<div class="col-md-4">
 							<div class="form-group">
-								{!!Form::label('Topografia', 'Topografia')!!}
-								{!!Form::select('Topografia', $topografia, null, ['class'=>'form-control', 'placeholder' => 'Seleccione topografia...', 'required'])!!}
+								{!!Form::label('idTopografia', 'Topografia')!!}
+								{!!Form::select('idTopografia', $topografia, null, ['class'=>'form-control', 'placeholder' => 'Seleccione topografia...', 'required'])!!}
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
-								{!!Form::label('Forma', 'Forma')!!}
-								{!!Form::select('Forma', $forma, null, ['class'=>'form-control', 'placeholder' => 'Seleccione Forma del Predio...', 'required'])!!}
+								{!!Form::label('idForma', 'Forma')!!}
+								{!!Form::select('idForma', $forma, null, ['class'=>'form-control', 'placeholder' => 'Seleccione Forma del Predio...', 'required'])!!}
 							</div>
 						</div>
 						
 						<div class="col-md-4">
 							<div class="form-group">
-								{!!Form::label('Frente', 'Frente')!!}
-								{!!Form::select('Frente', $frente, null, ['class'=>'form-control', 'placeholder' => 'Seleccione el Frente del Predio...', 'required'])!!}
+								{!!Form::label('idFrente', 'Frente')!!}
+								{!!Form::select('idFrente', $frente, null, ['class'=>'form-control', 'placeholder' => 'Seleccione el Frente del Predio...', 'required'])!!}
 							</div>
 						</div>	
 						<div class="col-md-4">

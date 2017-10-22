@@ -10,6 +10,9 @@ class forma extends Model
 
     protected $fillable = ['forma'];
 
-
+    public function caracteristicaspredio()
+    {
+    	return $this->hasMany('App\Models\Predios\Caracteristicapredio'); //una forma puede tener muchos predios
+    }
 
 }
