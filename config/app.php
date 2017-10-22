@@ -154,7 +154,6 @@ return [
         //Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
         //Cviebrock\EloquentSluggable\ServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
-        //GeneaLabs\Phpgmaps\PhpgmapsServiceProvider::class,
         Yajra\Datatables\DatatablesServiceProvider::class
         
     ],
