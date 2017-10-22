@@ -70,20 +70,19 @@ Route::group(['namespace' => 'Predios', 'prefix' => 'datos'], function () {
         'uses' => 'EspecificosController@index'
     ]);
 
+    get('/buscar-cp', 'EspecificosController@buscarcp'); 
 
     post('especificos', [
         'as' => 'datos.especificos.store',
         'uses' => 'EspecificosController@store'
     ]);
+
     put('especificos', [
         'as' => 'datos.especificos.update', 
         'uses' => 'EspecificosController@update'
     ]);
     
-
-    get('/buscar-cp', 'EspecificosController@buscarcp'); 
-
-
+ 
     get('caracteristicas/{id}', [
         'as' => 'datos.caracteristicas.index', 
         'uses' => 'CaracteristicasController@index'

@@ -28,8 +28,8 @@
         "App\\Providers\\RouteServiceProvider",
         "Acacha\\AdminLTETemplateLaravel\\app\\Providers\\AdminLTETemplateServiceProvider",
         "Collective\\Html\\HtmlServiceProvider",
+        "Cviebrock\\EloquentSluggable\\ServiceProvider",
         "Laracasts\\Flash\\FlashServiceProvider",
-        "GeneaLabs\\Phpgmaps\\PhpgmapsServiceProvider",
         "Yajra\\Datatables\\DatatablesServiceProvider"
     ],
     "eager": [
@@ -48,8 +48,8 @@
         "App\\Providers\\EventServiceProvider",
         "App\\Providers\\RouteServiceProvider",
         "Acacha\\AdminLTETemplateLaravel\\app\\Providers\\AdminLTETemplateServiceProvider",
+        "Cviebrock\\EloquentSluggable\\ServiceProvider",
         "Laracasts\\Flash\\FlashServiceProvider",
-        "GeneaLabs\\Phpgmaps\\PhpgmapsServiceProvider",
         "Yajra\\Datatables\\DatatablesServiceProvider"
     ],
     "deferred": {

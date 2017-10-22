@@ -151,8 +151,10 @@ return [
 
         Acacha\AdminLTETemplateLaravel\app\Providers\AdminLTETemplateServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        //Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
+        Cviebrock\EloquentSluggable\ServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
-        GeneaLabs\Phpgmaps\PhpgmapsServiceProvider::class,
+        //GeneaLabs\Phpgmaps\PhpgmapsServiceProvider::class,
         Yajra\Datatables\DatatablesServiceProvider::class
         
     ],
@@ -211,7 +213,7 @@ return [
         'Html'      => Collective\Html\HtmlFacade::class,
         'AdminLTE'  => Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::class,
         'Flash'     => Laracasts\Flash\Flash::class,
-        'Gmaps'     => GeneaLabs\Phpgmaps\Facades\PhpgmapsFacade::class,
+       // 'Gmaps'     => GeneaLabs\Phpgmaps\Facades\PhpgmapsFacade::class,
 
     ],
 

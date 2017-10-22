@@ -43,6 +43,7 @@ class EspecificosController extends Controller
         $regimen = Regimen::orderBy('id', 'ASC')->lists('regimen', 'id');
         $tipoTerreno = Tipoterreno::orderBy('id', 'ASC')->lists('tipoTerreno', 'id');
         return view('predios.especificos.index')
+            ->with('idDatosPrincipales', $id)
             ->with('usoSuelo', $usossuelo)
             ->with('regimen', $regimen)
             ->with('tipoTerreno', $tipoTerreno);

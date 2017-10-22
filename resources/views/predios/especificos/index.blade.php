@@ -15,7 +15,8 @@ Nuevo Predio
 				<div class="panel-body">
 					@include('partials.error')
 					{!!Form::open(['route'=>'datos.especificos.store', 'method'=>'POST'])!!}
-					{!! Form::hidden('idDatosPrincipales') !!}
+					
+					{!! Form::hidden('idDatosPrincipales', $idDatosPrincipales) !!}
 
 					<div class="row">
 						<div class="col-md-10">
@@ -147,5 +148,5 @@ Nuevo Predio
 @endsection
 
 @section('js')
-<script type="text/javascript" src="/js/predios/especificos.js"></script>
+<script type="text/javascript" src="/js/predios/especificos/especificos.js"></script>
 @endsection

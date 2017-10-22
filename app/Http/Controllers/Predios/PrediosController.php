@@ -18,9 +18,17 @@ class PrediosController extends Controller
     public function index()
     {
         
-        $datosprincipales = Datoprincipal::orderBy('id', 'ASC')->paginate(5);
+        $datosprincipales = Datoprincipal::orderBy('id', 'DESC')->paginate(5);
+
+        $datosprincipales->each(function($datosprincipales){
+            
+             $datosprincipales->tipologiainmueble;
+
+        });
+
+        //dd($datosprincipales);
         return view('predios.index')
-        ->with('datosprincipales', $datosprincipales);
+          ->with('datosprincipales', $datosprincipales);
     }
 
 

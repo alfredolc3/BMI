@@ -10,7 +10,7 @@ $(document).on("ready", function(){
 
 function buscarcp(){
 	var divAsentamientos=$("#asentamientos");
-	var urlbuscar = "/predios/buscar-cp";
+	var urlbuscar = '/datos/buscar-cp';
 	var datosbuscar = {
 		cp: cp.val()
 	};

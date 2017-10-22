@@ -13,7 +13,8 @@
         "laracasts/flash": "^3.0",
         "caouecs/laravel-lang": "~3.0",
         "genealabs/phpgmaps": "^0.4.1",
-        "yajra/laravel-datatables-oracle": "~6.0"
+        "yajra/laravel-datatables-oracle": "~6.0",
+        "cviebrock/eloquent-sluggable": "4.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
