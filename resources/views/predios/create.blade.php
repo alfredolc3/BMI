@@ -20,31 +20,31 @@ Nuevo Predio
 						<div class="col-md-4">
 							<div class="form-group">
 								{!!Form::label('idTipoInmueble', 'Tipo de Inmueble')!!}
-								{!!Form::select('idTipoInmueble', $tinmuebles, null, ['class'=>'form-control', 'placeholder' => 'Seleccione una opcion...', 'required'])!!}
+								{!!Form::select('idTipoInmueble', $tinmuebles, null, ['class'=>'form-control', 'placeholder' => 'Seleccione una opcion...'])!!}
 							</div>
 						</div>
 						<div class="col-md-3">
 							<div class="form-group">
 								{!!Form::label('fechaRegistro', 'Fecha')!!}
-								{!!Form::date('fechaRegistro', null, ['class'=>'form-control', 'required'])!!}
+								{!!Form::date('fechaRegistro', null, ['class'=>'form-control'])!!}
 							</div>
 						</div>
 						<div class="col-md-3">
 							<div class="form-group">
 								{!!Form::label('tipoOperacion', 'Tipo de Operacion')!!}
-								{!!Form::select('tipoOperacion', ['Renta'=>'Renta', 'Venta'=>'Venta'], null, ['class'=>'form-control', 'placeholder' => 'Seleccione una opcion...', 'required'])!!}
+								{!!Form::select('tipoOperacion', ['Renta'=>'Renta', 'Venta'=>'Venta'], null, ['class'=>'form-control', 'placeholder' => 'Seleccione una opcion...'])!!}
 							</div>
 						</div>
 						<div class="col-md-5">
 							<div class="form-group">
 								{!!Form::label('informante', 'Informante')!!}
-								{!!Form::text('informante', null,['class'=>'form-control', 'placeholder'=>'Empresa o Persona', 'required'])!!}
+								{!!Form::text('informante', null,['class'=>'form-control', 'placeholder'=>'Empresa o Persona'])!!}
 							</div>
 						</div>
 						<div class="col-md-3">
 							<div class="form-group">
 								{!!Form::label('telefono', 'Telefono')!!}
-								{!!Form::number('telefono', null,['class'=>'form-control', 'placeholder'=>'__-__-__-__-__', 'required'])!!}
+								{!!Form::number('telefono', null,['class'=>'form-control', 'placeholder'=>'__-__-__-__-__'])!!}
 							</div>
 						</div>
 						<div class="col-md-5">
@@ -56,13 +56,13 @@ Nuevo Predio
 						<div class="col-md-3">
 							<div class="form-group">
 								{!!Form::label('tipoValor', 'Tipo de Valor')!!}
-								{!!Form::select('tipoValor', ['Valor de avaluo'=>'Valor de avaluo', 'Valor de investigacion'=>'Valor de investigacion'], null, ['class'=>'form-control', 'placeholder' => 'Seleccione una opcion...', 'required'])!!}
+								{!!Form::select('tipoValor', ['Valor de avaluo'=>'Valor de avaluo', 'Valor de investigacion'=>'Valor de investigacion'], null, ['class'=>'form-control', 'placeholder' => 'Seleccione una opcion...'])!!}
 							</div>
 						</div>
 						<div class="col-md-3">
 							<div class="form-group">
 								{!!Form::label('valorOperacion', 'Valor')!!}
-								{!!Form::number('valorOperacion', null,['class'=>'form-control', 'placeholder'=>'Valor de la Operacion', 'required'])!!}
+								{!!Form::number('valorOperacion', null,['class'=>'form-control', 'placeholder'=>'Valor de la Operacion'])!!}
 							</div>
 						</div>
 
