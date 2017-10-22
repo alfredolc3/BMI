@@ -9,6 +9,8 @@ use App\Models\Predios\Datoprincipal;
 use App\Models\Admin\Tipologiainmueble;
 use Laracasts\Flash\Flash;
 use App\Http\Requests\PrediosRequest;
+use App\Http\Requests\GeneralesPredioRequest;
+
 
 
 
@@ -63,7 +65,7 @@ class PrediosController extends Controller
     }
 
 
-    public function update(Request $request, $id)
+    public function update(GeneralesPredioRequest $request, $id)
     {
         $datosprincipales = Datoprincipal::find($id);
         $datosprincipales->idTipoInmueble = $request->idTipoInmueble;

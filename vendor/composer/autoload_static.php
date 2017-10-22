@@ -365,9 +365,7 @@ class ComposerStaticInitf72c20140c9cad48bbfb053cc6127d19
         'AlterCaracteristicaspredioTable' => __DIR__ . '/../..' . '/database/migrations/2017_10_20_044407_alter_caracteristicaspredio_table.php',
         'AlterDatosespecificosTable' => __DIR__ . '/../..' . '/database/migrations/2017_10_20_050051_alter_datosespecificos_table.php',
         'AlterDatosprincipalesTable' => __DIR__ . '/../..' . '/database/migrations/2017_10_20_034839_alter_datosprincipales_table.php',
-<<<<<<< HEAD
         'AlterPrediosServiciosTable' => __DIR__ . '/../..' . '/database/migrations/2017_10_21_233202_alter_predios_servicios_table.php',
-=======
         'App\\Console\\Commands\\Inspire' => __DIR__ . '/../..' . '/app/Console/Commands/Inspire.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Events\\Event' => __DIR__ . '/../..' . '/app/Events/Event.php',
@@ -399,9 +397,11 @@ class ComposerStaticInitf72c20140c9cad48bbfb053cc6127d19
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Http\\Requests\\CaracteristicasPredioRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CaracteristicasPredioRequest.php',
         'App\\Http\\Requests\\EspecificoRequest' => __DIR__ . '/../..' . '/app/Http/Requests/EspecificoRequest.php',
         'App\\Http\\Requests\\FormaRequest' => __DIR__ . '/../..' . '/app/Http/Requests/FormaRequest.php',
         'App\\Http\\Requests\\FrenteRequest' => __DIR__ . '/../..' . '/app/Http/Requests/FrenteRequest.php',
+        'App\\Http\\Requests\\PrediosRequest' => __DIR__ . '/../..' . '/app/Http/Requests/PrediosRequest.php',
         'App\\Http\\Requests\\RegimenRequest' => __DIR__ . '/../..' . '/app/Http/Requests/RegimenRequest.php',
         'App\\Http\\Requests\\Request' => __DIR__ . '/../..' . '/app/Http/Requests/Request.php',
         'App\\Http\\Requests\\ServicioRequest' => __DIR__ . '/../..' . '/app/Http/Requests/ServicioRequest.php',
@@ -432,7 +432,6 @@ class ComposerStaticInitf72c20140c9cad48bbfb053cc6127d19
         'App\\Models\\Predios\\datoespecifico' => __DIR__ . '/../..' . '/app/models/predios/datoespecifico.php',
         'App\\Models\\Predios\\datoprincipal' => __DIR__ . '/../..' . '/app/models/predios/datoprincipal.php',
         'App\\Models\\Predios\\imagen' => __DIR__ . '/../..' . '/app/models/predios/imagen.php',
-        'App\\Models\\Predios\\predios_servicios' => __DIR__ . '/../..' . '/app/models/predios/predios_servicios.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
@@ -460,7 +459,6 @@ class ComposerStaticInitf72c20140c9cad48bbfb053cc6127d19
         'Collective\\Html\\HtmlBuilder' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlBuilder.php',
         'Collective\\Html\\HtmlFacade' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlFacade.php',
         'Collective\\Html\\HtmlServiceProvider' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlServiceProvider.php',
->>>>>>> 371fb220d290d847618e2bc137126634bff615e5
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'Cron\\AbstractField' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/AbstractField.php',

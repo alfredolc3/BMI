@@ -28,12 +28,15 @@ class EspecificoRequest extends Request
             'numeroExt.' => 'string|min:1|max:5',
             'numeroInt.' => 'string|min:1|max:5',
             'cp'        => 'min:5|max:5|required',
-            'longitud'  => 'required|numeric',
-            'latitud'   => 'required|numeric',
-            'altitud'   => 'required|numeric',
-            'tipoPredio' => 'required',
-            'idRegimenPropiedad' => 'required',
-            'idTipoTerreno' => 'required',
+            'longitud'  => 'numeric',
+            'latitud'   => 'numeric',
+            'altitud'   => 'numeric',
+            'tipoPredio' => '',
+            'idRegimenPropiedad' => '',
+            'idTipoTerreno' => '',
+            'superficieTerreno' =>'numeric',
+            'suerficieConstruccion' => 'numeric',
+            'UsoSuelo' => '',
             
         ];
     }

@@ -30,9 +30,7 @@ return array(
     'AlterCaracteristicaspredioTable' => $baseDir . '/database/migrations/2017_10_20_044407_alter_caracteristicaspredio_table.php',
     'AlterDatosespecificosTable' => $baseDir . '/database/migrations/2017_10_20_050051_alter_datosespecificos_table.php',
     'AlterDatosprincipalesTable' => $baseDir . '/database/migrations/2017_10_20_034839_alter_datosprincipales_table.php',
-<<<<<<< HEAD
     'AlterPrediosServiciosTable' => $baseDir . '/database/migrations/2017_10_21_233202_alter_predios_servicios_table.php',
-=======
     'App\\Console\\Commands\\Inspire' => $baseDir . '/app/Console/Commands/Inspire.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Events\\Event' => $baseDir . '/app/Events/Event.php',
@@ -64,9 +62,11 @@ return array(
     'App\\Http\\Middleware\\EncryptCookies' => $baseDir . '/app/Http/Middleware/EncryptCookies.php',
     'App\\Http\\Middleware\\RedirectIfAuthenticated' => $baseDir . '/app/Http/Middleware/RedirectIfAuthenticated.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
+    'App\\Http\\Requests\\CaracteristicasPredioRequest' => $baseDir . '/app/Http/Requests/CaracteristicasPredioRequest.php',
     'App\\Http\\Requests\\EspecificoRequest' => $baseDir . '/app/Http/Requests/EspecificoRequest.php',
     'App\\Http\\Requests\\FormaRequest' => $baseDir . '/app/Http/Requests/FormaRequest.php',
     'App\\Http\\Requests\\FrenteRequest' => $baseDir . '/app/Http/Requests/FrenteRequest.php',
+    'App\\Http\\Requests\\PrediosRequest' => $baseDir . '/app/Http/Requests/PrediosRequest.php',
     'App\\Http\\Requests\\RegimenRequest' => $baseDir . '/app/Http/Requests/RegimenRequest.php',
     'App\\Http\\Requests\\Request' => $baseDir . '/app/Http/Requests/Request.php',
     'App\\Http\\Requests\\ServicioRequest' => $baseDir . '/app/Http/Requests/ServicioRequest.php',
@@ -97,7 +97,6 @@ return array(
     'App\\Models\\Predios\\datoespecifico' => $baseDir . '/app/models/predios/datoespecifico.php',
     'App\\Models\\Predios\\datoprincipal' => $baseDir . '/app/models/predios/datoprincipal.php',
     'App\\Models\\Predios\\imagen' => $baseDir . '/app/models/predios/imagen.php',
-    'App\\Models\\Predios\\predios_servicios' => $baseDir . '/app/models/predios/predios_servicios.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
@@ -125,7 +124,6 @@ return array(
     'Collective\\Html\\HtmlBuilder' => $vendorDir . '/laravelcollective/html/src/HtmlBuilder.php',
     'Collective\\Html\\HtmlFacade' => $vendorDir . '/laravelcollective/html/src/HtmlFacade.php',
     'Collective\\Html\\HtmlServiceProvider' => $vendorDir . '/laravelcollective/html/src/HtmlServiceProvider.php',
->>>>>>> 371fb220d290d847618e2bc137126634bff615e5
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'Cron\\AbstractField' => $vendorDir . '/mtdowling/cron-expression/src/Cron/AbstractField.php',
