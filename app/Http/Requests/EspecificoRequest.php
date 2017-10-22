@@ -24,11 +24,13 @@ class EspecificoRequest extends Request
     public function rules()
     {
         return [
-            'calle'     => 'required',
+            'calle'     => 'required|string|min:5',
+            'numeroExt.' => 'string|min:1|max:5',
+            'numeroInt.' => 'string|min:1|max:5',
             'cp'        => 'min:5|max:5|required',
-            'longitud'  => 'required',
-            'latitud'   => 'required',
-            'altitud'   => 'required',
+            'longitud'  => 'required|numeric',
+            'latitud'   => 'required|numeric',
+            'altitud'   => 'required|numeric',
             'tipoPredio' => 'required',
             'idRegimenPropiedad' => 'required',
             'idTipoTerreno' => 'required',

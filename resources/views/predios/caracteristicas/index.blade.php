@@ -25,6 +25,7 @@ Nuevo Predio
 							<div class="form-group">
 								{!!Form::label('idUbicacionManzana', 'Ubicacion dentro de la Manzana')!!}
 								{!!Form::select('idUbicacionManzana', $ubicacionManzana, null, ['class'=>'form-control', 'placeholder' => 'Seleccione ubicacion de manzana...', 'required'])!!}
+
 							</div>
 						</div>
 

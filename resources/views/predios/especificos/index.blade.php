@@ -30,15 +30,15 @@ Nuevo Predio
 						
 						<div class="col-md-1">
 							<div class="form-group">
-								{!!Form::label('numero int.', 'N. Int')!!}
-								{!!Form::text('numero int.', null, ['class'=>'form-control'])!!}
+								{!!Form::label('numeroInt.', 'N. Int')!!}
+								{!!Form::text('numeroInt.', null, ['class'=>'form-control'])!!}
 							</div>
 						</div>
 
 						<div class="col-md-1">
 							<div class="form-group">
-								{!!Form::label('numero ext.', 'N. Ext')!!}
-								{!!Form::text('numero ext.', null, ['class'=>'form-control'])!!}
+								{!!Form::label('numeroExt.', 'N. Ext')!!}
+								{!!Form::text('numeroExt.', null, ['class'=>'form-control'])!!}
 							</div>
 						</div>
 
@@ -88,20 +88,20 @@ Nuevo Predio
 						</div>
 						<div class="col-md-3">
 							<div class="form-group">
-								{!!Form::label('tpredio', 'Tipo de Predio')!!}
-								{!!Form::select('tpredio', ['Urbano'=>'Urbano', 'Rustico'=>'Rustico'], null, ['class'=>'form-control', 'placeholder' => 'Seleccione tipo de inmueble'])!!}
+								{!!Form::label('tipoPredio', 'Tipo de Predio')!!}
+								{!!Form::select('tipoPredio', ['Urbano'=>'Urbano', 'Rustico'=>'Rustico'], null, ['class'=>'form-control', 'placeholder' => 'Seleccione tipo de inmueble'])!!}
 							</div>
 						</div>
 						<div class="col-md-3">
 							<div class="form-group">
-								{!!Form::label('rpropiedad', 'Regimen de Propiedad')!!}
-								{!!Form::select('rpropiedad', $regimen, null, ['class'=>'form-control', 'placeholder' => 'Seleccione Regimen ....'])!!}
+								{!!Form::label('idRegimenPropiedad', 'Regimen de Propiedad')!!}
+								{!!Form::select('idRegimenPropiedad', $regimen, null, ['class'=>'form-control', 'placeholder' => 'Seleccione Regimen ....'])!!}
 							</div>
 						</div>
 						<div class="col-md-3">
 							<div class="form-group">
-								{!!Form::label('tterreno', 'Tipo de Terreno')!!}
-								{!!Form::select('tterreno', $tipoTerreno, null, ['class'=>'form-control', 'placeholder' => 'Seleccione Tipo de Terreno...'])!!}
+								{!!Form::label('idTipoTerreno', 'Tipo de Terreno')!!}
+								{!!Form::select('idTipoTerreno', $tipoTerreno, null, ['class'=>'form-control', 'placeholder' => 'Seleccione Tipo de Terreno...'])!!}
 							</div>
 						</div>
 					</div>
