@@ -24,18 +24,17 @@ class CaracteristicasPredioRequest extends Request
     public function rules()
     {
         return [
-            'ubicacionManzana'=>'required',
-            'tipoVialidad' => 'required',
-            'proximidadUrbana' => 'required',
-            'tipoVialidad' => 'required',
-            'proximidadUrbana' => 'required',
-            'zona' => 'required',
-            'topografia' => 'required',
-            'forma' => 'required',
-            'frente' => 'required',
-            'vistasPanoramicas' => 'required',
-            'servicios' => 'required',
-
+            'ubicacionManzana'=>'',
+            'tipoVialidad' => '',
+            'proximidadUrbana' => '',
+            'tipoVialidad' => '',
+            'proximidadUrbana' => '',
+            'zona' => '',
+            'topografia' => '',
+            'forma' => '',
+            'frente' => '',
+            'vistasPanoramicas' => '',
+            'servicios' => '',
                ];
     }
 }
