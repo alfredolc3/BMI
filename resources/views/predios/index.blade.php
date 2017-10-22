@@ -27,7 +27,7 @@ Predios
 							@foreach($datosprincipales as $datos)
 								<tr>
 									<td>{{$datos->id}}</td>
-									<td>{{$datos->idTipoInmueble}}</td>
+									<td>{{$datos->tipologiainmueble->tipoInmueble}}</td>
 									<td>{{$datos->fechaRegistro}}</td>
 									<td>{{$datos->informante}}</td>
 									<td>{{$datos->tipoOperacion}}</td>
