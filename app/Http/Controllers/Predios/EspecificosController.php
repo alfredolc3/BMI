@@ -38,6 +38,7 @@ class EspecificosController extends Controller
            //dd('si hay datos');
            return $this->edit($id);
         }
+            //dd('no hay datos');
 
         $usossuelo = Usosuelo::orderBy('usoSuelo', 'ASC')->lists('usoSuelo','id');
         $regimen = Regimen::orderBy('id', 'ASC')->lists('regimen', 'id');
@@ -60,41 +61,51 @@ class EspecificosController extends Controller
         }
 
         //dd($request->all());
-
         
         $datosEspecificos->fill($request->all());
         $datosEspecificos->save();
+        
 
-        Flash::success("Se ha registrado la información especifica de forma exitosa!");
-        return redirect()->route('predios.especificos.index');
-                
-        //$datosespecificos = new Datoespecifico($request->all());
-        //$datosespecificos->idUser = \Auth::user()->id;
-        //dd($datosespecificos);
-        //dd($request->all());
-        //$datosespecificos->save();
-
+        \Flash::success("Se ha registrado la información especifica de forma exitosa!");
+        return redirect()->route('datos.predios.index');
+              
     }
 
     public function edit($id)
     {
 
-         $datosespecificos = Datoespecifico::where('idDatosPrincipales', $id)->first();
+        $datosespecificos = Datoespecifico::where('idDatosPrincipales', $id)->first();
 
-        $idDatosEspecificos = ($datosespecificos->id); //id de la tabla datosespecificos predio
+        //$idDatosEspecificos = ($datosespecificos->id); //id de la tabla datosespecificos predio
  
 
-
+       // dd($datosespecificos);
+        
         $usossuelo = Usosuelo::orderBy('usoSuelo', 'ASC')->lists('usoSuelo','id');
         $regimen = Regimen::orderBy('id', 'ASC')->lists('regimen', 'id');
         $tipoTerreno = Tipoterreno::orderBy('id', 'ASC')->lists('tipoTerreno', 'id');
-        return view('predios.especificos.index')
+        
+        return view('predios.especificos.edit')
+            ->with('especificos', $datosespecificos)
             ->with('idDatosPrincipales', $id)
             ->with('usoSuelo', $usossuelo)
             ->with('regimen', $regimen)
-            ->with('tipoTerreno', $tipoTerreno)
-            ->with('especificos', $datosespecificos);
+            ->with('tipoTerreno', $tipoTerreno);
 
+    }
+
+
+    public function update(EspecificoRequest $request)
+    {
+        $datosEspecificos = Datoespecifico::where('idDatosPrincipales', $request->idDatosPrincipales)->first();
+        
+        $datosEspecificos->fill($request->all());
+        $datosEspecificos->save();
+        
+
+        \Flash::success("Se ha modificado la información especifica de forma exitosa!");
+        return redirect()->route('datos.predios.index');
+              
     }
 
     public function destroy($id)

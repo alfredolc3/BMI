@@ -43,15 +43,15 @@
 
                             <div class="col-md-1">
                                 <div class="form-group">
-                                    {!!Form::label('numeroInt.', 'N. Int')!!}
-                                    {!!Form::text('numeroInt.', null, ['class'=>'form-control'])!!}
+                                    {!!Form::label('numeroInt', 'N. Int')!!}
+                                    {!!Form::text('numeroInt', null, ['class'=>'form-control'])!!}
                                 </div>
                             </div>
 
                             <div class="col-md-1">
                                 <div class="form-group">
-                                    {!!Form::label('numeroExt.', 'N. Ext')!!}
-                                    {!!Form::text('numeroExt.', null, ['class'=>'form-control'])!!}
+                                    {!!Form::label('numeroExt', 'N. Ext')!!}
+                                    {!!Form::text('numeroExt', null, ['class'=>'form-control'])!!}
                                 </div>
                             </div>
 
@@ -67,6 +67,9 @@
                                 </div>
                             </div>
                             <div id="asentamientos"></div>
+                            <div id="estado"></div>
+                            <div id="municipio"></div>
+                            <div id="cd"></div>
 
                         </div>
 
@@ -173,6 +176,6 @@
 @endsection
 
 @section('js')
-    <script type="text/javascript" src="/js/predios/especificos/especificos.js"></script>
+    <script type="text/javascript" src="/js/predios/especificos/index.js"></script>
     <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJ0i7nvxdKfnGnPzXmk7AHZCbBUopZr-4&callback=initMap"></script>
 @endsection

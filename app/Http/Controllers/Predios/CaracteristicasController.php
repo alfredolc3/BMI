@@ -14,7 +14,7 @@ use App\Models\Admin\Zona;
 use App\Models\Admin\Topografia;
 use App\Models\Admin\Forma;
 use App\Models\Admin\Frente;
-use App\Http\Requests\CaracteristicasPredioRequest;
+
 
 
 
@@ -54,11 +54,11 @@ class CaracteristicasController extends Controller
                 ->with('forma', $forma)
                 ->with('frente', $frente)
                 ->with('servicios', $servicios);
-       
+        
     }
 
 
-    public function store(CaracteristicasPredioRequest $request)
+    public function store(Request $request)
     {
        
        // dd($request->all());
@@ -73,8 +73,8 @@ class CaracteristicasController extends Controller
         
         //Nota aun no puedo guardar los datos
 
-        Flash::success("Se ha registrado las caracteristicas de forma exitosa!");
-        return redirect()->route('predios.index');
+        \Flash::success("Se ha registrado las caracteristicas de forma exitosa!");
+        return redirect()->route('datos.predios.index');
        
     }
 
@@ -110,17 +110,20 @@ class CaracteristicasController extends Controller
     }
 
 
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        $caracteristicas = Caracteristicapredio::where('idDatosPrincipales', $id)->first();
+        
+        
+        $caracteristicas = Caracteristicapredio::where('idDatosPrincipales', $request->idDatosPrincipales)->first();
         $caracteristicas->fill($request->all());
         $caracteristicas->save();
 
         $caracteristicas->services()->sync($request->servicios);
          
 
-        Flash::success("Se ha modificado las caracteristicas de forma exitosa!");
-        return redirect()->route('predios.index');
+        \Flash::success("Se ha modificado las caracteristicas de forma exitosa!");
+        return redirect()->route('datos.predios.index');
+        
     }
 
     

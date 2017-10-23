@@ -49,6 +49,7 @@ function initMap() {
 
 function buscarcp() {
     var divAsentamientos = $("#asentamientos");
+    var divEstado = $("#estado")
     var urlbuscar = '/datos/buscar-cp';
     var datosbuscar = {
         cp: cp.val()
@@ -62,14 +63,26 @@ function buscarcp() {
         var divFormGroup = $('<div class="form-group">');
         var labelColonia = $('<label>Colonia</label>');
         var selectColonia = $('<select class="form-control" name="idSepomex"/>');
+        var labelEstado = $('<label>Estado</label>');
+        var textEstado = $('<text class="form-control" name="estado"/>')
+
 
         $.each(jsonbuscar.data, function (k, v) {
             selectColonia.append('<option value="' + v.id + '">' + v.asentamiento + '</option>');
+            
         });
+
+
 
         divFormGroup.append(labelColonia).append(selectColonia);
         divColMd.append(divFormGroup);
         divAsentamientos.append(divColMd);
+
+        divFormGroup.append(labelEstado).append(textEstado);
+        divColMd.append(divFormGroup);
+        divEstado.append(divColMd);
+
+
 
     }
 }

@@ -14,7 +14,7 @@ Nuevo Predio
 
 				<div class="panel-body">
 					@include('partials.error')
-					{!!Form::open(['route'=>'datos.caracteristicas.update', 'method'=>'POSTT'])!!}
+					{!!Form::open(['route'=>'datos.caracteristicas.update', 'method'=>'PUT'])!!}
 
 					{!! Form::hidden('idDatosPrincipales', $idDatosPrincipales) !!}
 

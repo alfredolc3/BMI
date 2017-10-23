@@ -22,8 +22,10 @@ Nuevo Predio
 
 				<div class="panel-body">
 					@include('partials.error')
-					{!!Form::model($especificos, ['route'=>'datos.especificos.store', 'method'=>'POST'])!!}
-					{!! Form::hidden('idDatosPrincipales') !!}
+					{!!Form::open(['route'=>'datos.especificos.update', 'method'=>'PUT'])!!}
+
+					{!! Form::hidden('idDatosPrincipales', $idDatosPrincipales) !!}
+					{!! Form::hidden('idSepomex', $especificos->idSepomex,  ['id'=>'idSepomex']) !!}
 
 					<div class="d-inline-block bg-primary"><h3><B>UBICACION DEL PREDIO</B></h3></div>
 					<div class="row">
@@ -36,15 +38,15 @@ Nuevo Predio
 						
 						<div class="col-md-1">
 							<div class="form-group">
-								{!!Form::label('numeroInt.', 'N. Int')!!}
-								{!!Form::text('numeroInt.', $especificos->numeroInt int, ['class'=>'form-control'])!!}
+								{!!Form::label('numeroInt', 'N. Int')!!}
+								{!!Form::text('numeroInt', $especificos->numeroInt, ['class'=>'form-control'])!!}
 							</div>
 						</div>
 
 						<div class="col-md-1">
 							<div class="form-group">
-								{!!Form::label('numeroExt.', 'N. Ext')!!}
-								{!!Form::text('numeroExt.', $especificos->numeroExt, ['class'=>'form-control'])!!}
+								{!!Form::label('numeroExt', 'N. Ext')!!}
+								{!!Form::text('numeroExt', $especificos->numeroExt, ['class'=>'form-control'])!!}
 							</div>
 						</div>
 
@@ -59,13 +61,14 @@ Nuevo Predio
 								</div><!-- /input-group -->
 							</div>
 						</div>
+
 						<div id="asentamientos"></div>
 						
 					</div>
 
 
 					<div class="d-inline-block bg-primary"><h3><B>COORDENADAS GEOGRAFICAS</B></h3></div>
-					<div id="map"></div>
+					<div id="map" style="margin: 0 auto; width:90%; height:400px;"></div>
 					<div class="row">
 						<div class="col-md-4">
 							<div class="form-group">
@@ -124,8 +127,8 @@ Nuevo Predio
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
-								{!!Form::label('UsoSuelo', 'Uso de Suelo')!!}
-								{!!Form::select('UsoSuelo', $usoSuelo, $especificos->UsoSuelo, ['class'=>'form-control', 'placeholder' => 'Seleccione uso de suelo...', 'required'])!!}
+								{!!Form::label('idUsoSuelo', 'Uso de Suelo')!!}
+								{!!Form::select('idUsoSuelo', $usoSuelo, $especificos->idUsoSuelo, ['class'=>'form-control', 'placeholder' => 'Seleccione uso de suelo...', 'required'])!!}
 							</div>
 						</div>
 						
@@ -147,6 +150,6 @@ Nuevo Predio
 @endsection
 
 @section('js')
+<script type="text/javascript" src="/js/predios/especificos/edit.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJ0i7nvxdKfnGnPzXmk7AHZCbBUopZr-4&callback=initMap"></script>
-<script type="text/javascript" src="/js/predios/especificos.js"></script>
 @endsection
