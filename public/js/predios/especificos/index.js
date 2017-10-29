@@ -78,10 +78,11 @@ function buscarcp() {
         divColMd.append(divFormGroup);
         divAsentamientos.append(divColMd);
 
-        divFormGroup.append(labelEstado).append(textEstado);
+        //dibuja los campos de texto de estado, municipio y ciudad
+        /*divFormGroup.append(labelEstado).append(textEstado);
         divColMd.append(divFormGroup);
         divEstado.append(divColMd);
-
+        */
 
 
     }
