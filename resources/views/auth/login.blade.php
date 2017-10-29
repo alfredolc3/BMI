@@ -24,7 +24,7 @@
 
     <div class="login-box-body">
     <p class="login-box-msg">Ingrese sus datos para Iniciar Sesion</p>
-    <form action="{{ url('/auth/login') }}" method="post">
+    <form action="{{ route('auth.login') }}" method="post">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="form-group has-feedback">
             <input type="email" class="form-control" placeholder="Email" name="email"/>
@@ -35,19 +35,12 @@
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
         </div>
         <div class="row">
-            <div class="col-xs-8">
-                <div class="checkbox icheck">
-                    <label>
-                        <input type="checkbox" name="remember"> Recordarme
-                    </label>
-                </div>
-            </div><!-- /.col -->
             <div class="col-xs-4">
                 <button type="submit" class="btn btn-primary btn-block btn-flat">Acceder</button>
             </div><!-- /.col -->
         </div>
     </form>
-
+    <br>
     <a href="{{ url('/password/email') }}">Olvidé mi contraseña</a><br>
     <!--<a href="{{ url('/auth/register') }}" class="text-center">Register a new membership</a>-->
 
