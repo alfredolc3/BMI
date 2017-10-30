@@ -21,6 +21,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//Route::get('/change_password', 'PasswordController@password');
 
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['auth', 'Admin']], function () {
     //crear nuevos registros
