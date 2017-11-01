@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Predios;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -84,4 +83,5 @@ class ImagenesController extends Controller
     {
         //
     }
+
 }
