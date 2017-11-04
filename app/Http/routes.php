@@ -60,11 +60,10 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['aut
     Route::get('usossuelo/{id}/destroy', ['uses' => 'UsossueloController@destroy', 'as' => 'admin.usossuelo.destroy']);
     Route::get('zonas/{id}/destroy', ['uses' => 'ZonasController@destroy', 'as' => 'admin.zonas.destroy']);
 
+
 });
 
-
 Route::group(['namespace' => 'Predios', 'prefix' => 'datos'], function () {
-
     Route::resource('predios', 'PrediosController');
 
     get('especificos/{id}', [
@@ -107,13 +106,13 @@ Route::group(['namespace' => 'Predios', 'prefix' => 'datos'], function () {
         'as' => 'datos.imagenes.index', 
         'uses' => 'ImagenesController@index'
     ]);
+
+
     
     //Route::resource('imagenes', 'ImagenesController');
     //Route::resource('especificos', 'EspecificosController');
     //Route::resource('caracteristicas', 'CaracteristicasController');
-
-
-
+    
 });
 
 

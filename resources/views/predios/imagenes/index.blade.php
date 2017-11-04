@@ -1,9 +1,7 @@
 @extends('app')
-
 @section('htmlheader_title')
     Nuevo Predio
 @endsection
-
 
 @section('main-content')
 <div class="container">
@@ -11,8 +9,8 @@
 		<div class="col-md-10 col-md-offset-1">
 			<div class="panel panel-default">
 				<div class="panel-heading">Datos Generales</div>
-
-				<div class="panel-body">
+				<div class="row">
+					<div class="panel-body">
 					@include('partials.error')
 						{!!Form::open()!!}
 
@@ -41,11 +39,12 @@
 						</div>	
 
 
-						{!!Form::close()!!}	
+						{!!Form::close()!!}
 					
 				</div>
 			</div>
 		</div>
 	</div>
+</div>
 </div>
 @endsection
