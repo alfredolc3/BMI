@@ -29,8 +29,7 @@
         "Acacha\\AdminLTETemplateLaravel\\app\\Providers\\AdminLTETemplateServiceProvider",
         "Collective\\Html\\HtmlServiceProvider",
         "Laracasts\\Flash\\FlashServiceProvider",
-        "Yajra\\Datatables\\DatatablesServiceProvider",
-        "Folklore\\Image\\ImageServiceProvider"
+        "Yajra\\Datatables\\DatatablesServiceProvider"
     ],
     "eager": [
         "Illuminate\\Auth\\AuthServiceProvider",
@@ -49,8 +48,7 @@
         "App\\Providers\\RouteServiceProvider",
         "Acacha\\AdminLTETemplateLaravel\\app\\Providers\\AdminLTETemplateServiceProvider",
         "Laracasts\\Flash\\FlashServiceProvider",
-        "Yajra\\Datatables\\DatatablesServiceProvider",
-        "Folklore\\Image\\ImageServiceProvider"
+        "Yajra\\Datatables\\DatatablesServiceProvider"
     ],
     "deferred": {
         "command.app.name": "Illuminate\\Foundation\\Providers\\ArtisanServiceProvider",

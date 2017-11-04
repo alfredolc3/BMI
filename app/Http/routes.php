@@ -107,6 +107,16 @@ Route::group(['namespace' => 'Predios', 'prefix' => 'datos'], function () {
         'uses' => 'ImagenesController@index'
     ]);
 
+    post('imagenes', [
+        'as' => 'datos.imagenes.store', 
+        'uses' => 'ImagenesController@store'
+    ]);
+
+    put('imagenes', [
+        'as' => 'datos.imagenes.update',  
+        'uses' => 'ImagenesController@update'
+    ]);
+
 
     
     //Route::resource('imagenes', 'ImagenesController');

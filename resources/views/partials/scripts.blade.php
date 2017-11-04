@@ -12,6 +12,8 @@
 <script src="{{ asset('/js/DataTables-1.10.16/js/jquery.dataTables.min.js') }}" type="text/javascript"></script>
 <!-- Chosen-->
 <script src="{{ asset('/plugins/chosen/chosen.jquery.js') }}"></script>
+
+<script src="{{ asset('/js/dropzone.js')}}"></script>
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
       Both of these plugins are recommended to enhance the
       user experience. Slimscroll is required when using the

@@ -36,7 +36,15 @@ class ImagenesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $path = public_path().'/uploads/';
+        $files = $request->file('file');
+
+        dd($files);
+
+        foreach($files as $file){
+            $fileName = $file->getClientOriginalName();
+            $file->move($path, $fileName);
+        }
     }
 
     /**
