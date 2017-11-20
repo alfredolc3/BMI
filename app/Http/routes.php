@@ -22,7 +22,16 @@ Route::get('/', function () {
 });
 
 //Route::get('/change_password', 'PasswordController@password');
+    get('change-password', [
+        'as' => 'password.change.index', 
+        'uses' => 'Auth\ChangePasswordController@index'
+    ]);
 
+    post('change-password', [
+        'as' => 'password.change.store',
+        'uses' => 'Auth\ChangePasswordController@store'
+    ]);
+    
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['auth', 'Admin']], function () {
     //crear nuevos registros
     Route::resource('users', 'UsersController');
@@ -99,7 +108,6 @@ Route::group(['namespace' => 'Predios', 'prefix' => 'datos'], function () {
         'as' => 'datos.caracteristicas.update',  
         'uses' => 'CaracteristicasController@update'
     ]);
-
 
 
     get('imagenes/{id}', [
