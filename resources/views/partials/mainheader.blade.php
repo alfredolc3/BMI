@@ -40,11 +40,11 @@
                         <li class="user-footer">
                             <div class="pull-left">
                                       
-                                <a href="{{route('password.change.index')}}" class="btn btn-default btn-flat">Profile</a>
+                                <a href="{{route('password.change.index')}}" class="btn btn-default btn-flat">Cambio de Contraseña</a>
                                 
                             </div>
                             <div class="pull-right">
-                                <a href="{{ url('/auth/logout') }}" class="btn btn-default btn-flat">Sign out</a>
+                                <a href="{{ url('/auth/logout') }}" class="btn btn-default btn-flat">Salir</a>
                             </div>
                         </li>
                     </ul>

@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Laracasts\Flash\Flash;
 use App\Http\Requests\UserRequest;
+use Mail;
 
 class UsersController extends Controller
 {
@@ -44,11 +45,18 @@ class UsersController extends Controller
     public function store(UserRequest $request)
     {
 
-        $user = new User($request->all());
-        $user->password = bcrypt($request->password);
+        $user = new User($request->all());     
+        
+        Mail::send('emails.confirmationRegister', ['user' => $user], function($message) use ($user) {
+            $message->to($user['email'], $user['name'])->subject('Registro en BMI');
+        });
+
         //dd($user);
         //dd($request->all());
+        
+        $user->password = bcrypt($request->password);
         $user->save();
+
         Flash::success("Se ha registrado ". $user->name . " de forma exitosa!");
         return redirect()->route('admin.users.index');
     }
