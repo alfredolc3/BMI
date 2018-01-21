@@ -5,91 +5,73 @@ namespace App\Http\Controllers\Predios;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Models\Predios\imagen;
 
 class ImagenesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+
+    public function index($id)
     {
-         return view('predios.imagenes.index');
+
+        $imagenes = imagen::where('idDatosPrincipales', $id)->get();
+       
+       return view('predios.imagenes.index', compact('id', 'imagenes'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        $path = public_path().'/uploads/';
+
+        $path = public_path().DIRECTORY_SEPARATOR.'uploads'.DIRECTORY_SEPARATOR.$request->id;
+
+        if(!is_dir($path)){
+            mkdir($path, 0777);
+        }
+
         $files = $request->file('file');
 
-        dd($files);
-
         foreach($files as $file){
-            $fileName = $file->getClientOriginalName();
-            $file->move($path, $fileName);
+
+            //cambiar espacios por guiones en la imagen
+
+            $nombre = str_replace(" ", "-", $file->getClientOriginalName()); 
+
+            //cambiar tamaño y peso de la imagen
+            $img = \Image::make($file)
+            ->resize(800, 600)
+            ->save($path.DIRECTORY_SEPARATOR.$nombre);
+
+            //guardar en base de datos el directorio de la imagen
+              $imagenes = new imagen();
+              $imagenes->idDatosPrincipales = $request->id;
+              $imagenes->ruta = 'uploads'.DIRECTORY_SEPARATOR.$request->id.DIRECTORY_SEPARATOR.$nombre;
+              $imagenes->nombre = $nombre;
+            $imagenes->save();
+
         }
+    
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function destroy($id, $idDatosPrincipales, $nombre)
     {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+        $imagenes = imagen::where('nombre', $nombre)
+                            ->where('idDatosPrincipales', $idDatosPrincipales)->get();
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        foreach ($imagenes as $imagen) {
+            
+            $imagen->delete();
+        }
+        
+
+      $path = public_path().DIRECTORY_SEPARATOR.'uploads'.DIRECTORY_SEPARATOR.$idDatosPrincipales.DIRECTORY_SEPARATOR.$nombre;
+
+        if(\File::exists($path)){
+          
+          \File::delete($path);
+        }
+        
+        return redirect("datos/imagenes/".$idDatosPrincipales);
     }
 
 }

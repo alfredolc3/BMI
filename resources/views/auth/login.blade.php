@@ -42,6 +42,7 @@
     </form>
     <br>
     <a href="{{ url('/password/email') }}">Olvidé mi contraseña</a><br>
+    <!--{{Hash::make("12345")}}-->
     <!--<a href="{{ url('/auth/register') }}" class="text-center">Register a new membership</a>-->
 
 </div><!-- /.login-box-body -->

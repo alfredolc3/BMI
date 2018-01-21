@@ -155,7 +155,7 @@ return [
         //Cviebrock\EloquentSluggable\ServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
         Yajra\Datatables\DatatablesServiceProvider::class,
-        Folklore\Image\ImageServiceProvider::class
+        Intervention\Image\ImageServiceProvider::class
         
     ],
 
@@ -213,7 +213,7 @@ return [
         'Html'      => Collective\Html\HtmlFacade::class,
         'AdminLTE'  => Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::class,
         'Flash'     => Laracasts\Flash\Flash::class,
-        'Image' => Folklore\Image\Facades\Image::class
+        'Image' => Intervention\Image\Facades\Image::class
 
 
        // 'Gmaps'     => GeneaLabs\Phpgmaps\Facades\PhpgmapsFacade::class,

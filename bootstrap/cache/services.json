@@ -30,7 +30,7 @@
         "Collective\\Html\\HtmlServiceProvider",
         "Laracasts\\Flash\\FlashServiceProvider",
         "Yajra\\Datatables\\DatatablesServiceProvider",
-        "Folklore\\Image\\ImageServiceProvider"
+        "Intervention\\Image\\ImageServiceProvider"
     ],
     "eager": [
         "Illuminate\\Auth\\AuthServiceProvider",
@@ -50,7 +50,7 @@
         "Acacha\\AdminLTETemplateLaravel\\app\\Providers\\AdminLTETemplateServiceProvider",
         "Laracasts\\Flash\\FlashServiceProvider",
         "Yajra\\Datatables\\DatatablesServiceProvider",
-        "Folklore\\Image\\ImageServiceProvider"
+        "Intervention\\Image\\ImageServiceProvider"
     ],
     "deferred": {
         "command.app.name": "Illuminate\\Foundation\\Providers\\ArtisanServiceProvider",
